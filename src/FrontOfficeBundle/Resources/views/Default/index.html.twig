@@ -1,1 +1,39 @@
-Hello World!
+{% set equipe = 'Stade Rochelais' %}
+{% extends "FrontOfficeBundle:Layout:layout.html.twig" %}
+{% block body %}
+    <section class="content">
+        <div class="container">
+            <h1 class="align-center">MATCH à VENIR</h1>
+            <div class="row">
+                <div class="table-calendrier table-calendrier-accueil col-md-12">
+                    <table class="no-margin-top" style="width:100%">
+                        <tr class="entete-calendrier entete-calendrier-accueil">
+                            <th colspan="2">DOMICILE</th>
+                            <th class="align-center">DATE</th>
+                            <th colspan="2" class="align-right">EXTERIEUR</th>
+                        </tr>
+                        {% for unMatch in matchs %}
+                            <tr class="cursor-pointer" onclick="window.document.location='{{ app.request.getBaseURL() }}/match/{{ unMatch.id }}';">
+                                {% if equipe == unMatch.equipeDomicile.nom %}
+                                    <td class="calendrier-club1 align-left" width="30%"><strong>{{ unMatch.equipeDomicile.nom }}</strong></td>
+                                {% else %}
+                                    <td class="calendrier-club1 align-left" width="30%">{{ unMatch.equipeDomicile.nom }}</td>
+                                {% endif %}
+
+                                <td class="10%"><img src="{{ asset("img/logo/StadeRochelais.png") }}" height="55px" width="43px"></td>
+                                <td class="calendrier-info" width="20%"><strong>{{ unMatch.date|date("d/m") }}</strong>
+                                    <p><strong>{{ unMatch.date|date("H:i") }}</strong></p></td>
+                                <td class="10%"><img src="{{ asset("img/logo/Toulon.png") }}" height="55px" width="46px"></td>
+                                {% if equipe == unMatch.equipeExterieur.nom %}
+                                    <td class="calendrier-club2 align-right" width="30%"><strong>{{ unMatch.equipeExterieur.nom }}</strong></td>
+                                {% else %}
+                                    <td class="calendrier-club2 align-right" width="30%">{{ unMatch.equipeExterieur.nom }}</td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

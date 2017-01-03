@@ -13,15 +13,17 @@ class MatchsRepository extends \Doctrine\ORM\EntityRepository
     public function getMatchAvenirEquipe($equipe){
         $queryBuilder = $this->createQueryBuilder('m');
         $queryBuilder->innerJoin('FrontOfficeBundle:Equipe','e','with','m.equipeDomicile = e.id OR m.equipeExterieur = e.id')
-                     ->where('m.scoreDomicile IS NULL 
+            ->where('m.scoreDomicile IS NULL 
                               AND m.scoreExterieur IS NULL 
                               AND e.nom = :equipe
                               order by m.date ASC')
-                     ->setParameter(':equipe',$equipe);
+            ->setParameter(':equipe',$equipe)
+            ->setMaxResults(5);
         $query=$queryBuilder->getQuery();
 
         return $query->getResult();
     }
+
     public function getMatchJournee($journee){
         $queryBuilder = $this->createQueryBuilder('m');
         $queryBuilder->where('m.journee = :journee order by m.date ASC')
