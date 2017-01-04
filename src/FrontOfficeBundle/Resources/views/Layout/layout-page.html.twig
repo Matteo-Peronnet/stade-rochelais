@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset("css/styles.css") }}" media="all">
+    {% block stylesheets %}{% endblock %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header-background">
+        <div class="header-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="menu-logo col-sm-1 col-md-2">
+                        <img src="{{ asset("img/logo/StadeRochelais.png") }}" height="120px" width="94px">
+                    </div>
+                    <div class="menu col-md-10">
+                        <ul>
+                            <li class="is-active"><a href="http://localhost/Perso/Learn/StadeRochelaisPerso/web/app_dev.php/">Accueil</a></li>
+                            <li><a href="http://localhost/Perso/Learn/StadeRochelaisPerso/web/app_dev.php/calendrier">CALENDRIER</a></li>
+                            <li><a href="#">Clubs</a></li>
+                            <li><a href="#">Entreprise</a></li>
+                            <li><a href="#">Medias</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-content header-page">
+            <div class="container">
+                <div class="row">
+                    <div class="header-page-name col-md-12">
+                        <h1>{% block titrePage %}DéTail calendrier top 14{% endblock %}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>

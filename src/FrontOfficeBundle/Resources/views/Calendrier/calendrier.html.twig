@@ -1,0 +1,101 @@
+{% set equipe = 'Stade Rochelais' %}
+{% set date = null %}
+{% extends "FrontOfficeBundle:Layout:layout-page.html.twig" %}
+{% block body %}
+    <section class="content">
+        <section class="header-journee">
+            <div class="container">
+                <div class="journee-block journee-block-left col-md-2">
+                    <p>Précédent</p>
+                </div>
+                <div class="sub-header-journee">
+                    <div class="variable-width col-md-8">
+                        {% for uneJournee in journee %}
+                            {% if uneJournee.id == journeeSaisie %}
+                                <div class="journee-name is-active">
+                                    <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?j=' ~ uneJournee.id }}">{{ uneJournee.nom }}</a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        {% for uneJournee in journee %}
+                            {% if uneJournee.id != journeeSaisie %}
+                                <div class="journee-name">
+                                    <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?j=' ~ uneJournee.id }}">{{ uneJournee.nom }}</a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="journee-block journee-block-right col-md-2">
+                        <p>Suivant</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="table-calendrier table-calendrier-accueil col-md-12">
+                    {% for unMatch in matchs %}
+                        {% if loop.first %}
+                            {% set date =  unMatch.date|date("d/m") %}
+                            <table style="width:100%">
+                            <tr class="entete-calendrier entete-calendrier-accueil">
+                                <th colspan="5">{{ unMatch.date|localizeddate("medium", "none", null, null, "cccc d LLLL yyyy") |capitalize }}</th>
+                            </tr>
+                        {% endif %}
+                        {% if  unMatch.date|date("d/m") == date %}
+                            <tr class="cursor-pointer" onclick="window.document.location='{{ app.request.getBaseURL() }}/match/{{ unMatch.id }}';">
+                                {% if unMatch.scoreDomicile == null or unMatch.scoreExterieur == null %}
+                                    <td class="calendrier-etat" width="20%"><a href="#">A venir</a></td>
+                                {% else %}
+                                    <td class="calendrier-etat" width="20%"><a href="#">Terminé</a></td>
+                                {% endif %}
+                                <td class="calendrier-club1" width="25%">{{ unMatch.equipeDomicile.nom }} <img src="{{ asset("img/logo/StadeRochelais.png") }}" height="55px" width="43px"></td>
+                                {% if unMatch.scoreDomicile == null or unMatch.scoreExterieur == null %}
+                                    <td class="calendrier-info" width="10%"><strong>{{ unMatch.date|date("H:i") }}</strong></td>
+                                {% else %}
+                                    <td class="calendrier-info" width="10%"><strong>{{ unMatch.scoreDomicile }}-{{ unMatch.scoreExterieur }}</strong></td>
+                                {% endif %}                                <td class="calendrier-club2" width="25%"><img src="{{ asset("img/logo/Toulon.png") }}" height="55px" width="46px"> {{ unMatch.equipeExterieur.nom }}</td>
+                                <td class="calendrier-stade" width="20%">{{ unMatch.equipeDomicile.stade }}</td>
+                            </tr>
+                        {% else %}
+
+                            {% set date =  unMatch.date|date("d/m") %}
+                            </table>
+                            <table style="width:100%">
+                            <tr class="entete-calendrier entete-calendrier-accueil">
+                                <th colspan="5">{{ unMatch.date|localizeddate("medium", "none", null, null, "cccc d LLLL yyyy") |capitalize }}</th>
+                            </tr>
+                            <tr class="cursor-pointer" onclick="window.document.location='{{ app.request.getBaseURL() }}/match/{{ unMatch.id }}';">
+                                {% if unMatch.scoreDomicile == null or unMatch.scoreExterieur == null %}
+                                    <td class="calendrier-etat" width="20%"><a href="#">A venir</a></td>
+                                {% else %}
+                                    <td class="calendrier-etat" width="20%"><a href="#">Terminé</a></td>
+                                {% endif %}
+                                <td class="calendrier-club1" width="25%">{{ unMatch.equipeDomicile.nom }} <img src="{{ asset("img/logo/StadeRochelais.png") }}" height="55px" width="43px"></td>
+                                {% if unMatch.scoreDomicile == null or unMatch.scoreExterieur == null %}
+                                    <td class="calendrier-info" width="10%"><strong>{{ unMatch.date|date("H:i") }}</strong></td>
+                                {% else %}
+                                    <td class="calendrier-info" width="10%"><strong>{{ unMatch.scoreDomicile }}-{{ unMatch.scoreExterieur }}</strong></td>
+                                {% endif %}
+                                <td class="calendrier-club2" width="25%"><img src="{{ asset("img/logo/Toulon.png") }}" height="55px" width="46px"> {{ unMatch.equipeExterieur.nom }}</td>
+                                <td class="calendrier-stade" width="20%">{{ unMatch.equipeDomicile.stade }}</td>
+                            </tr>
+                        {% endif %}
+                        {% if loop.last %}
+                            </table>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascripts %}
+    <script
+            src="http://code.jquery.com/jquery-3.1.1.slim.js"
+            integrity="sha256-5i/mQ300M779N2OVDrl16lbohwXNUdzL/R2aVUXyXWA="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ asset("js/slick.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("js/slick-prop.js") }}"></script>
+{% endblock %}
