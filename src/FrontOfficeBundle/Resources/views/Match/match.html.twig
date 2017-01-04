@@ -1,0 +1,36 @@
+{% extends "FrontOfficeBundle:Layout:layout-page.html.twig" %}
+{% block titrePage %}
+    {{ matchs[0].equipeDomicile.nom }} VS {{ matchs[0].equipeExterieur.nom }}
+{% endblock %}
+{% block body %}
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="resume-match col-md-12">
+                    <div class="row">
+                        <div class="header-equipe col-md-4">
+                            <img src="{{ asset("img/logo/StadeRochelais.png") }}" height="215px" width="169px">
+                            <p>{{ matchs[0].equipeDomicile.nom }}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="resume-match-stade">Stade : {{ matchs[0].equipeDomicile.stade }}</p>
+                            <p class="resume-match-etat">à venir</p>
+                            <p class="resume-match-date">{{ matchs[0].date|localizeddate("medium", "none", null, null, "cccc d LLLL yyyy") |capitalize }}</p>
+                            <p class="resume-match-info">{{ matchs[0].date|date("H:i") }}</p>
+                            <div class="resume-match-diffuseurs">
+                                <img src="{{ asset("img/sponsors/top-14.png") }}">
+                                <img src="{{ asset("img/sponsors/canal+sport.png") }}">
+                                <img src="{{ asset("img/sponsors/sfr-sport.png") }}">
+                            </div>
+                            <a href="#"><span class="btn-header-detail btn-reserver">Réserver</span></a>
+                        </div>
+                        <div class="header-equipe col-md-4">
+                            <img src="{{ asset("img/logo/Racing92.png") }}" height="217px" width="217px">
+                            <p>{{ matchs[0].equipeExterieur.nom }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
