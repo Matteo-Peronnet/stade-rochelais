@@ -511,7 +511,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match8_5->setDiffuseur($this->getReference('diffuseur'));
 
         $match8_6 = new Matchs();
-        $match8_6->setEquipeDomicile($this->getReference('lyonOU'));
+        $match8_6->setEquipeDomicile($this->getReference('LyonOU'));
         $match8_6->setEquipeExterieur($this->getReference('Pau'));
         $match8_6->setJournee($this->getReference('journee8'));
         $match8_6->setScoreDomicile(27);

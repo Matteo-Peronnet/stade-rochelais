@@ -30,7 +30,7 @@ class LoadChampionnatData extends AbstractFixture implements OrderedFixtureInter
         $champ->addEquipe($this->getReference('LyonOU'));
         $champ->addEquipe($this->getReference('Montpellier'));
         $champ->addEquipe($this->getReference('Pau'));
-        $champ->addEquipe($this->getReference('Racing92'));
+        $champ->addEquipe($this->getReference('Racing_92'));
         $champ->addEquipe($this->getReference('Stade_Francais'));
         $champ->addEquipe($this->getReference('Stade_Rochelais'));
         $champ->addEquipe($this->getReference('Toulon'));

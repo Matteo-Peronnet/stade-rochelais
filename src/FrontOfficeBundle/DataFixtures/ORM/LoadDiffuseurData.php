@@ -20,11 +20,11 @@ class LoadDiffuseurData extends AbstractFixture implements OrderedFixtureInterfa
     {
         $diffuseur = new Diffuseur();
         $diffuseur->setNom("SFR");
-        $diffuseur->setLogo("");
+        $diffuseur->setLogo("img/sponsors/sfr-sport.png");
 
         $diffuseur2 = new Diffuseur();
         $diffuseur2->setNom("Canal + ");
-        $diffuseur2->setLogo("");
+        $diffuseur2->setLogo("img/sponsors/canal+sport.png");
 
         $manager->persist($diffuseur);
         $manager->persist($diffuseur2);
