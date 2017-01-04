@@ -42,11 +42,6 @@ class Equipe
      */
     private $stade;
 
-    /**
-     * @var championnat
-     * @ORM\ManyToMany(targetEntity="FrontOfficeBundle\Entity\Championnat", cascade={"persist"},inversedBy="equipe")
-     */
-    private $championnat;
 
     /**
      * Get id

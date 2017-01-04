@@ -43,7 +43,7 @@ class Championnat
 
     /**
      * @var equipe
-     * @ORM\ManyToMany(targetEntity="FrontOfficeBundle\Entity\Equipe", cascade={"persist"},mappedBy="championnat")
+     * @ORM\ManyToMany(targetEntity="FrontOfficeBundle\Entity\Equipe", cascade={"persist"})
      */
     private $equipe;
 
