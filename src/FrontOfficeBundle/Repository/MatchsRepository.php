@@ -41,4 +41,13 @@ class MatchsRepository extends \Doctrine\ORM\EntityRepository
 
         return $query->getResult();
     }
+
+    public function getDernierScoreSaisie(){
+        $queryBuilder = $this->createQueryBuilder('m');
+        $queryBuilder->where('m.scoreDomicile is not null AND m.scoreExterieur is not null order by m.date desc')
+            ->setMaxResults(1);
+        $query=$queryBuilder->getQuery();
+
+        return $query->getResult();
+    }
 }

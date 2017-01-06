@@ -22,7 +22,7 @@ class LoadChampionnatData extends AbstractFixture implements OrderedFixtureInter
         $champ->setNom("Top 14");
         $champ->setDescription("Le Championnat de France de Rugby a XV de premiere division");
         $champ->addEquipe($this->getReference('Bayonne'));
-        $champ->addEquipe($this->getReference('Bordeaux-Begles'));
+        $champ->addEquipe($this->getReference('Bordeaux-begles'));
         $champ->addEquipe($this->getReference('Brive'));
         $champ->addEquipe($this->getReference('Castres'));
         $champ->addEquipe($this->getReference('Clermont'));

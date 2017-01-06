@@ -11,14 +11,11 @@
                 <div class="sub-header-journee">
                     <div class="variable-width col-md-8">
                         {% for uneJournee in journee %}
-                            {% if uneJournee.id == journeeSaisie %}
+                            {% if uneJournee.numero == journeeSaisie %}
                                 <div class="journee-name is-active">
                                     <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?j=' ~ uneJournee.id }}">{{ uneJournee.nom }}</a>
                                 </div>
-                            {% endif %}
-                        {% endfor %}
-                        {% for uneJournee in journee %}
-                            {% if uneJournee.id != journeeSaisie %}
+                            {% else %}
                                 <div class="journee-name">
                                     <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?j=' ~ uneJournee.id }}">{{ uneJournee.nom }}</a>
                                 </div>
@@ -50,12 +47,12 @@
                                 {% else %}
                                     <td class="calendrier-etat" width="20%"><a href="#">Terminé</a></td>
                                 {% endif %}
-                                <td class="calendrier-club1" width="25%">{{ unMatch.equipeDomicile.nom }} <img src="{{ asset("img/logo/StadeRochelais.png") }}" height="55px" width="43px"></td>
+                                <td class="calendrier-club1" width="25%">{{ unMatch.equipeDomicile.nom }} <img src="{{ asset(unMatch.equipeDomicile.blason) }}" height="55px"></td>
                                 {% if unMatch.scoreDomicile == null or unMatch.scoreExterieur == null %}
                                     <td class="calendrier-info" width="10%"><strong>{{ unMatch.date|date("H:i") }}</strong></td>
                                 {% else %}
                                     <td class="calendrier-info" width="10%"><strong>{{ unMatch.scoreDomicile }}-{{ unMatch.scoreExterieur }}</strong></td>
-                                {% endif %}                                <td class="calendrier-club2" width="25%"><img src="{{ asset("img/logo/Toulon.png") }}" height="55px" width="46px"> {{ unMatch.equipeExterieur.nom }}</td>
+                                {% endif %}                                <td class="calendrier-club2" width="25%"><img src="{{ asset(unMatch.equipeExterieur.blason) }}" height="55px"> {{ unMatch.equipeExterieur.nom }}</td>
                                 <td class="calendrier-stade" width="20%">{{ unMatch.equipeDomicile.stade }}</td>
                             </tr>
                         {% else %}
@@ -72,13 +69,13 @@
                                 {% else %}
                                     <td class="calendrier-etat" width="20%"><a href="#">Terminé</a></td>
                                 {% endif %}
-                                <td class="calendrier-club1" width="25%">{{ unMatch.equipeDomicile.nom }} <img src="{{ asset("img/logo/StadeRochelais.png") }}" height="55px" width="43px"></td>
+                                <td class="calendrier-club1" width="25%">{{ unMatch.equipeDomicile.nom }} <img src="{{ asset(unMatch.equipeDomicile.blason)}}" height="55px""></td>
                                 {% if unMatch.scoreDomicile == null or unMatch.scoreExterieur == null %}
                                     <td class="calendrier-info" width="10%"><strong>{{ unMatch.date|date("H:i") }}</strong></td>
                                 {% else %}
                                     <td class="calendrier-info" width="10%"><strong>{{ unMatch.scoreDomicile }}-{{ unMatch.scoreExterieur }}</strong></td>
                                 {% endif %}
-                                <td class="calendrier-club2" width="25%"><img src="{{ asset("img/logo/Toulon.png") }}" height="55px" width="46px"> {{ unMatch.equipeExterieur.nom }}</td>
+                                <td class="calendrier-club2" width="25%"><img src="{{ asset(unMatch.equipeExterieur.blason) }}" height="55px"> {{ unMatch.equipeExterieur.nom }}</td>
                                 <td class="calendrier-stade" width="20%">{{ unMatch.equipeDomicile.stade }}</td>
                             </tr>
                         {% endif %}

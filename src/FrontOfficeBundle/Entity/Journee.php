@@ -41,6 +41,14 @@ class Journee
     private $matchs;
 
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numero", type="integer", nullable=false)
+     */
+    private $numero;
+
+
      /**
      * Get id
      *
@@ -139,4 +147,21 @@ class Journee
     {
         return $this->matchs;
     }
+
+    /**
+     * @return int
+     */
+    public function getNumero()
+    {
+        return $this->numero;
+    }
+
+    /**
+     * @param int $numero
+     */
+    public function setNumero($numero)
+    {
+        $this->numero = $numero;
+    }
+
 }

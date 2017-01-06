@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="header-equipe col-md-3">
                         <p class="header-equipe-nom">{{ prochainMatch.equipeDomicile.nom }}</p>
-                        <img src="{{ asset("img/logo/StadeRochelais.png") }}" height="170px" width="133px">
+                        <img src="{{ asset(prochainMatch.equipeDomicile.blason) }}" height="170px">
                     </div>
                     <div class="header-next-match col-md-4 col-md-offset-1">
                         <div class="box">
@@ -51,11 +51,11 @@
                             </div>
                         </div>
                         <p class="header-next-match-stade">Stade : {{ prochainMatch.equipeDomicile.stade }}</p>
-                        <a href="detail-match-a-venir.html"><span class="btn-header-detail">PLUS D'INFOS</span></a>
+                        <a href="{{ app.request.getBaseURL() }}/match/{{ prochainMatch.id }}"><span class="btn-header-detail">PLUS D'INFOS</span></a>
                     </div>
                     <div class="header-equipe col-md-3 col-md-offset-1">
                         <p class="header-equipe-nom">{{ prochainMatch.equipeExterieur.nom }}</p>
-                        <img src="{{ asset("img/logo/Racing92.png") }}" height="170px" width="156px">
+                        <img src="{{ asset(prochainMatch.equipeExterieur.blason) }}" height="170px">
                     </div>
                 </div>
             </div>

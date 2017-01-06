@@ -20,10 +20,10 @@
                                     <td class="calendrier-club1 align-left" width="30%">{{ unMatch.equipeDomicile.nom }}</td>
                                 {% endif %}
 
-                                <td class="10%"><img src="{{ asset("img/logo/StadeRochelais.png") }}" height="55px" width="43px"></td>
+                                <td class="10%"><img src="{{ asset(unMatch.equipeDomicile.blason) }}" height="55px"></td>
                                 <td class="calendrier-info" width="20%"><strong>{{ unMatch.date|date("d/m") }}</strong>
                                     <p><strong>{{ unMatch.date|date("H:i") }}</strong></p></td>
-                                <td class="10%"><img src="{{ asset("img/logo/Toulon.png") }}" height="55px" width="46px"></td>
+                                <td class="10%"><img src="{{ (asset(unMatch.equipeExterieur.blason)) }}" height="55px"></td>
                                 {% if equipe == unMatch.equipeExterieur.nom %}
                                     <td class="calendrier-club2 align-right" width="30%"><strong>{{ unMatch.equipeExterieur.nom }}</strong></td>
                                 {% else %}
