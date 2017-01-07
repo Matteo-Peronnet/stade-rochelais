@@ -1,1 +1,57 @@
-Hello World!
+{% extends "BackOfficeBundle:Layout:layout.html.twig" %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="sidebar-left col-md-3 ">
+                {% include "BackOfficeBundle:Layout:menu.html.twig" %}
+            </div>
+            <div class="sidebar-right col-md-9 no-padding">
+                {% include "BackOfficeBundle:Layout:header.html.twig" %}
+            </div>
+            <div class="case-info col-md-2 no-padding">
+                <p class="case-info-title">Total d'équipe</p>
+                <p class="case-info-number blue">35</p>
+                <a href="#">
+                    <footer class="bg-blue">
+                        <p>Voir la liste des équipe</p>
+                        <img src="{{ asset('css/icon/icon-backend-case-info-1.png') }}">
+                    </footer>
+                </a>
+            </div>
+            <div class="case-info col-md-2 no-padding">
+                <p class="case-info-title">Total de matchs</p>
+                <p class="case-info-number red">125</p>
+                <a href="#">
+                    <footer class="bg-red">
+                        <p>Voir la liste des matchs</p>
+                        <img src="{{ asset('css/icon/icon-backend-case-info-1.png') }}">
+                    </footer>
+                </a>
+            </div>
+            <div class="case-info col-md-2 no-padding">
+                <p class="case-info-title">Matchs à remplir</p>
+                <p class="case-info-number green">6</p>
+                <a href="#">
+                    <footer class="bg-green">
+                        <p>Voir les matchs à remplir</p>
+                        <img src="{{ asset('css/icon/icon-backend-case-info-1.png') }}">
+                    </footer>
+                </a>
+            </div>
+            <div class="case-info col-md-2 no-padding">
+                <p class="case-info-title">Total championnats</p>
+                <p class="case-info-number orange">4</p>
+                <a href="#">
+                    <footer class="bg-orange">
+                        <p>Voir la liste des championnats</p>
+                        <img src="{{ asset('css/icon/icon-backend-case-info-1.png') }}">
+                    </footer>
+                </a>
+            </div>
+            <div class="box draw meet-blue col-md-6 margin-15 no-padding">
+                <h1>Accueil </h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut .</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

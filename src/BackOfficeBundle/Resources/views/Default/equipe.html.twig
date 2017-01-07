@@ -1,0 +1,102 @@
+{% extends "BackOfficeBundle:Layout:layout.html.twig" %}
+{% block body %}
+    <div class="container-fluid">
+    <div class="row">
+    <div class="sidebar-left col-md-3 ">
+        {% include "BackOfficeBundle:Layout:menu.html.twig" %}
+    </div>
+    <div class="sidebar-right col-md-9 no-padding">
+        {% include "BackOfficeBundle:Layout:header.html.twig" %}
+    </div>
+    <!-- Contenu -->
+    <div class="col-md-9">
+        <div class="content">
+            <div class="row">
+                <div class="box col-md-7 margin-15 no-padding">
+                    <h1>Ajouter une équipe</h1>
+                    <form method="post" action="#">
+                        <p>
+                            <label for="NomEquipe">Nom Equipe : </label>
+                            <input>
+                        </p>
+                        <p>
+                            <label for="NomStade">Nom Stade : </label>
+                            <input>
+                        </p>
+                        <p>
+                            <label for="blason">Blason : </label>
+                            <button type="button" class="btn btn-lg btn-default">Parcourir</button>
+                        </p>
+                        <footer>
+                            <input class="btn-annuler" type="reset" value="Annuler">
+                            <input class="btn-ajouter" type="submit" value="Ajouter">
+                        </footer>
+                    </form>
+                </div>
+
+                <div class="box draw meet-blue col-md-7 margin-15 no-padding">
+                    <h1>Liste des équipes
+                        <select class="pull-right" name="championnat" id="championnat">
+                            <option value="TOP14">TOP14</option>
+                            <option value="U18">PRO D2</option>
+                            <option value="U16">CHAMPIONS CUP</option>
+                        </select>
+                    </h1>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Blason</th>
+                            <th>Nom</th>
+                            <th>Stade</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><img src="img/logo/StadeRochelais.png" height="42px" width="33px"></td>
+                            <td>Stade Rochelais</td>
+                            <td>Stade Marcel Deflandre</td>
+                            <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
+                                <a href="#"><img src="css/icon/icon-backend-supprimer.png"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/logo/StadeFrancais.png" height="42px" width="34px"></td>
+                            <td>Paris</td>
+                            <td>Stade Jean-Bouin</td>
+                            <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
+                                <a href="#"><img src="css/icon/icon-backend-supprimer.png"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/logo/Brive.png" height="42px" width="35px"></td>
+                            <td>Brive</td>
+                            <td>Stadium Municipal Amédée-Domenech</td>
+                            <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
+                                <a href="#"><img src="css/icon/icon-backend-supprimer.png"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/logo/LyonOU.png" height="42px" width="26px"></td>
+                            <td>Lyon</td>
+                            <td>Stade Gerland</td>
+                            <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
+                                <a href="#"><img src="css/icon/icon-backend-supprimer.png"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/logo/Clermont.png" height="42px" width="33px"></td>
+                            <td>Clermont</td>
+                            <td>Stade Marcel-Michelin</td>
+                            <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
+                                <a href="#"><img src="css/icon/icon-backend-supprimer.png"></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

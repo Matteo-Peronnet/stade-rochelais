@@ -1,0 +1,137 @@
+{% extends "BackOfficeBundle:Layout:layout.html.twig" %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="sidebar-left col-md-3 ">
+                {% include "BackOfficeBundle:Layout:menu.html.twig" %}
+            </div>
+            <div class="sidebar-right col-md-9 no-padding">
+                {% include "BackOfficeBundle:Layout:header.html.twig" %}
+            </div>
+
+            <div class="col-md-9">
+                <div class="content">
+                    <div class="row">
+                        <div class="box col-md-5 margin-15 no-padding">
+                            <h1>Ajouter un Match</h1>
+                            <form method="post" action="#">
+                                {{ form_start(form) }}
+
+                                <p>{{ form_row(form.equipeDomicile) }}</p>
+                                <p>{{ form_row(form.equipeExterieur) }}</p>
+                                <p>{{ form_row(form.journee) }}</p>
+                                <p>{{ form_row(form.date) }}</p>
+                                <p>{{ form_row(form.diffuseur) }}</p>
+
+                                <footer>
+                                    {{ form_row(form.annuler, { 'label': 'Annuler' }) }}
+                                    {{ form_row(form.ajouter, { 'label': 'Ajouter' }) }}
+                                </footer>
+                            </form>
+                        </div>
+
+                        <div class="box col-md-11 margin-15 no-padding">
+                            <h1>Rechercher un match</h1>
+                            <div class="box-parametre">
+                                <p>Rechercher par équipe
+                                    <select style="font-family:arial; font-size: 16px;" name="equipeDomicile" id="equipeDomicile">
+                                        <option style="font-family:arial; font-size: 16px;" value="default">saisir equipe</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="Toulon">Toulon</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="Clermont">Clermont</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="Montpellier">Montpellier</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="Racing 92">Racing 92</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="Toulouse">Toulouse</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="Pau">Pau</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="Grenoble">Grenoble</option>
+                                    </select>
+                                    ou <select style="font-family:arial; font-size: 16px;" name="championnat" id="championnat">
+                                        <option style="font-family:arial; font-size: 16px;" value="default">saisir championnat</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="TOP14">TOP14</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="U18">U18</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="U16">U16</option>
+                                    </select>
+                                    <select style="font-family:arial; font-size: 16px;" name="journee" id="journee">
+                                        <option style="font-family:arial; font-size: 16px;" value="default">saisir journée</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="journee1">1ere journee</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="journee2">2eme journee</option>
+                                        <option style="font-family:arial; font-size: 16px;" value="journee3">3eme journee</option>
+                                    </select>
+                                </p>
+
+                                <p>Afficher que les matchs à venir <input class="increaseCheckbox" type="checkbox" id="matchAvenir" value="matchAvenir"></p>
+                            </div>
+                            <table class="table table-box">
+                                <thead>
+                                <tr>
+                                    <th>Domicile</th>
+                                    <th>Extérieur</th>
+                                    <th>Championnat</th>
+                                    <th>Journée</th>
+                                    <th>Date</th>
+                                    <th>Score</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Lyon</td>
+                                    <td>Stade Rochelais</td>
+                                    <td>TOP 14</td>
+                                    <td>12ème journée</td>
+                                    <td>24-12-2016 20-15</td>
+                                    <td>A venir</td>
+                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Stade Rochelais</td>
+                                    <td>Paris</td>
+                                    <td>TOP 14</td>
+                                    <td>12ème journée</td>
+                                    <td>24-12-2016 20-15</td>
+                                    <td>A venir</td>
+                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>                                </tr>
+                                <tr>
+                                    <td>Stade Rochelais</td>
+                                    <td>Brive</td>
+                                    <td>TOP 14</td>
+                                    <td>12ème journée</td>
+                                    <td>24-12-2016 20-15</td>
+                                    <td>A venir</td>
+                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>                                </tr>
+                                <tr>
+                                    <td>Stade Rochelais</td>
+                                    <td>Lyon</td>
+                                    <td>TOP 14</td>
+                                    <td>12ème journée</td>
+                                    <td>24-12-2016 20-15</td>
+                                    <td>15:12</td>
+                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Stade Rochelais</td>
+                                    <td>Lyon</td>
+                                    <td>TOP 14</td>
+                                    <td>12ème journée</td>
+                                    <td>24-12-2016 20-15</td>
+                                    <td>A venir</td>
+                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Stade Rochelais</td>
+                                    <td>Clermont</td>
+                                    <td>TOP 14</td>
+                                    <td>12ème journée</td>
+                                    <td>24-12-2016 20-15</td>
+                                    <td>A venir</td>
+                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

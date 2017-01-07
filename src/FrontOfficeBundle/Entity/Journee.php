@@ -44,7 +44,7 @@ class Journee
     /**
      * @var integer
      *
-     * @ORM\Column(name="numero", type="integer", nullable=false)
+     * @ORM\Column(name="numero", type="integer", nullable=true)
      */
     private $numero;
 

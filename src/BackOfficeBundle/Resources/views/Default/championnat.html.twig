@@ -1,0 +1,148 @@
+{% extends "BackOfficeBundle:Layout:layout.html.twig" %}
+{% block body %}
+    <div class="container-fluid">
+    <div class="row">
+    <div class="sidebar-left col-md-3 ">
+        {% include "BackOfficeBundle:Layout:menu.html.twig" %}
+    </div>
+    <div class="sidebar-right col-md-9 no-padding">
+        {% include "BackOfficeBundle:Layout:header.html.twig" %}
+    </div>
+        <div class="box col-md-4 margin-15 no-padding">
+            <h1>Ajouter un championnat</h1>
+            <form method="post" action="#">
+                <p>
+                    <label for="NomChampionnat">Nom Championnat : </label>
+                    <input>
+                </p>
+                <p>
+                    <label for="descriptionChampionnat">Description : </label>
+                    <input>
+                </p>
+                <footer>
+                    <input class="btn-annuler" type="reset" value="Annuler">
+                    <input class="btn-ajouter" type="submit" value="Ajouter">
+                </footer>
+            </form>
+        </div>
+        <div class="box col-md-4 margin-15 no-padding">
+            <h1>Ajouter une journée à un championnat</h1>
+            <form method="post" action="#">
+                <p>
+                    <label for="NomChampionnat">Nom Championnat : </label>
+                    <select>
+                        <option>TOP 14</option>
+                        <option>PRO D2</option>
+                        <option>CHAMPIONS CUP</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="NomJournee">Nom Journée : </label>
+                    <input>
+                </p>
+                <footer>
+                    <input class="btn-annuler" type="reset" value="Annuler">
+                    <input class="btn-ajouter" type="submit" value="Ajouter">
+                </footer>
+            </form>
+        </div>
+
+        <div class="box col-md-4 margin-15 no-padding">
+            <h1>Liste des championnats :
+            </h1>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>TOP14</td>
+                    <td>
+                        <a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
+                        <a href="#">
+                            <img src="css/icon/icon-backend-supprimer.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td>PRO D2</td>
+                    <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
+                        <a href="#"><img src="css/icon/icon-backend-supprimer.png"></td>
+                </tr>
+                <tr>
+                    <td>CHAMPIONS CUP</td>
+                    <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
+                        <a href="#"><img src="css/icon/icon-backend-supprimer.png"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box col-md-4 margin-15 no-padding">
+            <h1>Liste des journées du championnat :
+                <select class="pull-right" name="championnat" id="championnat">
+                    <option value="TOP14">TOP14</option>
+                    <option value="U18">PRO D2</option>
+                    <option value="U16">CHAMPIONS CUP</option>
+                </select>
+            </h1>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1ere Journée</td>
+                    <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
+                        <a href="#"><img src="css/icon/icon-backend-supprimer.png"></td>
+                </tr>
+                <tr>
+                    <td>2eme Journée</td>
+                    <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
+                        <a href="#"><img src="css/icon/icon-backend-supprimer.png"></td>
+                </tr>
+                <tr>
+                    <td>3eme Journée</td>
+                    <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
+                        <a href="#"><img src="css/icon/icon-backend-supprimer.png"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box col-md-4 margin-15 no-padding">
+            <h1>Ajouter une équipe à un championnat</h1>
+            <form method="post" action="#">
+                <p>
+                    <label for="NomChampionnat">Championnat : </label>
+                    <select>
+                        <option>TOP 14</option>
+                        <option>PRO D2</option>
+                        <option>CHAMPIONS CUP</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="NomEquipe">Equipe : </label>
+                    <select>
+                        <option value="Toulon">Toulon</option>
+                        <option value="StadeRochelais">StadeRochelais</option>
+                        <option value="Clermont">Clermont</option>
+                        <option value="Montpellier">Montpellier</option>
+                        <option value="Racing 92">Racing 92</option>
+                        <option value="Toulouse">Toulouse</option>
+                        <option value="Pau">Pau</option>
+                        <option value="Grenoble">Grenoble</option>
+                    </select>
+                </p>
+                <footer>
+                    <input class="btn-annuler" type="reset" value="Annuler">
+                    <input class="btn-ajouter" type="submit" value="Ajouter">
+                </footer>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+<div class="header-logo">
+    <img src="{{ asset('img/logo/StadeRochelais.png') }}" height="82px" width="65px">
+    <p class="title-equipe">Stade Rochelais</p>
+</div>
+<div class="account">
+    <div class="account-img">
+        <img src="{{ asset('img/account-img.png') }}" height="100px" width="100px">
+    </div>
+    <div class="account-info">
+        <p>Nom</p>
+        <p>Prenom</p>
+    </div>
+</div>
+<div class="menu">
+    <ul>
+        <li class="is-active"><a href="{{ app.request.getBaseURL() }}/admin/"><img src="{{ asset('css/icon/icon-backend-accueil.png') }}">Accueil</a></li>
+        <li><a href="{{ app.request.getBaseURL() }}/admin/equipe"><img src="{{ asset('css/icon/icon-backend-equipe.png') }}">Les équipes</a></li>
+        <li> <a href="{{ app.request.getBaseURL() }}/admin/championnat"><img src="{{ asset('css/icon/icon-backend-championnat.png') }}">Championnat</a></li>
+        <li><a href="{{ app.request.getBaseURL() }}/admin/match"><img src="{{ asset('css/icon/icon-backend-match.png') }}">Match</a></li>
+    </ul>
+</div>
