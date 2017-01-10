@@ -209,6 +209,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match3_7->setScoreExterieur(14);
         $match3_7->setDate(new \DateTime('2016/09/04 21:00'));
         $match3_7->setDiffuseur($this->getReference('diffuseur'));
+
         // ------------------------ JOURNEE 4 -------------------------
         $match4_1 = new Matchs();
         $match4_1->setEquipeDomicile($this->getReference('Stade_Francais'));
@@ -400,6 +401,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match6_7->setScoreExterieur(21);
         $match6_7->setDate(new \DateTime('2016/09/25 16:15'));
         $match6_7->setDiffuseur($this->getReference('diffuseur'));
+
         // ------------------------ JOURNEE 7 -------------------------
         $match7_1 = new Matchs();
         $match7_1->setEquipeDomicile($this->getReference('Clermont'));
@@ -527,6 +529,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match8_7->setScoreExterieur(25);
         $match8_7->setDate(new \DateTime('2016/10/09 16:15'));
         $match8_7->setDiffuseur($this->getReference('diffuseur'));
+
         // ------------------------ JOURNEE 9 -------------------------
         $match9_1 = new Matchs();
         $match9_1->setEquipeDomicile($this->getReference('Pau'));
@@ -590,7 +593,70 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match9_7->setScoreExterieur(40);
         $match9_7->setDate(new \DateTime('2016/10/30 16:15'));
         $match9_7->setDiffuseur($this->getReference('diffuseur'));
+
         // ------------------------ JOURNEE 10 -------------------------
+        $match10_1 = new Matchs();
+        $match10_1->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match10_1->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match10_1->setJournee($this->getReference('journee10'));
+        $match10_1->setScoreDomicile(37);
+        $match10_1->setScoreExterieur(19);
+        $match10_1->setDate(new \DateTime('2016/11/05 14:45'));
+        $match10_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match10_2 = new Matchs();
+        $match10_2->setEquipeDomicile($this->getReference('Toulouse'));
+        $match10_2->setEquipeExterieur($this->getReference('Castres'));
+        $match10_2->setJournee($this->getReference('journee10'));
+        $match10_2->setScoreDomicile(16);
+        $match10_2->setScoreExterieur(15);
+        $match10_2->setDate(new \DateTime('2016/11/05 18:30'));
+        $match10_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match10_3 = new Matchs();
+        $match10_3->setEquipeDomicile($this->getReference('Clermont'));
+        $match10_3->setEquipeExterieur($this->getReference('Grenoble'));
+        $match10_3->setJournee($this->getReference('journee10'));
+        $match10_3->setScoreDomicile(21);
+        $match10_3->setScoreExterieur(20);
+        $match10_3->setDate(new \DateTime('2016/11/05 18:30'));
+        $match10_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match10_4 = new Matchs();
+        $match10_4->setEquipeDomicile($this->getReference('Brive'));
+        $match10_4->setEquipeExterieur($this->getReference('Bayonne'));
+        $match10_4->setJournee($this->getReference('journee10'));
+        $match10_4->setScoreDomicile(26);
+        $match10_4->setScoreExterieur(9);
+        $match10_4->setDate(new \DateTime('2016/11/05 18:30'));
+        $match10_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match10_5 = new Matchs();
+        $match10_5->setEquipeDomicile($this->getReference('Racing_92'));
+        $match10_5->setEquipeExterieur($this->getReference('Montpellier'));
+        $match10_5->setJournee($this->getReference('journee10'));
+        $match10_5->setScoreDomicile(21);
+        $match10_5->setScoreExterieur(9);
+        $match10_5->setDate(new \DateTime('2016/11/05 20:45'));
+        $match10_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match10_6 = new Matchs();
+        $match10_6->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match10_6->setEquipeExterieur($this->getReference('Pau'));
+        $match10_6->setJournee($this->getReference('journee10'));
+        $match10_6->setScoreDomicile(27);
+        $match10_6->setScoreExterieur(6);
+        $match10_6->setDate(new \DateTime('2016/11/06 12:30'));
+        $match10_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match10_7 = new Matchs();
+        $match10_7->setEquipeDomicile($this->getReference('LyonOU'));
+        $match10_7->setEquipeExterieur($this->getReference('Toulon'));
+        $match10_7->setJournee($this->getReference('journee10'));
+        $match10_7->setScoreDomicile(27);
+        $match10_7->setScoreExterieur(13);
+        $match10_7->setDate(new \DateTime('2016/11/06 16:15'));
+        $match10_7->setDiffuseur($this->getReference('diffuseur'));
 
         // ------------------------ JOURNEE 11 -------------------------
         $match11_1 = new Matchs();
@@ -655,6 +721,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match11_7->setScoreExterieur(12);
         $match11_7->setDate(new \DateTime('2016/11/13 21:00'));
         $match11_7->setDiffuseur($this->getReference('diffuseur'));
+
         // ------------------------ JOURNEE 12 -------------------------
         $match12_1 = new Matchs();
         $match12_1->setEquipeDomicile($this->getReference('Castres'));
@@ -718,9 +785,134 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match12_7->setScoreExterieur(13);
         $match12_7->setDate(new \DateTime('2016/11/20 16:15'));
         $match12_7->setDiffuseur($this->getReference('diffuseur'));
+
         // ------------------------ JOURNEE 13 -------------------------
+        $match13_1 = new Matchs();
+        $match13_1->setEquipeDomicile($this->getReference('Pau'));
+        $match13_1->setEquipeExterieur($this->getReference('Clermont'));
+        $match13_1->setJournee($this->getReference('journee13'));
+        $match13_1->setScoreDomicile(40);
+        $match13_1->setScoreExterieur(35);
+        $match13_1->setDate(new \DateTime('2016/12/03 14:45'));
+        $match13_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match13_2 = new Matchs();
+        $match13_2->setEquipeDomicile($this->getReference('LyonOU'));
+        $match13_2->setEquipeExterieur($this->getReference('Castres'));
+        $match13_2->setJournee($this->getReference('journee13'));
+        $match13_2->setScoreDomicile(19);
+        $match13_2->setScoreExterieur(23);
+        $match13_2->setDate(new \DateTime('2016/12/03 18:30'));
+        $match13_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match13_3 = new Matchs();
+        $match13_3->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match13_3->setEquipeExterieur($this->getReference('Bayonne'));
+        $match13_3->setJournee($this->getReference('journee13'));
+        $match13_3->setScoreDomicile(51);
+        $match13_3->setScoreExterieur(5);
+        $match13_3->setDate(new \DateTime('2016/12/03 18:30'));
+        $match13_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match13_4 = new Matchs();
+        $match13_4->setEquipeDomicile($this->getReference('Grenoble'));
+        $match13_4->setEquipeExterieur($this->getReference('Montpellier'));
+        $match13_4->setJournee($this->getReference('journee13'));
+        $match13_4->setScoreDomicile(37);
+        $match13_4->setScoreExterieur(51);
+        $match13_4->setDate(new \DateTime('2016/12/03 18:30'));
+        $match13_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match13_5 = new Matchs();
+        $match13_5->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match13_5->setEquipeExterieur($this->getReference('Racing_92'));
+        $match13_5->setJournee($this->getReference('journee13'));
+        $match13_5->setScoreDomicile(23);
+        $match13_5->setScoreExterieur(23);
+        $match13_5->setDate(new \DateTime('2016/12/03 20:45'));
+        $match13_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match13_6 = new Matchs();
+        $match13_6->setEquipeDomicile($this->getReference('Toulouse'));
+        $match13_6->setEquipeExterieur($this->getReference('Brive'));
+        $match13_6->setJournee($this->getReference('journee13'));
+        $match13_6->setScoreDomicile(30);
+        $match13_6->setScoreExterieur(12);
+        $match13_6->setDate(new \DateTime('2016/12/04 12:30'));
+        $match13_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match13_7 = new Matchs();
+        $match13_7->setEquipeDomicile($this->getReference('Toulon'));
+        $match13_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match13_7->setJournee($this->getReference('journee13'));
+        $match13_7->setScoreDomicile(37);
+        $match13_7->setScoreExterieur(10);
+        $match13_7->setDate(new \DateTime('2016/12/04 16:15'));
+        $match13_7->setDiffuseur($this->getReference('diffuseur'));
 
         // ------------------------ JOURNEE 14 -------------------------
+        $match14_1 = new Matchs();
+        $match14_1->setEquipeDomicile($this->getReference('Grenoble'));
+        $match14_1->setEquipeExterieur($this->getReference('Toulouse'));
+        $match14_1->setJournee($this->getReference('journee14'));
+        $match14_1->setScoreDomicile(26);
+        $match14_1->setScoreExterieur(22);
+        $match14_1->setDate(new \DateTime('2016/12/22 20:45'));
+        $match14_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match14_2 = new Matchs();
+        $match14_2->setEquipeDomicile($this->getReference('Brive'));
+        $match14_2->setEquipeExterieur($this->getReference('LyonOU'));
+        $match14_2->setJournee($this->getReference('journee14'));
+        $match14_2->setScoreDomicile(22);
+        $match14_2->setScoreExterieur(6);
+        $match14_2->setDate(new \DateTime('2016/12/23 17:00'));
+        $match14_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match14_3 = new Matchs();
+        $match14_3->setEquipeDomicile($this->getReference('Racing_92'));
+        $match14_3->setEquipeExterieur($this->getReference('Castres'));
+        $match14_3->setJournee($this->getReference('journee14'));
+        $match14_3->setScoreDomicile(23);
+        $match14_3->setScoreExterieur(10);
+        $match14_3->setDate(new \DateTime('2016/12/23 19:00'));
+        $match14_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match14_4 = new Matchs();
+        $match14_4->setEquipeDomicile($this->getReference('Bayonne'));
+        $match14_4->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match14_4->setJournee($this->getReference('journee14'));
+        $match14_4->setScoreDomicile(17);
+        $match14_4->setScoreExterieur(42);
+        $match14_4->setDate(new \DateTime('2016/12/23 19:00'));
+        $match14_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match14_5 = new Matchs();
+        $match14_5->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match14_5->setEquipeExterieur($this->getReference('Pau'));
+        $match14_5->setJournee($this->getReference('journee14'));
+        $match14_5->setScoreDomicile(16);
+        $match14_5->setScoreExterieur(18);
+        $match14_5->setDate(new \DateTime('2016/12/23 19:00'));
+        $match14_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match14_6 = new Matchs();
+        $match14_6->setEquipeDomicile($this->getReference('Clermont'));
+        $match14_6->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match14_6->setJournee($this->getReference('journee14'));
+        $match14_6->setScoreDomicile(46);
+        $match14_6->setScoreExterieur(10);
+        $match14_6->setDate(new \DateTime('2016/12/23 19:00'));
+        $match14_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match14_7 = new Matchs();
+        $match14_7->setEquipeDomicile($this->getReference('Montpellier'));
+        $match14_7->setEquipeExterieur($this->getReference('Toulon'));
+        $match14_7->setJournee($this->getReference('journee14'));
+        $match14_7->setScoreDomicile(33);
+        $match14_7->setScoreExterieur(29);
+        $match14_7->setDate(new \DateTime('2016/12/23 21:00'));
+        $match14_7->setDiffuseur($this->getReference('diffuseur'));
 
         // ------------------------ JOURNEE 15 -------------------------
         $match15_1 = new Matchs();
@@ -785,6 +977,556 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match15_7->setScoreExterieur(11);
         $match15_7->setDate(new \DateTime('2017/01/01 20:45'));
         $match15_7->setDiffuseur($this->getReference('diffuseur'));
+
+        // ------------------------ JOURNEE 16 -------------------------
+        $match16_1 = new Matchs();
+        $match16_1->setEquipeDomicile($this->getReference('Montpellier'));
+        $match16_1->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match16_1->setJournee($this->getReference('journee16'));
+        $match16_1->setDate(new \DateTime('2017/01/06 20:45'));
+        $match16_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match16_2 = new Matchs();
+        $match16_2->setEquipeDomicile($this->getReference('Brive'));
+        $match16_2->setEquipeExterieur($this->getReference('Grenoble'));
+        $match16_2->setJournee($this->getReference('journee16'));
+        $match16_2->setDate(new \DateTime('2017/01/07 14:45'));
+        $match16_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match16_3 = new Matchs();
+        $match16_3->setEquipeDomicile($this->getReference('Pau'));
+        $match16_3->setEquipeExterieur($this->getReference('LyonOU'));
+        $match16_3->setJournee($this->getReference('journee16'));
+        $match16_3->setDate(new \DateTime('2017/01/07 18:30'));
+        $match16_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match16_4 = new Matchs();
+        $match16_4->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match16_4->setEquipeExterieur($this->getReference('Castres'));
+        $match16_4->setJournee($this->getReference('journee16'));
+        $match16_4->setDate(new \DateTime('2017/01/07 20:45'));
+        $match16_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match16_5 = new Matchs();
+        $match16_5->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match16_5->setEquipeExterieur($this->getReference('Toulouse'));
+        $match16_5->setJournee($this->getReference('journee16'));
+        $match16_5->setDate(new \DateTime('2017/01/08 16:15'));
+        $match16_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match16_6 = new Matchs();
+        $match16_6->setEquipeDomicile($this->getReference('Clermont'));
+        $match16_6->setEquipeExterieur($this->getReference('Toulon'));
+        $match16_6->setJournee($this->getReference('journee16'));
+        $match16_6->setDate(new \DateTime('2017/01/08 21:00'));
+        $match16_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match16_7 = new Matchs();
+        $match16_7->setEquipeDomicile($this->getReference('Racing_92'));
+        $match16_7->setEquipeExterieur($this->getReference('Bayonne'));
+        $match16_7->setJournee($this->getReference('journee16'));
+        $match16_7->setDate(new \DateTime('2017/02/11 20:45'));
+        $match16_7->setDiffuseur($this->getReference('diffuseur'));
+
+        // ------------------------ JOURNEE 17 -------------------------
+        $match17_1 = new Matchs();
+        $match17_1->setEquipeDomicile($this->getReference('Toulon'));
+        $match17_1->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match17_1->setJournee($this->getReference('journee17'));
+        $match17_1->setDate(new \DateTime('2017/01/28 14:45'));
+        $match17_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match17_2 = new Matchs();
+        $match17_2->setEquipeDomicile($this->getReference('Toulouse'));
+        $match17_2->setEquipeExterieur($this->getReference('Pau'));
+        $match17_2->setJournee($this->getReference('journee17'));
+        $match17_2->setDate(new \DateTime('2017/01/28 18:30'));
+        $match17_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match17_3 = new Matchs();
+        $match17_3->setEquipeDomicile($this->getReference('Grenoble'));
+        $match17_3->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match17_3->setJournee($this->getReference('journee17'));
+        $match17_3->setDate(new \DateTime('2017/01/28 18:30'));
+        $match17_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match17_4 = new Matchs();
+        $match17_4->setEquipeDomicile($this->getReference('Castres'));
+        $match17_4->setEquipeExterieur($this->getReference('Montpellier'));
+        $match17_4->setJournee($this->getReference('journee17'));
+        $match17_4->setDate(new \DateTime('2017/01/28 18:30'));
+        $match17_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match17_5 = new Matchs();
+        $match17_5->setEquipeDomicile($this->getReference('LyonOU'));
+        $match17_5->setEquipeExterieur($this->getReference('Racing_92'));
+        $match17_5->setJournee($this->getReference('journee17'));
+        $match17_5->setDate(new \DateTime('2017/01/28 20:45'));
+        $match17_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match17_6 = new Matchs();
+        $match17_6->setEquipeDomicile($this->getReference('Bayonne'));
+        $match17_6->setEquipeExterieur($this->getReference('Brive'));
+        $match17_6->setJournee($this->getReference('journee17'));
+        $match17_6->setDate(new \DateTime('2017/01/29 12:30'));
+        $match17_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match17_7 = new Matchs();
+        $match17_7->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match17_7->setEquipeExterieur($this->getReference('Clermont'));
+        $match17_7->setJournee($this->getReference('journee17'));
+        $match17_7->setDate(new \DateTime('2017/01/29 16:45'));
+        $match17_7->setDiffuseur($this->getReference('diffuseur'));
+
+        // ------------------------ JOURNEE 18 -------------------------
+        $match18_1 = new Matchs();
+        $match18_1->setEquipeDomicile($this->getReference('Racing_92'));
+        $match18_1->setEquipeExterieur($this->getReference('Brive'));
+        $match18_1->setJournee($this->getReference('journee18'));
+        $match18_1->setDate(new \DateTime('2017/02/18 18:30'));
+        $match18_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match18_2 = new Matchs();
+        $match18_2->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match18_2->setEquipeExterieur($this->getReference('Castres'));
+        $match18_2->setJournee($this->getReference('journee18'));
+        $match18_2->setDate(new \DateTime('2017/02/18 18:30'));
+        $match18_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match18_3 = new Matchs();
+        $match18_3->setEquipeDomicile($this->getReference('Pau'));
+        $match18_3->setEquipeExterieur($this->getReference('Grenoble'));
+        $match18_3->setJournee($this->getReference('journee18'));
+        $match18_3->setDate(new \DateTime('2017/02/18 18:30'));
+        $match18_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match18_4 = new Matchs();
+        $match18_4->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match18_4->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match18_4->setJournee($this->getReference('journee18'));
+        $match18_4->setDate(new \DateTime('2017/02/18 18:30'));
+        $match18_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match18_5 = new Matchs();
+        $match18_5->setEquipeDomicile($this->getReference('Montpellier'));
+        $match18_5->setEquipeExterieur($this->getReference('Toulouse'));
+        $match18_5->setJournee($this->getReference('journee18'));
+        $match18_5->setDate(new \DateTime('2017/02/18 18:30'));
+        $match18_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match18_6 = new Matchs();
+        $match18_6->setEquipeDomicile($this->getReference('Clermont'));
+        $match18_6->setEquipeExterieur($this->getReference('Bayonne'));
+        $match18_6->setJournee($this->getReference('journee18'));
+        $match18_6->setDate(new \DateTime('2017/02/18 18:30'));
+        $match18_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match18_7 = new Matchs();
+        $match18_7->setEquipeDomicile($this->getReference('Toulon'));
+        $match18_7->setEquipeExterieur($this->getReference('LyonOU'));
+        $match18_7->setJournee($this->getReference('journee18'));
+        $match18_7->setDate(new \DateTime('2017/02/18 18:30'));
+        $match18_7->setDiffuseur($this->getReference('diffuseur'));
+
+        // ------------------------ JOURNEE 19 -------------------------
+        $match19_1 = new Matchs();
+        $match19_1->setEquipeDomicile($this->getReference('Toulouse'));
+        $match19_1->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match19_1->setJournee($this->getReference('journee19'));
+        $match19_1->setDate(new \DateTime('2017/03/04 18:30'));
+        $match19_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match19_2 = new Matchs();
+        $match19_2->setEquipeDomicile($this->getReference('Castres'));
+        $match19_2->setEquipeExterieur($this->getReference('Clermont'));
+        $match19_2->setJournee($this->getReference('journee19'));
+        $match19_2->setDate(new \DateTime('2017/03/04 18:30'));
+        $match19_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match19_3 = new Matchs();
+        $match19_3->setEquipeDomicile($this->getReference('Bayonne'));
+        $match19_3->setEquipeExterieur($this->getReference('Pau'));
+        $match19_3->setJournee($this->getReference('journee19'));
+        $match19_3->setDate(new \DateTime('2017/03/04 18:30'));
+        $match19_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match19_4 = new Matchs();
+        $match19_4->setEquipeDomicile($this->getReference('Grenoble'));
+        $match19_4->setEquipeExterieur($this->getReference('Racing_92'));
+        $match19_4->setJournee($this->getReference('journee19'));
+        $match19_4->setDate(new \DateTime('2017/03/04 18:30'));
+        $match19_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match19_5 = new Matchs();
+        $match19_5->setEquipeDomicile($this->getReference('Brive'));
+        $match19_5->setEquipeExterieur($this->getReference('Toulon'));
+        $match19_5->setJournee($this->getReference('journee19'));
+        $match19_5->setDate(new \DateTime('2017/03/04 18:30'));
+        $match19_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match19_6 = new Matchs();
+        $match19_6->setEquipeDomicile($this->getReference('LyonOU'));
+        $match19_6->setEquipeExterieur($this->getReference('Montpellier'));
+        $match19_6->setJournee($this->getReference('journee19'));
+        $match19_6->setDate(new \DateTime('2017/03/04 18:30'));
+        $match19_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match19_7 = new Matchs();
+        $match19_7->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match19_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match19_7->setJournee($this->getReference('journee19'));
+        $match19_7->setDate(new \DateTime('2017/03/04 18:30'));
+        $match19_7->setDiffuseur($this->getReference('diffuseur'));
+
+        // ------------------------ JOURNEE 20 -------------------------
+        $match20_1 = new Matchs();
+        $match20_1->setEquipeDomicile($this->getReference('Pau'));
+        $match20_1->setEquipeExterieur($this->getReference('Castres'));
+        $match20_1->setJournee($this->getReference('journee20'));
+        $match20_1->setDate(new \DateTime('2017/03/11 18:30'));
+        $match20_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match20_2 = new Matchs();
+        $match20_2->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match20_2->setEquipeExterieur($this->getReference('Grenoble'));
+        $match20_2->setJournee($this->getReference('journee20'));
+        $match20_2->setDate(new \DateTime('2017/03/11 18:30'));
+        $match20_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match20_3 = new Matchs();
+        $match20_3->setEquipeDomicile($this->getReference('Racing_92'));
+        $match20_3->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match20_3->setJournee($this->getReference('journee20'));
+        $match20_3->setDate(new \DateTime('2017/03/11 18:30'));
+        $match20_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match20_4 = new Matchs();
+        $match20_4->setEquipeDomicile($this->getReference('LyonOU'));
+        $match20_4->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match20_4->setJournee($this->getReference('journee20'));
+        $match20_4->setDate(new \DateTime('2017/03/11 18:30'));
+        $match20_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match20_5 = new Matchs();
+        $match20_5->setEquipeDomicile($this->getReference('Brive'));
+        $match20_5->setEquipeExterieur($this->getReference('Toulouse'));
+        $match20_5->setJournee($this->getReference('journee20'));
+        $match20_5->setDate(new \DateTime('2017/03/11 18:30'));
+        $match20_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match20_6 = new Matchs();
+        $match20_6->setEquipeDomicile($this->getReference('Toulon'));
+        $match20_6->setEquipeExterieur($this->getReference('Bayonne'));
+        $match20_6->setJournee($this->getReference('journee20'));
+        $match20_6->setDate(new \DateTime('2017/03/11 18:30'));
+        $match20_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match20_7 = new Matchs();
+        $match20_7->setEquipeDomicile($this->getReference('Clermont'));
+        $match20_7->setEquipeExterieur($this->getReference('Montpellier'));
+        $match20_7->setJournee($this->getReference('journee20'));
+        $match20_7->setDate(new \DateTime('2017/03/11 18:30'));
+        $match20_7->setDiffuseur($this->getReference('diffuseur'));
+
+        // ------------------------ JOURNEE 21 -------------------------
+        $match21_1 = new Matchs();
+        $match21_1->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match21_1->setEquipeExterieur($this->getReference('Brive'));
+        $match21_1->setJournee($this->getReference('journee21'));
+        $match21_1->setDate(new \DateTime('2017/03/18 18:30'));
+        $match21_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match21_2 = new Matchs();
+        $match21_2->setEquipeDomicile($this->getReference('Clermont'));
+        $match21_2->setEquipeExterieur($this->getReference('Pau'));
+        $match21_2->setJournee($this->getReference('journee21'));
+        $match21_2->setDate(new \DateTime('2017/03/18 18:30'));
+        $match21_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match21_3 = new Matchs();
+        $match21_3->setEquipeDomicile($this->getReference('Montpellier'));
+        $match21_3->setEquipeExterieur($this->getReference('Racing_92'));
+        $match21_3->setJournee($this->getReference('journee21'));
+        $match21_3->setDate(new \DateTime('2017/03/18 18:30'));
+        $match21_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match21_4 = new Matchs();
+        $match21_4->setEquipeDomicile($this->getReference('Castres'));
+        $match21_4->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match21_4->setJournee($this->getReference('journee21'));
+        $match21_4->setDate(new \DateTime('2017/03/18 18:30'));
+        $match21_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match21_5 = new Matchs();
+        $match21_5->setEquipeDomicile($this->getReference('Grenoble'));
+        $match21_5->setEquipeExterieur($this->getReference('Toulon'));
+        $match21_5->setJournee($this->getReference('journee21'));
+        $match21_5->setDate(new \DateTime('2017/03/18 18:30'));
+        $match21_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match21_6 = new Matchs();
+        $match21_6->setEquipeDomicile($this->getReference('Toulouse'));
+        $match21_6->setEquipeExterieur($this->getReference('LyonOU'));
+        $match21_6->setJournee($this->getReference('journee21'));
+        $match21_6->setDate(new \DateTime('2017/03/18 18:30'));
+        $match21_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match21_7 = new Matchs();
+        $match21_7->setEquipeDomicile($this->getReference('Bayonne'));
+        $match21_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match21_7->setJournee($this->getReference('journee21'));
+        $match21_7->setDate(new \DateTime('2017/03/18 18:30'));
+        $match21_7->setDiffuseur($this->getReference('diffuseur'));
+
+        // ------------------------ JOURNEE 22 -------------------------
+        $match22_1 = new Matchs();
+        $match22_1->setEquipeDomicile($this->getReference('Grenoble'));
+        $match22_1->setEquipeExterieur($this->getReference('Castres'));
+        $match22_1->setJournee($this->getReference('journee22'));
+        $match22_1->setDate(new \DateTime('2017/03/25 18:30'));
+        $match22_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match22_2 = new Matchs();
+        $match22_2->setEquipeDomicile($this->getReference('Pau'));
+        $match22_2->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match22_2->setJournee($this->getReference('journee22'));
+        $match22_2->setDate(new \DateTime('2017/03/25 18:30'));
+        $match22_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match22_3 = new Matchs();
+        $match22_3->setEquipeDomicile($this->getReference('Racing_92'));
+        $match22_3->setEquipeExterieur($this->getReference('Clermont'));
+        $match22_3->setJournee($this->getReference('journee22'));
+        $match22_3->setDate(new \DateTime('2017/03/25 18:30'));
+        $match22_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match22_4 = new Matchs();
+        $match22_4->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match22_4->setEquipeExterieur($this->getReference('Toulon'));
+        $match22_4->setJournee($this->getReference('journee22'));
+        $match22_4->setDate(new \DateTime('2017/03/25 18:30'));
+        $match22_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match22_5 = new Matchs();
+        $match22_5->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match22_5->setEquipeExterieur($this->getReference('Toulouse'));
+        $match22_5->setJournee($this->getReference('journee22'));
+        $match22_5->setDate(new \DateTime('2017/03/25 18:30'));
+        $match22_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match22_6 = new Matchs();
+        $match22_6->setEquipeDomicile($this->getReference('LyonOU'));
+        $match22_6->setEquipeExterieur($this->getReference('Bayonne'));
+        $match22_6->setJournee($this->getReference('journee22'));
+        $match22_6->setDate(new \DateTime('2017/03/25 18:30'));
+        $match22_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match22_7 = new Matchs();
+        $match22_7->setEquipeDomicile($this->getReference('Brive'));
+        $match22_7->setEquipeExterieur($this->getReference('Montpellier'));
+        $match22_7->setJournee($this->getReference('journee22'));
+        $match22_7->setDate(new \DateTime('2017/03/25 18:30'));
+        $match22_7->setDiffuseur($this->getReference('diffuseur'));
+
+        // ------------------------ JOURNEE 23 -------------------------
+        $match23_1 = new Matchs();
+        $match23_1->setEquipeDomicile($this->getReference('Clermont'));
+        $match23_1->setEquipeExterieur($this->getReference('Brive'));
+        $match23_1->setJournee($this->getReference('journee23'));
+        $match23_1->setDate(new \DateTime('2017/04/08 18:30'));
+        $match23_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match23_2 = new Matchs();
+        $match23_2->setEquipeDomicile($this->getReference('Montpellier'));
+        $match23_2->setEquipeExterieur($this->getReference('Grenoble'));
+        $match23_2->setJournee($this->getReference('journee23'));
+        $match23_2->setDate(new \DateTime('2017/04/08 18:30'));
+        $match23_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match23_3 = new Matchs();
+        $match23_3->setEquipeDomicile($this->getReference('Racing_92'));
+        $match23_3->setEquipeExterieur($this->getReference('Pau'));
+        $match23_3->setJournee($this->getReference('journee23'));
+        $match23_3->setDate(new \DateTime('2017/04/08 18:30'));
+        $match23_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match23_4 = new Matchs();
+        $match23_4->setEquipeDomicile($this->getReference('Bayonne'));
+        $match23_4->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match23_4->setJournee($this->getReference('journee23'));
+        $match23_4->setDate(new \DateTime('2017/04/08 18:30'));
+        $match23_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match23_5 = new Matchs();
+        $match23_5->setEquipeDomicile($this->getReference('Toulon'));
+        $match23_5->setEquipeExterieur($this->getReference('Toulouse'));
+        $match23_5->setJournee($this->getReference('journee23'));
+        $match23_5->setDate(new \DateTime('2017/04/08 18:30'));
+        $match23_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match23_6 = new Matchs();
+        $match23_6->setEquipeDomicile($this->getReference('Castres'));
+        $match23_6->setEquipeExterieur($this->getReference('LyonOU'));
+        $match23_6->setJournee($this->getReference('journee23'));
+        $match23_6->setDate(new \DateTime('2017/04/08 18:30'));
+        $match23_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match23_7 = new Matchs();
+        $match23_7->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match23_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match23_7->setJournee($this->getReference('journee23'));
+        $match23_7->setDate(new \DateTime('2017/04/08 18:30'));
+        $match23_7->setDiffuseur($this->getReference('diffuseur'));
+
+        // ------------------------ JOURNEE 24 -------------------------
+        $match24_1 = new Matchs();
+        $match24_1->setEquipeDomicile($this->getReference('Toulon'));
+        $match24_1->setEquipeExterieur($this->getReference('Castres'));
+        $match24_1->setJournee($this->getReference('journee24'));
+        $match24_1->setDate(new \DateTime('2017/04/15 18:30'));
+        $match24_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match24_2 = new Matchs();
+        $match24_2->setEquipeDomicile($this->getReference('LyonOU'));
+        $match24_2->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match24_2->setJournee($this->getReference('journee24'));
+        $match24_2->setDate(new \DateTime('2017/04/15 18:30'));
+        $match24_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match24_3 = new Matchs();
+        $match24_3->setEquipeDomicile($this->getReference('Grenoble'));
+        $match24_3->setEquipeExterieur($this->getReference('Clermont'));
+        $match24_3->setJournee($this->getReference('journee24'));
+        $match24_3->setDate(new \DateTime('2017/04/15 18:30'));
+        $match24_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match24_4 = new Matchs();
+        $match24_4->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match24_4->setEquipeExterieur($this->getReference('Pau'));
+        $match24_4->setJournee($this->getReference('journee24'));
+        $match24_4->setDate(new \DateTime('2017/04/15 18:30'));
+        $match24_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match24_5 = new Matchs();
+        $match24_5->setEquipeDomicile($this->getReference('Toulouse'));
+        $match24_5->setEquipeExterieur($this->getReference('Racing_92'));
+        $match24_5->setJournee($this->getReference('journee24'));
+        $match24_5->setDate(new \DateTime('2017/04/15 18:30'));
+        $match24_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match24_6 = new Matchs();
+        $match24_6->setEquipeDomicile($this->getReference('Montpellier'));
+        $match24_6->setEquipeExterieur($this->getReference('Bayonne'));
+        $match24_6->setJournee($this->getReference('journee24'));
+        $match24_6->setDate(new \DateTime('2017/04/15 18:30'));
+        $match24_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match24_7 = new Matchs();
+        $match24_7->setEquipeDomicile($this->getReference('Brive'));
+        $match24_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match24_7->setJournee($this->getReference('journee24'));
+        $match24_7->setDate(new \DateTime('2017/04/15 18:30'));
+        $match24_7->setDiffuseur($this->getReference('diffuseur'));
+
+        // ------------------------ JOURNEE 25 -------------------------
+        $match25_1 = new Matchs();
+        $match25_1->setEquipeDomicile($this->getReference('Pau'));
+        $match25_1->setEquipeExterieur($this->getReference('Brive'));
+        $match25_1->setJournee($this->getReference('journee25'));
+        $match25_1->setDate(new \DateTime('2017/04/29 18:30'));
+        $match25_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match25_2 = new Matchs();
+        $match25_2->setEquipeDomicile($this->getReference('Bayonne'));
+        $match25_2->setEquipeExterieur($this->getReference('Grenoble'));
+        $match25_2->setJournee($this->getReference('journee25'));
+        $match25_2->setDate(new \DateTime('2017/04/29 18:30'));
+        $match25_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match25_3 = new Matchs();
+        $match25_3->setEquipeDomicile($this->getReference('LyonOU'));
+        $match25_3->setEquipeExterieur($this->getReference('Clermont'));
+        $match25_3->setJournee($this->getReference('journee25'));
+        $match25_3->setDate(new \DateTime('2017/04/29 18:30'));
+        $match25_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match25_4 = new Matchs();
+        $match25_4->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match25_4->setEquipeExterieur($this->getReference('Racing_92'));
+        $match25_4->setJournee($this->getReference('journee25'));
+        $match25_4->setDate(new \DateTime('2017/04/29 18:30'));
+        $match25_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match25_5 = new Matchs();
+        $match25_5->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match25_5->setEquipeExterieur($this->getReference('Toulon'));
+        $match25_5->setJournee($this->getReference('journee25'));
+        $match25_5->setDate(new \DateTime('2017/04/29 18:30'));
+        $match25_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match25_6 = new Matchs();
+        $match25_6->setEquipeDomicile($this->getReference('Castres'));
+        $match25_6->setEquipeExterieur($this->getReference('Toulouse'));
+        $match25_6->setJournee($this->getReference('journee25'));
+        $match25_6->setDate(new \DateTime('2017/04/29 18:30'));
+        $match25_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match25_7 = new Matchs();
+        $match25_7->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match25_7->setEquipeExterieur($this->getReference('Montpellier'));
+        $match25_7->setJournee($this->getReference('journee25'));
+        $match25_7->setDate(new \DateTime('2017/04/29 18:30'));
+        $match25_7->setDiffuseur($this->getReference('diffuseur'));
+
+        // ------------------------ JOURNEE 26 -------------------------
+        $match26_1 = new Matchs();
+        $match26_1->setEquipeDomicile($this->getReference('Brive'));
+        $match26_1->setEquipeExterieur($this->getReference('Castres'));
+        $match26_1->setJournee($this->getReference('journee26'));
+        $match26_1->setDate(new \DateTime('2017/05/06 18:30'));
+        $match26_1->setDiffuseur($this->getReference('diffuseur'));
+
+        $match26_2 = new Matchs();
+        $match26_2->setEquipeDomicile($this->getReference('Clermont'));
+        $match26_2->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match26_2->setJournee($this->getReference('journee26'));
+        $match26_2->setDate(new \DateTime('2017/05/06 18:30'));
+        $match26_2->setDiffuseur($this->getReference('diffuseur'));
+
+        $match26_3 = new Matchs();
+        $match26_3->setEquipeDomicile($this->getReference('Toulon'));
+        $match26_3->setEquipeExterieur($this->getReference('Pau'));
+        $match26_3->setJournee($this->getReference('journee26'));
+        $match26_3->setDate(new \DateTime('2017/05/06 18:30'));
+        $match26_3->setDiffuseur($this->getReference('diffuseur'));
+
+        $match26_4 = new Matchs();
+        $match26_4->setEquipeDomicile($this->getReference('Montpellier'));
+        $match26_4->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match26_4->setJournee($this->getReference('journee26'));
+        $match26_4->setDate(new \DateTime('2017/05/06 18:30'));
+        $match26_4->setDiffuseur($this->getReference('diffuseur'));
+
+        $match26_5 = new Matchs();
+        $match26_5->setEquipeDomicile($this->getReference('Toulouse'));
+        $match26_5->setEquipeExterieur($this->getReference('Bayonne'));
+        $match26_5->setJournee($this->getReference('journee26'));
+        $match26_5->setDate(new \DateTime('2017/05/06 18:30'));
+        $match26_5->setDiffuseur($this->getReference('diffuseur'));
+
+        $match26_6 = new Matchs();
+        $match26_6->setEquipeDomicile($this->getReference('Grenoble'));
+        $match26_6->setEquipeExterieur($this->getReference('LyonOU'));
+        $match26_6->setJournee($this->getReference('journee26'));
+        $match26_6->setDate(new \DateTime('2017/05/06 18:30'));
+        $match26_6->setDiffuseur($this->getReference('diffuseur'));
+
+        $match26_7 = new Matchs();
+        $match26_7->setEquipeDomicile($this->getReference('Racing_92'));
+        $match26_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match26_7->setJournee($this->getReference('journee26'));
+        $match26_7->setDate(new \DateTime('2017/05/06 18:30'));
+        $match26_7->setDiffuseur($this->getReference('diffuseur'));
 
 
         $manager->persist($match1_1);
@@ -859,6 +1601,14 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($match9_6);
         $manager->persist($match9_7);
 
+        $manager->persist($match10_1);
+        $manager->persist($match10_2);
+        $manager->persist($match10_3);
+        $manager->persist($match10_4);
+        $manager->persist($match10_5);
+        $manager->persist($match10_6);
+        $manager->persist($match10_7);
+
         $manager->persist($match11_1);
         $manager->persist($match11_2);
         $manager->persist($match11_3);
@@ -875,6 +1625,22 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($match12_6);
         $manager->persist($match12_7);
 
+        $manager->persist($match13_1);
+        $manager->persist($match13_2);
+        $manager->persist($match13_3);
+        $manager->persist($match13_4);
+        $manager->persist($match13_5);
+        $manager->persist($match13_6);
+        $manager->persist($match13_7);
+
+        $manager->persist($match14_1);
+        $manager->persist($match14_2);
+        $manager->persist($match14_3);
+        $manager->persist($match14_4);
+        $manager->persist($match14_5);
+        $manager->persist($match14_6);
+        $manager->persist($match14_7);
+
         $manager->persist($match15_1);
         $manager->persist($match15_2);
         $manager->persist($match15_3);
@@ -882,6 +1648,94 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($match15_5);
         $manager->persist($match15_6);
         $manager->persist($match15_7);
+
+        $manager->persist($match16_1);
+        $manager->persist($match16_2);
+        $manager->persist($match16_3);
+        $manager->persist($match16_4);
+        $manager->persist($match16_5);
+        $manager->persist($match16_6);
+        $manager->persist($match16_7);
+
+        $manager->persist($match17_1);
+        $manager->persist($match17_2);
+        $manager->persist($match17_3);
+        $manager->persist($match17_4);
+        $manager->persist($match17_5);
+        $manager->persist($match17_6);
+        $manager->persist($match17_7);
+
+        $manager->persist($match18_1);
+        $manager->persist($match18_2);
+        $manager->persist($match18_3);
+        $manager->persist($match18_4);
+        $manager->persist($match18_5);
+        $manager->persist($match18_6);
+        $manager->persist($match18_7);
+
+        $manager->persist($match19_1);
+        $manager->persist($match19_2);
+        $manager->persist($match19_3);
+        $manager->persist($match19_4);
+        $manager->persist($match19_5);
+        $manager->persist($match19_6);
+        $manager->persist($match19_7);
+
+        $manager->persist($match20_1);
+        $manager->persist($match20_2);
+        $manager->persist($match20_3);
+        $manager->persist($match20_4);
+        $manager->persist($match20_5);
+        $manager->persist($match20_6);
+        $manager->persist($match20_7);
+
+        $manager->persist($match21_1);
+        $manager->persist($match21_2);
+        $manager->persist($match21_3);
+        $manager->persist($match21_4);
+        $manager->persist($match21_5);
+        $manager->persist($match21_6);
+        $manager->persist($match21_7);
+
+        $manager->persist($match22_1);
+        $manager->persist($match22_2);
+        $manager->persist($match22_3);
+        $manager->persist($match22_4);
+        $manager->persist($match22_5);
+        $manager->persist($match22_6);
+        $manager->persist($match22_7);
+
+        $manager->persist($match23_1);
+        $manager->persist($match23_2);
+        $manager->persist($match23_3);
+        $manager->persist($match23_4);
+        $manager->persist($match23_5);
+        $manager->persist($match23_6);
+        $manager->persist($match23_7);
+
+        $manager->persist($match24_1);
+        $manager->persist($match24_2);
+        $manager->persist($match24_3);
+        $manager->persist($match24_4);
+        $manager->persist($match24_5);
+        $manager->persist($match24_6);
+        $manager->persist($match24_7);
+
+        $manager->persist($match25_1);
+        $manager->persist($match25_2);
+        $manager->persist($match25_3);
+        $manager->persist($match25_4);
+        $manager->persist($match25_5);
+        $manager->persist($match25_6);
+        $manager->persist($match25_7);
+
+        $manager->persist($match26_1);
+        $manager->persist($match26_2);
+        $manager->persist($match26_3);
+        $manager->persist($match26_4);
+        $manager->persist($match26_5);
+        $manager->persist($match26_6);
+        $manager->persist($match26_7);
 
         $manager->flush();
     }
