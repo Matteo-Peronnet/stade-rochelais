@@ -69,6 +69,12 @@ class Matchs
      */
     private $date;
 
+    /**
+     * @var Arbitre
+     * @ORM\OneToOne(targetEntity="FrontOfficeBundle\Entity\Arbitre")
+     */
+    private $arbitre;
+
 
     /**
      * Get id
@@ -285,5 +291,31 @@ class Matchs
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+
+
+    /**
+     * Set arbitre
+     *
+     * @param \FrontOfficeBundle\Entity\Arbitre $arbitre
+     *
+     * @return Matchs
+     */
+    public function setArbitre(\FrontOfficeBundle\Entity\Arbitre $arbitre = null)
+    {
+        $this->arbitre = $arbitre;
+
+        return $this;
+    }
+
+    /**
+     * Get arbitre
+     *
+     * @return \FrontOfficeBundle\Entity\Arbitre
+     */
+    public function getArbitre()
+    {
+        return $this->arbitre;
     }
 }

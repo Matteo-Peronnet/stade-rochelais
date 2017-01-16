@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="equipe")
  * @ORM\Entity(repositoryClass="FrontOfficeBundle\Repository\EquipeRepository")
  */
-class Equipe
+class Equipe implements \JsonSerializable
 {
     /**
      * @var int
@@ -41,6 +41,18 @@ class Equipe
      * @ORM\Column(name="Stade", type="string", length=255)
      */
     private $stade;
+
+    /**
+     * @var championnat
+     * @ORM\ManyToMany(targetEntity="FrontOfficeBundle\Entity\Championnat", cascade={"persist"},mappedBy="equipe")
+     */
+    private $championnat;
+
+    /**
+     * @var Joueur
+     * @ORM\OneToMany(targetEntity="FrontOfficeBundle\Entity\Joueur", cascade={"persist"},mappedBy="equipe")
+     */
+    private $joueur;
 
 
     /**
@@ -164,5 +176,78 @@ class Equipe
     public function getChampionnat()
     {
         return $this->championnat;
+    }
+    /**
+     * toString
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string) $this->getNom();
+    }
+
+    /**
+     * @param championnat $championnat
+     */
+    public function setChampionnat($championnat)
+    {
+        $this->championnat = $championnat;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * Specify data which should be serialized to JSON
+     * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    function jsonSerialize()
+    {
+        return [
+            "id"=>$this->getId(),
+            "nom"=>$this->getNom(),
+        ];
+    }
+
+    /**
+     * Add joueur
+     *
+     * @param \FrontOfficeBundle\Entity\Joueur $joueur
+     *
+     * @return Equipe
+     */
+    public function addJoueur(\FrontOfficeBundle\Entity\Joueur $joueur)
+    {
+        $this->joueur[] = $joueur;
+
+        return $this;
+    }
+
+    /**
+     * Remove joueur
+     *
+     * @param \FrontOfficeBundle\Entity\Joueur $joueur
+     */
+    public function removeJoueur(\FrontOfficeBundle\Entity\Joueur $joueur)
+    {
+        $this->joueur->removeElement($joueur);
+    }
+
+    /**
+     * Get joueur
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getJoueur()
+    {
+        return $this->joueur;
     }
 }

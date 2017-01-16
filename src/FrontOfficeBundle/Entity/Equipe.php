@@ -49,6 +49,13 @@ class Equipe implements \JsonSerializable
     private $championnat;
 
     /**
+     * @var Joueur
+     * @ORM\OneToMany(targetEntity="FrontOfficeBundle\Entity\Joueur", cascade={"persist"},mappedBy="equipe")
+     */
+    private $joueur;
+
+
+    /**
      * Get id
      *
      * @return int
@@ -208,5 +215,39 @@ class Equipe implements \JsonSerializable
             "id"=>$this->getId(),
             "nom"=>$this->getNom(),
         ];
+    }
+
+    /**
+     * Add joueur
+     *
+     * @param \FrontOfficeBundle\Entity\Joueur $joueur
+     *
+     * @return Equipe
+     */
+    public function addJoueur(\FrontOfficeBundle\Entity\Joueur $joueur)
+    {
+        $this->joueur[] = $joueur;
+
+        return $this;
+    }
+
+    /**
+     * Remove joueur
+     *
+     * @param \FrontOfficeBundle\Entity\Joueur $joueur
+     */
+    public function removeJoueur(\FrontOfficeBundle\Entity\Joueur $joueur)
+    {
+        $this->joueur->removeElement($joueur);
+    }
+
+    /**
+     * Get joueur
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getJoueur()
+    {
+        return $this->joueur;
     }
 }
