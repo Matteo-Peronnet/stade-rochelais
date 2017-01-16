@@ -50,4 +50,27 @@ class MatchsRepository extends \Doctrine\ORM\EntityRepository
 
         return $query->getResult();
     }
+
+    public function getMatchByFormFindMatchByChampionnatJournee($championnat,$journee,$filtre){
+
+        if($filtre==0) {
+            $queryBuilder = $this->createQueryBuilder('m');
+            $queryBuilder->innerJoin("m.journee", "j")
+                ->andWhere("j.id = :journee")
+                ->setParameter("journee", $journee);
+            $query = $queryBuilder->getQuery();
+
+            return $query->getResult();
+        }else{
+            $queryBuilder = $this->createQueryBuilder('m');
+            $queryBuilder->innerJoin("m.journee", "j")
+                ->andWhere("j.id = :journee")
+                ->andWhere("m.date < CURRENT_DATE()")
+                ->andWhere("m.scoreDomicile is null and m.scoreExterieur is null")
+                ->setParameter("journee", $journee);
+            $query = $queryBuilder->getQuery();
+
+            return $query->getResult();
+        }
+    }
 }

@@ -16,12 +16,14 @@
                             <h1>Ajouter un Match</h1>
                             <form method="post" action="#">
                                 {{ form_start(form) }}
-
+                                <p>{{ form_row(form.championnat) }}</p>
+                                <p>{{ form_row(form.journee) }}</p>
                                 <p>{{ form_row(form.equipeDomicile) }}</p>
                                 <p>{{ form_row(form.equipeExterieur) }}</p>
                                 <p>{{ form_row(form.journee) }}</p>
                                 <p>{{ form_row(form.date) }}</p>
                                 <p>{{ form_row(form.diffuseur) }}</p>
+                                {{ form_widget(form._token) }}
 
                                 <footer>
                                     {{ form_row(form.annuler, { 'label': 'Annuler' }) }}
@@ -31,100 +33,67 @@
                         </div>
 
                         <div class="box col-md-11 margin-15 no-padding">
-                            <h1>Rechercher un match</h1>
+                            <h1>Saisir Score</h1>
                             <div class="box-parametre">
                                 <p>Rechercher par équipe
-                                    <select style="font-family:arial; font-size: 16px;" name="equipeDomicile" id="equipeDomicile">
-                                        <option style="font-family:arial; font-size: 16px;" value="default">saisir equipe</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="Toulon">Toulon</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="Clermont">Clermont</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="Montpellier">Montpellier</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="Racing 92">Racing 92</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="Toulouse">Toulouse</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="Pau">Pau</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="Grenoble">Grenoble</option>
-                                    </select>
-                                    ou <select style="font-family:arial; font-size: 16px;" name="championnat" id="championnat">
-                                        <option style="font-family:arial; font-size: 16px;" value="default">saisir championnat</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="TOP14">TOP14</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="U18">U18</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="U16">U16</option>
-                                    </select>
-                                    <select style="font-family:arial; font-size: 16px;" name="journee" id="journee">
-                                        <option style="font-family:arial; font-size: 16px;" value="default">saisir journée</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="journee1">1ere journee</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="journee2">2eme journee</option>
-                                        <option style="font-family:arial; font-size: 16px;" value="journee3">3eme journee</option>
-                                    </select>
+                                    {{ form_start(FindByChampionnatJournee) }}
+                                    {{ form_row(FindByChampionnatJournee.championnat) }}
+                                    {{ form_row(FindByChampionnatJournee.journee) }}
+                                    {{ form_row(FindByChampionnatJournee.filtre) }}
+                                    {{ form_row(FindByChampionnatJournee.submit) }}
+                                    {{ form_widget(FindByChampionnatJournee._token) }}
                                 </p>
 
-                                <p>Afficher que les matchs à venir <input class="increaseCheckbox" type="checkbox" id="matchAvenir" value="matchAvenir"></p>
+
                             </div>
                             <table class="table table-box">
                                 <thead>
                                 <tr>
+                                    <th>Logo</th>
                                     <th>Domicile</th>
-                                    <th>Extérieur</th>
-                                    <th>Championnat</th>
-                                    <th>Journée</th>
+                                    <th>Score</th>
                                     <th>Date</th>
                                     <th>Score</th>
-                                    <th>Action</th>
+                                    <th>Exterieur</th>
+                                    <th>Logo</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Lyon</td>
-                                    <td>Stade Rochelais</td>
-                                    <td>TOP 14</td>
-                                    <td>12ème journée</td>
-                                    <td>24-12-2016 20-15</td>
-                                    <td>A venir</td>
-                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Stade Rochelais</td>
-                                    <td>Paris</td>
-                                    <td>TOP 14</td>
-                                    <td>12ème journée</td>
-                                    <td>24-12-2016 20-15</td>
-                                    <td>A venir</td>
-                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>                                </tr>
-                                <tr>
-                                    <td>Stade Rochelais</td>
-                                    <td>Brive</td>
-                                    <td>TOP 14</td>
-                                    <td>12ème journée</td>
-                                    <td>24-12-2016 20-15</td>
-                                    <td>A venir</td>
-                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>                                </tr>
-                                <tr>
-                                    <td>Stade Rochelais</td>
-                                    <td>Lyon</td>
-                                    <td>TOP 14</td>
-                                    <td>12ème journée</td>
-                                    <td>24-12-2016 20-15</td>
-                                    <td>15:12</td>
-                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Stade Rochelais</td>
-                                    <td>Lyon</td>
-                                    <td>TOP 14</td>
-                                    <td>12ème journée</td>
-                                    <td>24-12-2016 20-15</td>
-                                    <td>A venir</td>
-                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Stade Rochelais</td>
-                                    <td>Clermont</td>
-                                    <td>TOP 14</td>
-                                    <td>12ème journée</td>
-                                    <td>24-12-2016 20-15</td>
-                                    <td>A venir</td>
-                                    <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}"></a><a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a></td>
-                                </tr>
+
+                                {% for leMatch in matchs %}
+                                    <tr>
+                                    {{ form_start(FormAddScoreMatch[loop.index0]) }}
+
+                                    <td><img src="{{ asset(leMatch.equipeDomicile.blason) }}" height="40px"></td>
+                                    <td>{{ leMatch.equipeDomicile.nom }}</td>
+                                    {% if leMatch.scoreDomicile == null %}
+                                        <td>{{ form_row(FormAddScoreMatch[loop.index0].scoreDomicile) }}</td>
+                                    {% else %}
+                                        <td>{{ form_row(FormAddScoreMatch[loop.index0].scoreDomicile,{ 'attr': {'value': leMatch.scoreDomicile} }) }}</td>
+                                    {% endif %}
+                                    <td>{{ leMatch.date|date("d/m/y") }}</td>
+                                    {% if leMatch.scoreExterieur == null %}
+                                        <td>{{ form_row(FormAddScoreMatch[loop.index0].scoreExterieur) }}</td>
+                                    {% else %}
+                                        <td>{{ form_row(FormAddScoreMatch[loop.index0].scoreExterieur,{ 'attr': {'value': leMatch.scoreExterieur} }) }}</td>
+                                    {% endif %}
+                                    <td>{{ leMatch.equipeExterieur.nom }}</td>
+                                    <td><img src="{{ asset(leMatch.equipeExterieur.blason) }}" height="40px"></td>
+                                    <td>{{ form_row(FormAddScoreMatch[loop.index0].ajouter,{'id':'le_match-'~leMatch.id}, { 'label': 'Ajouter' })}} </td>
+
+
+                                    <tr>
+                                    <td colspan="7">
+                                    {% if loop.last == loop.index or loop.last == 1 %}
+                                            {% if loop.last == 1 %}
+                                                <button type="button" class="btn-ajouter pull-right" id="submit_score">Envoyer</button>      
+                                            {% else %}
+                                                <button type="button" class="btn-ajouter pull-right" id="submit_score">Envoyer</button>
+                                             {% endif %}      
+                                    {% endif %}
+                                    </td>
+                                    </tr>
+                                {% endfor %}
                                 </tbody>
                             </table>
                         </div>
@@ -133,5 +102,125 @@
             </div>
         </div>
     </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    {{ parent() }}
+    <script>
+        $(function () {
+            var $championnat = $("#{{ form.championnat.vars.id }}");
+            var $journee = $("#{{ form.journee.vars.id }}");
+            var $equipeDomicile = $("#{{ form.equipeDomicile.vars.id }}");
+            var $equipeExterieur = $("#{{ form.equipeExterieur.vars.id }}");
+
+            var $FindMatchChampionnat = $("#{{ FindByChampionnatJournee.championnat.vars.id }}");
+            var $FindMatchJournee = $("#{{ FindByChampionnatJournee.journee.vars.id }}");
+
+            $championnat.on("change", function (evt) {
+                var data = {};
+                data["championnat_id"] = $championnat.val();
+                $.ajax({
+                    url: "{{ path('api_get_journee') }}",
+                    type: "POST",
+                    data: data,
+                    success: function (datas) {
+                        $journee.find('option').remove();
+                        datas.forEach(function (e) {
+                            console.log($journee);
+                            var o = $("<option/>", {text: e.nom, value: e.id});
+                            o.appendTo($journee);
+                        });
+                    }
+                });
+            });
+            $championnat.on("change", function (evt) {
+                var data = {};
+                data["championnat_id"] = $championnat.val();
+                $.ajax({
+                    url: "{{ path('api_get_equipe') }}",
+                    type: "POST",
+                    data: data,
+                    success: function (datas) {
+                        $equipeDomicile.find('option').remove();
+                        datas.forEach(function (e) {
+                            console.log($equipeDomicile);
+                            var o = $("<option/>", {text: e.nom, value: e.id});
+                            o.appendTo($equipeDomicile);
+                        });
+                    }
+                });
+            });
+            $championnat.on("change", function (evt) {
+                var data = {};
+                data["championnat_id"] = $championnat.val();
+                $.ajax({
+                    url: "{{ path('api_get_equipe') }}",
+                    type: "POST",
+                    data: data,
+                    success: function (datas) {
+                        $equipeExterieur.find('option').remove();
+                        datas.forEach(function (e) {
+                            console.log($equipeExterieur);
+                            var o = $("<option/>", {text: e.nom, value: e.id});
+                            o.appendTo($equipeExterieur);
+                        });
+                    }
+                });
+            });
+            $FindMatchChampionnat.on("change", function (evt) {
+                var data = {};
+                data["championnat_id"] = $FindMatchChampionnat.val();
+                $.ajax({
+                    url: "{{ path('api_get_journee') }}",
+                    type: "POST",
+                    data: data,
+                    success: function (datas) {
+                        $FindMatchJournee.find('option').remove();
+                        datas.forEach(function (e) {
+                            console.log($FindMatchJournee);
+                            var o = $("<option/>", {text: e.nom, value: e.id});
+                            o.appendTo($FindMatchJournee);
+                        });
+                    }
+                });
+            });
+
+            var matchData = new Array();
+            var button_envoyer = $("#submit_score");
+            $("button[id*='le_match-']").each(function (i, el) {
+                $(this).on("click",function(evt){
+                    $(this).text("Modifié");
+                    $(this).css("background-color","blue");
+
+                    var idMatch = $(this).attr('id');
+                    idMatch = idMatch.replace("le_match-", "");
+
+                    var scoreExterieur= $(this).parent().parent().prev().prev().prev().children().first().children().first();
+                    var scoreDomicile = $(this).parent().parent().prev().prev().prev().prev().prev().children().first().children().first();
+                    scoreExterieur = scoreExterieur[0].value;
+                    scoreDomicile = scoreDomicile[0].value;
+                    matchData.push(parseInt(idMatch),parseInt(scoreDomicile),parseInt(scoreExterieur));
+                });
+            });
+
+            button_envoyer.on("click", function (evt) {
+                console.log(matchData);
+                $.ajax({
+                    type: "GET",
+                    url: "{{ path('admin_match_update_score') }}",
+                    data: JSON.stringify(matchData),
+                    success:function(jsonStr){
+                        $("button[id*='le_match-']").each(function (i, el) {
+                            $(this).text("Modifié");
+                            $(this).css("background-color","green");
+                            })
+                    }
+                    });
+            });
+        })
+    </script>
 
 {% endblock %}
