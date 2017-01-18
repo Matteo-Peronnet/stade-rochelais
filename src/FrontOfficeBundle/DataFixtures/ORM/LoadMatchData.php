@@ -983,6 +983,8 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match16_1->setEquipeDomicile($this->getReference('Montpellier'));
         $match16_1->setEquipeExterieur($this->getReference('Bordeaux-begles'));
         $match16_1->setJournee($this->getReference('journee16'));
+        $match16_1->setScoreDomicile(31);
+        $match16_1->setScoreExterieur(26);
         $match16_1->setDate(new \DateTime('2017/01/06 20:45'));
         $match16_1->setDiffuseur($this->getReference('diffuseur'));
 
@@ -990,42 +992,50 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match16_2->setEquipeDomicile($this->getReference('Brive'));
         $match16_2->setEquipeExterieur($this->getReference('Grenoble'));
         $match16_2->setJournee($this->getReference('journee16'));
+        $match16_2->setScoreDomicile(23);
+        $match16_2->setScoreExterieur(22);
         $match16_2->setDate(new \DateTime('2017/01/07 14:45'));
         $match16_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match16_3 = new Matchs();
-        $match16_3->setEquipeDomicile($this->getReference('Pau'));
-        $match16_3->setEquipeExterieur($this->getReference('LyonOU'));
+        $match16_3->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match16_3->setEquipeExterieur($this->getReference('Castres'));
         $match16_3->setJournee($this->getReference('journee16'));
-        $match16_3->setDate(new \DateTime('2017/01/07 18:30'));
+        $match16_3->setScoreDomicile(22);
+        $match16_3->setScoreExterieur(8);
+        $match16_3->setDate(new \DateTime('2017/01/07 20:45'));
         $match16_3->setDiffuseur($this->getReference('diffuseur'));
 
         $match16_4 = new Matchs();
-        $match16_4->setEquipeDomicile($this->getReference('Stade_Rochelais'));
-        $match16_4->setEquipeExterieur($this->getReference('Castres'));
+        $match16_4->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match16_4->setEquipeExterieur($this->getReference('Toulouse'));
         $match16_4->setJournee($this->getReference('journee16'));
-        $match16_4->setDate(new \DateTime('2017/01/07 20:45'));
+        $match16_4->setScoreDomicile(15);
+        $match16_4->setScoreExterieur(18);
+        $match16_4->setDate(new \DateTime('2017/01/08 16:15'));
         $match16_4->setDiffuseur($this->getReference('diffuseur'));
 
         $match16_5 = new Matchs();
-        $match16_5->setEquipeDomicile($this->getReference('Stade_Francais'));
-        $match16_5->setEquipeExterieur($this->getReference('Toulouse'));
+        $match16_5->setEquipeDomicile($this->getReference('Clermont'));
+        $match16_5->setEquipeExterieur($this->getReference('Toulon'));
         $match16_5->setJournee($this->getReference('journee16'));
-        $match16_5->setDate(new \DateTime('2017/01/08 16:15'));
+        $match16_5->setScoreDomicile(30);
+        $match16_5->setScoreExterieur(6);
+        $match16_5->setDate(new \DateTime('2017/01/08 21:00'));
         $match16_5->setDiffuseur($this->getReference('diffuseur'));
 
         $match16_6 = new Matchs();
-        $match16_6->setEquipeDomicile($this->getReference('Clermont'));
-        $match16_6->setEquipeExterieur($this->getReference('Toulon'));
+        $match16_6->setEquipeDomicile($this->getReference('Pau'));
+        $match16_6->setEquipeExterieur($this->getReference('LyonOU'));
         $match16_6->setJournee($this->getReference('journee16'));
-        $match16_6->setDate(new \DateTime('2017/01/08 21:00'));
+        $match16_6->setDate(new \DateTime('2017/02/11 20:45'));
         $match16_6->setDiffuseur($this->getReference('diffuseur'));
 
         $match16_7 = new Matchs();
         $match16_7->setEquipeDomicile($this->getReference('Racing_92'));
         $match16_7->setEquipeExterieur($this->getReference('Bayonne'));
         $match16_7->setJournee($this->getReference('journee16'));
-        $match16_7->setDate(new \DateTime('2017/02/11 20:45'));
+        $match16_7->setDate(new \DateTime('2017/02/12 12:30'));
         $match16_7->setDiffuseur($this->getReference('diffuseur'));
 
         // ------------------------ JOURNEE 17 -------------------------

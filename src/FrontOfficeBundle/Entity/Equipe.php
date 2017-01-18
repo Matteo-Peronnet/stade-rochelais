@@ -56,7 +56,7 @@ class Equipe implements \JsonSerializable
 
     /**
      * @var Formation
-     * @ORM\OneToOne(targetEntity="FrontOfficeBundle\Entity\Formation", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="FrontOfficeBundle\Entity\Formation", cascade={"persist"}, mappedBy="equipe")
      */
     private $formation;
 
@@ -279,5 +279,29 @@ class Equipe implements \JsonSerializable
     public function getFormation()
     {
         return $this->formation;
+    }
+
+    /**
+     * Add formation
+     *
+     * @param \FrontOfficeBundle\Entity\Formation $formation
+     *
+     * @return Equipe
+     */
+    public function addFormation(\FrontOfficeBundle\Entity\Formation $formation)
+    {
+        $this->formation[] = $formation;
+
+        return $this;
+    }
+
+    /**
+     * Remove formation
+     *
+     * @param \FrontOfficeBundle\Entity\Formation $formation
+     */
+    public function removeFormation(\FrontOfficeBundle\Entity\Formation $formation)
+    {
+        $this->formation->removeElement($formation);
     }
 }

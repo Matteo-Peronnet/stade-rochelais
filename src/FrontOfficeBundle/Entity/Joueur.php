@@ -43,13 +43,6 @@ class Joueur
     private $photo;
 
     /**
-     * @var bool
-     *
-     * @ORM\Column(name="titulaire", type="boolean")
-     */
-    private $titulaire;
-
-    /**
      * @var integer
      *
      * @ORM\Column(name="numero", type="integer", length=255)
@@ -158,30 +151,6 @@ class Joueur
     public function setId($id)
     {
         $this->id = $id;
-    }
-
-    /**
-     * Set titulaire
-     *
-     * @param boolean $titulaire
-     *
-     * @return Joueur
-     */
-    public function setTitulaire($titulaire)
-    {
-        $this->titulaire = $titulaire;
-
-        return $this;
-    }
-
-    /**
-     * Get titulaire
-     *
-     * @return bool
-     */
-    public function getTitulaire()
-    {
-        return $this->titulaire;
     }
 
     /**

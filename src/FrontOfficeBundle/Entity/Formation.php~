@@ -27,14 +27,20 @@ class Formation
      * @ORM\JoinColumn(name="joueur_id", referencedColumnName="id")
      */
     private $joueur;
-
-
+    
     /**
      * @var Position
      * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Position", inversedBy="formation")
      * @ORM\JoinColumn(name="position_id", referencedColumnName="id")
      */
     private $position;
+
+    /**
+     * @var Equipe
+     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Equipe", inversedBy="formation")
+     * @ORM\JoinColumn(name="equipe_id", referencedColumnName="id")
+     */
+    private $equipe;
 
 
     /**
@@ -46,5 +52,52 @@ class Formation
     {
         return $this->id;
     }
-}
 
+    /**
+     * Set joueur
+     *
+     * @param \FrontOfficeBundle\Entity\Joueur $joueur
+     *
+     * @return Formation
+     */
+    public function setJoueur(\FrontOfficeBundle\Entity\Joueur $joueur = null)
+    {
+        $this->joueur = $joueur;
+
+        return $this;
+    }
+
+    /**
+     * Get joueur
+     *
+     * @return \FrontOfficeBundle\Entity\Joueur
+     */
+    public function getJoueur()
+    {
+        return $this->joueur;
+    }
+
+    /**
+     * Set position
+     *
+     * @param \FrontOfficeBundle\Entity\Position $position
+     *
+     * @return Formation
+     */
+    public function setPosition(\FrontOfficeBundle\Entity\Position $position = null)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return \FrontOfficeBundle\Entity\Position
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+}
