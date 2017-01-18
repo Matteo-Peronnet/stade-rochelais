@@ -75,6 +75,12 @@ class Matchs
      */
     private $arbitre;
 
+    /**
+     * @var Formation
+     * @ORM\OneToMany(targetEntity="FrontOfficeBundle\Entity\Formation", cascade={"persist"}, mappedBy="Matchs")
+     */
+    private $formation;
+
 
     /**
      * Get id
@@ -317,5 +323,39 @@ class Matchs
     public function getArbitre()
     {
         return $this->arbitre;
+    }
+
+    /**
+     * Add formation
+     *
+     * @param \FrontOfficeBundle\Entity\Formation $formation
+     *
+     * @return Matchs
+     */
+    public function addFormation(\FrontOfficeBundle\Entity\Formation $formation)
+    {
+        $this->formation[] = $formation;
+
+        return $this;
+    }
+
+    /**
+     * Remove formation
+     *
+     * @param \FrontOfficeBundle\Entity\Formation $formation
+     */
+    public function removeFormation(\FrontOfficeBundle\Entity\Formation $formation)
+    {
+        $this->formation->removeElement($formation);
+    }
+
+    /**
+     * Get formation
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFormation()
+    {
+        return $this->formation;
     }
 }

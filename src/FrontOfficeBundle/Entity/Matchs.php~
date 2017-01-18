@@ -75,6 +75,12 @@ class Matchs
      */
     private $arbitre;
 
+    /**
+     * @var Formation
+     * @ORM\OneToMany(targetEntity="FrontOfficeBundle\Entity\Formation", cascade={"persist"}, mappedBy="Matchs")
+     */
+    private $formation;
+
 
     /**
      * Get id

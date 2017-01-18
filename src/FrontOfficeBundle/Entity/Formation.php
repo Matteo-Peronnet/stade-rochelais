@@ -42,6 +42,13 @@ class Formation
      */
     private $equipe;
 
+    /**
+     * @var Matchs
+     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Matchs", inversedBy="formation")
+     * @ORM\JoinColumn(name="matchs_id", referencedColumnName="id")
+     */
+    private $matchs;
+
 
     /**
      * Get id
@@ -123,5 +130,29 @@ class Formation
     public function getEquipe()
     {
         return $this->equipe;
+    }
+
+    /**
+     * Set matchs
+     *
+     * @param \FrontOfficeBundle\Entity\Matchs $matchs
+     *
+     * @return Formation
+     */
+    public function setMatchs(\FrontOfficeBundle\Entity\Matchs $matchs = null)
+    {
+        $this->matchs = $matchs;
+
+        return $this;
+    }
+
+    /**
+     * Get matchs
+     *
+     * @return \FrontOfficeBundle\Entity\Matchs
+     */
+    public function getMatchs()
+    {
+        return $this->matchs;
     }
 }

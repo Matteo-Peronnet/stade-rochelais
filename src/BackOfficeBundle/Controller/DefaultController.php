@@ -150,5 +150,13 @@ class DefaultController extends Controller
         return $this->render('BackOfficeBundle:Default:championnat.html.twig');
     }
 
+    /**
+     * @Route("/diffuseur")
+     */
+    public function diffuseurAction(){
+
+        return $this->render('BackOfficeBundle:Default:diffuseur.html.twig');
+    }
+
 
 }
