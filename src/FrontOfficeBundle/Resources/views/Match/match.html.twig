@@ -42,5 +42,262 @@
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+                    <defs>
+                        <style>
+                            .cls-1, .cls-8 {
+                                fill: #019501;
+                            }
+                            .cls-13, .cls-2, .cls-3 {
+                                fill: #fff;
+                            }
+                            .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+                                stroke: #fff;
+                                stroke-miterlimit: 10;
+                            }
+                            .cls-3, .cls-4, .cls-6, .cls-7, .cls-8 {
+                                stroke-width: 2px;
+                            }
+                            .cls-4, .cls-5, .cls-6, .cls-7 {
+                                fill: none;
+                            }
+                            .cls-5 {
+                                stroke-width: 0.75px;
+                            }
+                            .cls-6 {
+                                stroke-dasharray: 5 5;
+                            }
+                            .cls-7, .cls-8 {
+                                stroke-dasharray: 5;
+                            }
+                            .cls-9 {
+                                fill: #fecb00;
+                            }
+                            .cls-10 {
+                                font-size: 10px;
+                            }
+                            .cls-10, .cls-13 {
+                                font-family: MyriadPro-Regular, Myriad Pro;
+                            }
+                            .cls-11 {
+                                letter-spacing: -0.07em;
+                            }
+                            .cls-12 {
+                                fill: #1d1d1b;
+                            }
+                            .cls-13 {
+                                font-size: 12px;
+                            }
+                        </style>
+                    </defs>
+                    <title>terrain</title>
+                    <g id="Base">
+                        <g>
+                            <rect class="cls-1" x="0.5" y="0.5" width="499" height="199"/>
+                            <path class="cls-2" d="M499,1V199H1V1H499m1-1H0V200H500V0Z"/>
+                        </g>
+                        <g>
+                            <rect class="cls-1" x="0.5" y="0.5" width="499" height="199"/>
+                            <path class="cls-2" d="M499,1V199H1V1H499m1-1H0V200H500V0Z"/>
+                        </g>
+                        <line class="cls-3" x1="39" y1="20" x2="460" y2="20"/>
+                        <line class="cls-4" x1="40" y1="181" x2="40" y2="21"/>
+                        <line class="cls-4" x1="460" y1="180" x2="40" y2="180"/>
+                        <line class="cls-4" x1="460" y1="181" x2="460" y2="19"/>
+                        <line class="cls-4" x1="80" y1="20" x2="80" y2="180"/>
+                        <line class="cls-4" x1="420" y1="20" x2="420" y2="180"/>
+                        <line class="cls-5" x1="420" y1="90" x2="440" y2="82"/>
+                        <line class="cls-5" x1="420" y1="110" x2="440" y2="118"/>
+                        <line class="cls-5" x1="430" y1="86" x2="430" y2="114"/>
+                        <line class="cls-5" x1="80" y1="110" x2="60" y2="118"/>
+                        <line class="cls-5" x1="80" y1="90" x2="60" y2="82"/>
+                        <line class="cls-5" x1="70" y1="86" x2="70" y2="114"/>
+                        <line class="cls-4" x1="250" y1="20" x2="250" y2="180"/>
+                        <line class="cls-4" x1="145" y1="20" x2="145" y2="180"/>
+                        <line class="cls-4" x1="365" y1="20" x2="365" y2="180"/>
+                        <g>
+                            <line class="cls-4" x1="400" y1="20" x2="400" y2="22.5"/>
+                            <line class="cls-6" x1="400" y1="27.5" x2="400" y2="175"/>
+                            <line class="cls-4" x1="400" y1="177.5" x2="400" y2="180"/>
+                        </g>
+                        <line class="cls-7" x1="100" y1="20" x2="100" y2="180"/>
+                        <line class="cls-8" x1="220.5" y1="19.5" x2="220.5" y2="179.5"/>
+                        <line class="cls-8" x1="280.5" y1="19.5" x2="280.5" y2="179.5"/>
+                    </g>
+                    <g id="equipeDomicile">
+                        {% for leJoueur in matchs[0].equipeDomicile.joueur %}
+                            {% if(leJoueur.position.numero==15) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M100,109.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,100,109.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="100" y="103">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==14) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M130,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,130,169.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="130" y="163">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==13) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M130,139.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,130,139.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="130" y="133">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==12) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M130,79.88A9.88,9.88,0,1,1,139.88,70,9.89,9.89,0,0,1,130,79.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="130" y="73">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==11) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M130,49.88A9.88,9.88,0,1,1,139.88,40,9.89,9.89,0,0,1,130,49.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="130" y="43">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==10) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M160,74.88A9.88,9.88,0,1,1,169.88,65,9.89,9.89,0,0,1,160,74.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="160" y="68">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==9) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M160,139.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,160,139.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="160" y="133">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==8) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M190,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,190,169.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="190" y="163">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==7) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M190,108.88A9.88,9.88,0,1,1,199.88,99,9.89,9.89,0,0,1,190,108.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="190" y="102">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==6) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M210,139.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,210,139.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="210" y="133">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==5) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M190,49.88A9.88,9.88,0,1,1,199.88,40,9.89,9.89,0,0,1,190,49.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="190" y="43">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==4) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M210,74.88A9.88,9.88,0,1,1,219.88,65,9.89,9.89,0,0,1,210,74.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="210" y="68">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==3) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M235,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,235,169.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="235" y="163">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==2) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M235,109.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,235,109.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="235" y="103">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                            {% if(leJoueur.position.numero==1) %}
+                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
+                                    <path class="cls-9" d="M235,49.88A9.88,9.88,0,1,1,244.88,40,9.89,9.89,0,0,1,235,49.88Z"/>
+                                    <text class="cls-10" text-anchor="middle" x="235" y="43">{{ leJoueur.numero }}</text>
+                                </g>
+                            {% endif %}
+                        {% endfor %}
+
+                    </g>
+                    <g id="equipeExterieur" >
+                        <g data-toggle="popover" data-placement='right' data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M400,109.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,400,109.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="400" y="103">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M380,49.88A9.88,9.88,0,1,1,389.88,40,9.89,9.89,0,0,1,380,49.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="380" y="43">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M380,79.88A9.88,9.88,0,1,1,389.88,70,9.89,9.89,0,0,1,380,79.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="380" y="73">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M380,139.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,380,139.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="380" y="133">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M380,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,380,169.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="380" y="163">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M340,144.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,340,144.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="340" y="138">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M340,79.88A9.88,9.88,0,1,1,349.88,70,9.89,9.89,0,0,1,340,79.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="340" y="73">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M310,49.88A9.88,9.88,0,1,1,319.88,40,9.89,9.89,0,0,1,310,49.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="310" y="43">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M310,110.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,310,110.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="310" y="104">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M290,79.88A9.88,9.88,0,1,1,299.88,70,9.89,9.89,0,0,1,290,79.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="290" y="73">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M310,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,310,169.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="310" y="163">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M290,144.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,290,144.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="290" y="138">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M265,49.88A9.88,9.88,0,1,1,274.88,40,9.89,9.89,0,0,1,265,49.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="265" y="43">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M265,109.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,265,109.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="265" y="103">12</text>
+                        </g>
+                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
+                            <path class="cls-12" d="M265,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,265,169.88Z"/>
+                            <text class="cls-13" text-anchor="middle" x="265" y="163">12</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
     </section>
 {% endblock %}
+
+{% block javascripts %}
+    <script
+            src="http://code.jquery.com/jquery-3.1.1.slim.js"
+            integrity="sha256-5i/mQ300M779N2OVDrl16lbohwXNUdzL/R2aVUXyXWA="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ asset("js/bootstrap.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("js/popover.js") }}"></script>
+
+{% endblock %}
+
+

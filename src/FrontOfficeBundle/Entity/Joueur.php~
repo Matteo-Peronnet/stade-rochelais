@@ -50,9 +50,9 @@ class Joueur
     private $titulaire;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="numero", type="string", length=255)
+     * @ORM\Column(name="numero", type="integer", length=255)
      */
     private $numero;
 
@@ -65,7 +65,7 @@ class Joueur
 
     /**
      * @var Position
-     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Position", inversedBy="joueur")
+     * @ORM\ManyToMany(targetEntity="FrontOfficeBundle\Entity\Position", inversedBy="joueur")
      * @ORM\JoinColumn(name="position_id", referencedColumnName="id")
      */
     private $position;
@@ -153,6 +153,14 @@ class Joueur
     }
 
     /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
      * Set titulaire
      *
      * @param boolean $titulaire
@@ -222,5 +230,29 @@ class Joueur
     public function getEquipe()
     {
         return $this->equipe;
+    }
+
+    /**
+     * Set position
+     *
+     * @param \FrontOfficeBundle\Entity\Position $position
+     *
+     * @return Joueur
+     */
+    public function setPosition(\FrontOfficeBundle\Entity\Position $position = null)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return \FrontOfficeBundle\Entity\Position
+     */
+    public function getPosition()
+    {
+        return $this->position;
     }
 }

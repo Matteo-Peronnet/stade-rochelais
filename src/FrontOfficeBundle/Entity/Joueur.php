@@ -50,9 +50,9 @@ class Joueur
     private $titulaire;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="numero", type="string", length=255)
+     * @ORM\Column(name="numero", type="integer", length=255)
      */
     private $numero;
 
@@ -65,7 +65,7 @@ class Joueur
 
     /**
      * @var Position
-     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Position", inversedBy="joueur")
+     * @ORM\ManyToMany(targetEntity="FrontOfficeBundle\Entity\Position", inversedBy="joueur")
      * @ORM\JoinColumn(name="position_id", referencedColumnName="id")
      */
     private $position;
@@ -150,6 +150,14 @@ class Joueur
     public function getPhoto()
     {
         return $this->photo;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     /**
@@ -246,5 +254,36 @@ class Joueur
     public function getPosition()
     {
         return $this->position;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->position = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add position
+     *
+     * @param \FrontOfficeBundle\Entity\Position $position
+     *
+     * @return Joueur
+     */
+    public function addPosition(\FrontOfficeBundle\Entity\Position $position)
+    {
+        $this->position[] = $position;
+
+        return $this;
+    }
+
+    /**
+     * Remove position
+     *
+     * @param \FrontOfficeBundle\Entity\Position $position
+     */
+    public function removePosition(\FrontOfficeBundle\Entity\Position $position)
+    {
+        $this->position->removeElement($position);
     }
 }

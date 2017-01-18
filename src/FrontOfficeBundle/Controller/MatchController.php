@@ -13,13 +13,17 @@ class MatchController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $repository = $this->getDoctrine()->getManager()->getRepository('FrontOfficeBundle:Matchs');
+        $repository_match = $this->getDoctrine()->getManager()->getRepository('FrontOfficeBundle:Matchs');
+        $repository_joueur = $this->getDoctrine()->getManager()->getRepository('FrontOfficeBundle:Joueur');
 
         $id = $request->attributes->get('id');
 
-        $matchs = $repository->getMatchID($id);
+        $matchs = $repository_match->getMatchID($id);
+        $joueurs = $repository_joueur->findAll();
 
-        return $this->render('FrontOfficeBundle:Match:match.html.twig', array('matchs'=>$matchs
+        return $this->render('FrontOfficeBundle:Match:match.html.twig', array(
+            'matchs'=>$matchs,
+            'joueurs'=>$joueurs
         ));
     }
 

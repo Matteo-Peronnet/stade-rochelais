@@ -25,7 +25,7 @@ class AddMatchListenerChampionnat implements EventSubscriberInterface
     {
 
         //$id = $event->getData()->getChampionnat() !== null ? $event->getData()->getChampionnat()->getId(): null;
-        $id = 83;
+        $id = 101;
         $this->addModifier($event->getForm(), $id);
         $this->addModifierEquipeDomicile($event->getForm(),$id);
         $this->addModifierEquipeExterieur($event->getForm(),$id);

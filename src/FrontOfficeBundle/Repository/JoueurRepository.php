@@ -10,4 +10,15 @@ namespace FrontOfficeBundle\Repository;
  */
 class JoueurRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getJoueurEquipe($equipe){
+        $queryBuilder = $this->createQueryBuilder('j');
+         $queryBuilder->innerJoin('FrontOfficeBundle:Equipe','e')
+                     ->andWhere("e.id = :equipe")
+                     //->andWhere("e.id = j.equipe")
+            ->setParameter('equipe',$equipe);
+
+        $query=$queryBuilder->getQuery();
+
+        return $query->getResult();
+    }
 }

@@ -54,6 +54,12 @@ class Equipe implements \JsonSerializable
      */
     private $joueur;
 
+    /**
+     * @var Formation
+     * @ORM\OneToOne(targetEntity="FrontOfficeBundle\Entity\Formation", cascade={"persist"})
+     */
+    private $formation;
+
 
     /**
      * Get id

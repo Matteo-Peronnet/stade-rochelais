@@ -29,17 +29,12 @@ class Position
     private $nom;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="numero", type="string", length=255)
+     * @ORM\Column(name="numero", type="integer", length=255)
      */
     private $numero;
 
-    /**
-     * @var Joueur
-     * @ORM\OneToMany(targetEntity="FrontOfficeBundle\Entity\Joueur", cascade={"persist"},mappedBy="position")
-     */
-    private $joueur;
 
     /**
      * Get id
