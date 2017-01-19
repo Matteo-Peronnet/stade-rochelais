@@ -29,7 +29,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match1_1->setDiffuseur($this->getReference('diffuseur'));
 
         $match1_2 = new Matchs();
-        $match1_2->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match1_2->setEquipeDomicile($this->getReference('Stade Français'));
         $match1_2->setEquipeExterieur($this->getReference('Grenoble'));
         $match1_2->setJournee($this->getReference('journee'));
         $match1_2->setScoreDomicile(54);
@@ -38,7 +38,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match1_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match1_3 = new Matchs();
-        $match1_3->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match1_3->setEquipeDomicile($this->getReference('Stade Rochelais'));
         $match1_3->setEquipeExterieur($this->getReference('Clermont'));
         $match1_3->setJournee($this->getReference('journee'));
         $match1_3->setScoreDomicile(30);
@@ -56,8 +56,8 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match1_4->setDiffuseur($this->getReference('diffuseur'));
 
         $match1_5 = new Matchs();
-        $match1_5->setEquipeDomicile($this->getReference('Bordeaux-begles'));
-        $match1_5->setEquipeExterieur($this->getReference('Racing_92'));
+        $match1_5->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
+        $match1_5->setEquipeExterieur($this->getReference('Racing 92'));
         $match1_5->setJournee($this->getReference('journee'));
         $match1_5->setScoreDomicile(15);
         $match1_5->setScoreExterieur(9);
@@ -103,7 +103,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match2_3 = new Matchs();
         $match2_3->setEquipeDomicile($this->getReference('Grenoble'));
-        $match2_3->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match2_3->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match2_3->setJournee($this->getReference('journee2'));
         $match2_3->setScoreDomicile(19);
         $match2_3->setScoreExterieur(22);
@@ -112,7 +112,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match2_4 = new Matchs();
         $match2_4->setEquipeDomicile($this->getReference('Brive'));
-        $match2_4->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match2_4->setEquipeExterieur($this->getReference('Stade Français'));
         $match2_4->setJournee($this->getReference('journee2'));
         $match2_4->setScoreDomicile(28);
         $match2_4->setScoreExterieur(20);
@@ -120,7 +120,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match2_4->setDiffuseur($this->getReference('diffuseur'));
 
         $match2_5 = new Matchs();
-        $match2_5->setEquipeDomicile($this->getReference('Racing_92'));
+        $match2_5->setEquipeDomicile($this->getReference('Racing 92'));
         $match2_5->setEquipeExterieur($this->getReference('LyonOU'));
         $match2_5->setJournee($this->getReference('journee2'));
         $match2_5->setScoreDomicile(29);
@@ -130,7 +130,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match2_6 = new Matchs();
         $match2_6->setEquipeDomicile($this->getReference('Toulouse'));
-        $match2_6->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match2_6->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match2_6->setJournee($this->getReference('journee2'));
         $match2_6->setScoreDomicile(22);
         $match2_6->setScoreExterieur(17);
@@ -148,7 +148,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         // ------------------------ JOURNEE 3 -------------------------
         $match3_1 = new Matchs();
-        $match3_1->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match3_1->setEquipeDomicile($this->getReference('Stade Français'));
         $match3_1->setEquipeExterieur($this->getReference('Clermont'));
         $match3_1->setJournee($this->getReference('journee3'));
         $match3_1->setScoreDomicile(30);
@@ -167,7 +167,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match3_3 = new Matchs();
         $match3_3->setEquipeDomicile($this->getReference('Castres'));
-        $match3_3->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match3_3->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match3_3->setJournee($this->getReference('journee3'));
         $match3_3->setScoreDomicile(18);
         $match3_3->setScoreExterieur(26);
@@ -193,7 +193,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match3_5->setDiffuseur($this->getReference('diffuseur'));
 
         $match3_6 = new Matchs();
-        $match3_6->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match3_6->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
         $match3_6->setEquipeExterieur($this->getReference('Montpellier'));
         $match3_6->setJournee($this->getReference('journee3'));
         $match3_6->setScoreDomicile(15);
@@ -202,7 +202,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match3_6->setDiffuseur($this->getReference('diffuseur'));
 
         $match3_7 = new Matchs();
-        $match3_7->setEquipeDomicile($this->getReference('Racing_92'));
+        $match3_7->setEquipeDomicile($this->getReference('Racing 92'));
         $match3_7->setEquipeExterieur($this->getReference('Toulouse'));
         $match3_7->setJournee($this->getReference('journee3'));
         $match3_7->setScoreDomicile(28);
@@ -212,7 +212,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         // ------------------------ JOURNEE 4 -------------------------
         $match4_1 = new Matchs();
-        $match4_1->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match4_1->setEquipeDomicile($this->getReference('Stade Français'));
         $match4_1->setEquipeExterieur($this->getReference('Castres'));
         $match4_1->setJournee($this->getReference('journee4'));
         $match4_1->setScoreDomicile(29);
@@ -230,7 +230,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match4_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match4_3 = new Matchs();
-        $match4_3->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match4_3->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
         $match4_3->setEquipeExterieur($this->getReference('Bayonne'));
         $match4_3->setJournee($this->getReference('journee4'));
         $match4_3->setScoreDomicile(40);
@@ -239,7 +239,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match4_3->setDiffuseur($this->getReference('diffuseur'));
 
         $match4_4 = new Matchs();
-        $match4_4->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match4_4->setEquipeDomicile($this->getReference('Stade Rochelais'));
         $match4_4->setEquipeExterieur($this->getReference('LyonOU'));
         $match4_4->setJournee($this->getReference('journee4'));
         $match4_4->setScoreDomicile(43);
@@ -249,7 +249,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match4_5 = new Matchs();
         $match4_5->setEquipeDomicile($this->getReference('Clermont'));
-        $match4_5->setEquipeExterieur($this->getReference('Racing_92'));
+        $match4_5->setEquipeExterieur($this->getReference('Racing 92'));
         $match4_5->setJournee($this->getReference('journee4'));
         $match4_5->setScoreDomicile(47);
         $match4_5->setScoreExterieur(10);
@@ -286,7 +286,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match5_2 = new Matchs();
         $match5_2->setEquipeDomicile($this->getReference('Brive'));
-        $match5_2->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match5_2->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match5_2->setJournee($this->getReference('journee5'));
         $match5_2->setScoreDomicile(29);
         $match5_2->setScoreExterieur(28);
@@ -295,7 +295,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match5_3 = new Matchs();
         $match5_3->setEquipeDomicile($this->getReference('Pau'));
-        $match5_3->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match5_3->setEquipeExterieur($this->getReference('Stade Français'));
         $match5_3->setJournee($this->getReference('journee5'));
         $match5_3->setScoreDomicile(23);
         $match5_3->setScoreExterieur(6);
@@ -313,7 +313,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match5_5 = new Matchs();
         $match5_5->setEquipeDomicile($this->getReference('Clermont'));
-        $match5_5->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match5_5->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match5_5->setJournee($this->getReference('journee5'));
         $match5_5->setScoreDomicile(40);
         $match5_5->setScoreExterieur(16);
@@ -330,7 +330,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match5_6->setDiffuseur($this->getReference('diffuseur'));
 
         $match5_7 = new Matchs();
-        $match5_7->setEquipeDomicile($this->getReference('Racing_92'));
+        $match5_7->setEquipeDomicile($this->getReference('Racing 92'));
         $match5_7->setEquipeExterieur($this->getReference('Toulon'));
         $match5_7->setJournee($this->getReference('journee5'));
         $match5_7->setScoreDomicile(41);
@@ -341,7 +341,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         // ------------------------ JOURNEE 6 -------------------------
         $match6_1 = new Matchs();
         $match6_1->setEquipeDomicile($this->getReference('Castres'));
-        $match6_1->setEquipeExterieur($this->getReference('Racing_92'));
+        $match6_1->setEquipeExterieur($this->getReference('Racing 92'));
         $match6_1->setJournee($this->getReference('journee6'));
         $match6_1->setScoreDomicile(31);
         $match6_1->setScoreExterieur(23);
@@ -358,7 +358,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match6_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match6_3 = new Matchs();
-        $match6_3->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match6_3->setEquipeDomicile($this->getReference('Stade Rochelais'));
         $match6_3->setEquipeExterieur($this->getReference('Bayonne'));
         $match6_3->setJournee($this->getReference('journee6'));
         $match6_3->setScoreDomicile(34);
@@ -367,7 +367,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match6_3->setDiffuseur($this->getReference('diffuseur'));
 
         $match6_4 = new Matchs();
-        $match6_4->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match6_4->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
         $match6_4->setEquipeExterieur($this->getReference('LyonOU'));
         $match6_4->setJournee($this->getReference('journee6'));
         $match6_4->setScoreDomicile(32);
@@ -377,7 +377,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match6_5 = new Matchs();
         $match6_5->setEquipeDomicile($this->getReference('Toulouse'));
-        $match6_5->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match6_5->setEquipeExterieur($this->getReference('Stade Français'));
         $match6_5->setJournee($this->getReference('journee6'));
         $match6_5->setScoreDomicile(23);
         $match6_5->setScoreExterieur(18);
@@ -432,7 +432,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match7_4 = new Matchs();
         $match7_4->setEquipeDomicile($this->getReference('Pau'));
-        $match7_4->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match7_4->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match7_4->setJournee($this->getReference('journee7'));
         $match7_4->setScoreDomicile(28);
         $match7_4->setScoreExterieur(30);
@@ -441,7 +441,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match7_5 = new Matchs();
         $match7_5->setEquipeDomicile($this->getReference('Brive'));
-        $match7_5->setEquipeExterieur($this->getReference('Racing_92'));
+        $match7_5->setEquipeExterieur($this->getReference('Racing 92'));
         $match7_5->setJournee($this->getReference('journee7'));
         $match7_5->setScoreDomicile(25);
         $match7_5->setScoreExterieur(16);
@@ -449,8 +449,8 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match7_5->setDiffuseur($this->getReference('diffuseur'));
 
         $match7_6 = new Matchs();
-        $match7_6->setEquipeDomicile($this->getReference('Stade_Francais'));
-        $match7_6->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match7_6->setEquipeDomicile($this->getReference('Stade Français'));
+        $match7_6->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match7_6->setJournee($this->getReference('journee7'));
         $match7_6->setScoreDomicile(31);
         $match7_6->setScoreExterieur(26);
@@ -468,8 +468,8 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         // ------------------------ JOURNEE 8 -------------------------
         $match8_1 = new Matchs();
-        $match8_1->setEquipeDomicile($this->getReference('Racing_92'));
-        $match8_1->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match8_1->setEquipeDomicile($this->getReference('Racing 92'));
+        $match8_1->setEquipeExterieur($this->getReference('Stade Français'));
         $match8_1->setJournee($this->getReference('journee8'));
         $match8_1->setScoreDomicile(29);
         $match8_1->setScoreExterieur(22);
@@ -477,7 +477,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match8_1->setDiffuseur($this->getReference('diffuseur'));
 
         $match8_2 = new Matchs();
-        $match8_2->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match8_2->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
         $match8_2->setEquipeExterieur($this->getReference('Brive'));
         $match8_2->setJournee($this->getReference('journee8'));
         $match8_2->setScoreDomicile(27);
@@ -504,7 +504,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match8_4->setDiffuseur($this->getReference('diffuseur'));
 
         $match8_5 = new Matchs();
-        $match8_5->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match8_5->setEquipeDomicile($this->getReference('Stade Rochelais'));
         $match8_5->setEquipeExterieur($this->getReference('Toulon'));
         $match8_5->setJournee($this->getReference('journee8'));
         $match8_5->setScoreDomicile(17);
@@ -551,7 +551,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match9_3 = new Matchs();
         $match9_3->setEquipeDomicile($this->getReference('Montpellier'));
-        $match9_3->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match9_3->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match9_3->setJournee($this->getReference('journee9'));
         $match9_3->setScoreDomicile(12);
         $match9_3->setScoreExterieur(11);
@@ -559,7 +559,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match9_3->setDiffuseur($this->getReference('diffuseur'));
 
         $match9_4 = new Matchs();
-        $match9_4->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match9_4->setEquipeDomicile($this->getReference('Stade Français'));
         $match9_4->setEquipeExterieur($this->getReference('LyonOU'));
         $match9_4->setJournee($this->getReference('journee9'));
         $match9_4->setScoreDomicile(25);
@@ -569,7 +569,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match9_5 = new Matchs();
         $match9_5->setEquipeDomicile($this->getReference('Bayonne'));
-        $match9_5->setEquipeExterieur($this->getReference('Racing_92'));
+        $match9_5->setEquipeExterieur($this->getReference('Racing 92'));
         $match9_5->setJournee($this->getReference('journee9'));
         $match9_5->setScoreDomicile(3);
         $match9_5->setScoreExterieur(16);
@@ -578,7 +578,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match9_6 = new Matchs();
         $match9_6->setEquipeDomicile($this->getReference('Castres'));
-        $match9_6->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match9_6->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match9_6->setJournee($this->getReference('journee9'));
         $match9_6->setScoreDomicile(33);
         $match9_6->setScoreExterieur(27);
@@ -596,8 +596,8 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         // ------------------------ JOURNEE 10 -------------------------
         $match10_1 = new Matchs();
-        $match10_1->setEquipeDomicile($this->getReference('Bordeaux-begles'));
-        $match10_1->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match10_1->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
+        $match10_1->setEquipeExterieur($this->getReference('Stade Français'));
         $match10_1->setJournee($this->getReference('journee10'));
         $match10_1->setScoreDomicile(37);
         $match10_1->setScoreExterieur(19);
@@ -632,7 +632,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match10_4->setDiffuseur($this->getReference('diffuseur'));
 
         $match10_5 = new Matchs();
-        $match10_5->setEquipeDomicile($this->getReference('Racing_92'));
+        $match10_5->setEquipeDomicile($this->getReference('Racing 92'));
         $match10_5->setEquipeExterieur($this->getReference('Montpellier'));
         $match10_5->setJournee($this->getReference('journee10'));
         $match10_5->setScoreDomicile(21);
@@ -641,7 +641,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match10_5->setDiffuseur($this->getReference('diffuseur'));
 
         $match10_6 = new Matchs();
-        $match10_6->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match10_6->setEquipeDomicile($this->getReference('Stade Rochelais'));
         $match10_6->setEquipeExterieur($this->getReference('Pau'));
         $match10_6->setJournee($this->getReference('journee10'));
         $match10_6->setScoreDomicile(27);
@@ -661,7 +661,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         // ------------------------ JOURNEE 11 -------------------------
         $match11_1 = new Matchs();
         $match11_1->setEquipeDomicile($this->getReference('Pau'));
-        $match11_1->setEquipeExterieur($this->getReference('Racing_92'));
+        $match11_1->setEquipeExterieur($this->getReference('Racing 92'));
         $match11_1->setJournee($this->getReference('journee11'));
         $match11_1->setScoreDomicile(26);
         $match11_1->setScoreExterieur(17);
@@ -688,7 +688,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match11_4 = new Matchs();
         $match11_4->setEquipeDomicile($this->getReference('Grenoble'));
-        $match11_4->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match11_4->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match11_4->setJournee($this->getReference('journee11'));
         $match11_4->setScoreDomicile(22);
         $match11_4->setScoreExterieur(24);
@@ -705,7 +705,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match11_5->setDiffuseur($this->getReference('diffuseur'));
 
         $match11_6 = new Matchs();
-        $match11_6->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match11_6->setEquipeDomicile($this->getReference('Stade Rochelais'));
         $match11_6->setEquipeExterieur($this->getReference('Toulouse'));
         $match11_6->setJournee($this->getReference('journee11'));
         $match11_6->setScoreDomicile(25);
@@ -715,7 +715,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match11_7 = new Matchs();
         $match11_7->setEquipeDomicile($this->getReference('Toulon'));
-        $match11_7->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match11_7->setEquipeExterieur($this->getReference('Stade Français'));
         $match11_7->setJournee($this->getReference('journee11'));
         $match11_7->setScoreDomicile(31);
         $match11_7->setScoreExterieur(12);
@@ -733,7 +733,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match12_1->setDiffuseur($this->getReference('diffuseur'));
 
         $match12_2 = new Matchs();
-        $match12_2->setEquipeDomicile($this->getReference('Racing_92'));
+        $match12_2->setEquipeDomicile($this->getReference('Racing 92'));
         $match12_2->setEquipeExterieur($this->getReference('Grenoble'));
         $match12_2->setJournee($this->getReference('journee12'));
         $match12_2->setScoreDomicile(29);
@@ -742,8 +742,8 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match12_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match12_3 = new Matchs();
-        $match12_3->setEquipeDomicile($this->getReference('Bordeaux-begles'));
-        $match12_3->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match12_3->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
+        $match12_3->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match12_3->setJournee($this->getReference('journee12'));
         $match12_3->setScoreDomicile(26);
         $match12_3->setScoreExterieur(0);
@@ -769,7 +769,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match12_5->setDiffuseur($this->getReference('diffuseur'));
 
         $match12_6 = new Matchs();
-        $match12_6->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match12_6->setEquipeDomicile($this->getReference('Stade Français'));
         $match12_6->setEquipeExterieur($this->getReference('Montpellier'));
         $match12_6->setJournee($this->getReference('journee12'));
         $match12_6->setScoreDomicile(21);
@@ -806,7 +806,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match13_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match13_3 = new Matchs();
-        $match13_3->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match13_3->setEquipeDomicile($this->getReference('Stade Français'));
         $match13_3->setEquipeExterieur($this->getReference('Bayonne'));
         $match13_3->setJournee($this->getReference('journee13'));
         $match13_3->setScoreDomicile(51);
@@ -824,8 +824,8 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match13_4->setDiffuseur($this->getReference('diffuseur'));
 
         $match13_5 = new Matchs();
-        $match13_5->setEquipeDomicile($this->getReference('Stade_Rochelais'));
-        $match13_5->setEquipeExterieur($this->getReference('Racing_92'));
+        $match13_5->setEquipeDomicile($this->getReference('Stade Rochelais'));
+        $match13_5->setEquipeExterieur($this->getReference('Racing 92'));
         $match13_5->setJournee($this->getReference('journee13'));
         $match13_5->setScoreDomicile(23);
         $match13_5->setScoreExterieur(23);
@@ -843,7 +843,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match13_7 = new Matchs();
         $match13_7->setEquipeDomicile($this->getReference('Toulon'));
-        $match13_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match13_7->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match13_7->setJournee($this->getReference('journee13'));
         $match13_7->setScoreDomicile(37);
         $match13_7->setScoreExterieur(10);
@@ -870,7 +870,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match14_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match14_3 = new Matchs();
-        $match14_3->setEquipeDomicile($this->getReference('Racing_92'));
+        $match14_3->setEquipeDomicile($this->getReference('Racing 92'));
         $match14_3->setEquipeExterieur($this->getReference('Castres'));
         $match14_3->setJournee($this->getReference('journee14'));
         $match14_3->setScoreDomicile(23);
@@ -880,7 +880,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match14_4 = new Matchs();
         $match14_4->setEquipeDomicile($this->getReference('Bayonne'));
-        $match14_4->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match14_4->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match14_4->setJournee($this->getReference('journee14'));
         $match14_4->setScoreDomicile(17);
         $match14_4->setScoreExterieur(42);
@@ -888,7 +888,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match14_4->setDiffuseur($this->getReference('diffuseur'));
 
         $match14_5 = new Matchs();
-        $match14_5->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match14_5->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
         $match14_5->setEquipeExterieur($this->getReference('Pau'));
         $match14_5->setJournee($this->getReference('journee14'));
         $match14_5->setScoreDomicile(16);
@@ -898,7 +898,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match14_6 = new Matchs();
         $match14_6->setEquipeDomicile($this->getReference('Clermont'));
-        $match14_6->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match14_6->setEquipeExterieur($this->getReference('Stade Français'));
         $match14_6->setJournee($this->getReference('journee14'));
         $match14_6->setScoreDomicile(46);
         $match14_6->setScoreExterieur(10);
@@ -917,7 +917,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         // ------------------------ JOURNEE 15 -------------------------
         $match15_1 = new Matchs();
         $match15_1->setEquipeDomicile($this->getReference('LyonOU'));
-        $match15_1->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match15_1->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match15_1->setJournee($this->getReference('journee15'));
         $match15_1->setScoreDomicile(19);
         $match15_1->setScoreExterieur(16);
@@ -934,7 +934,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match15_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match15_3 = new Matchs();
-        $match15_3->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match15_3->setEquipeDomicile($this->getReference('Stade Français'));
         $match15_3->setEquipeExterieur($this->getReference('Brive'));
         $match15_3->setJournee($this->getReference('journee15'));
         $match15_3->setScoreDomicile(12);
@@ -961,7 +961,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match15_5->setDiffuseur($this->getReference('diffuseur'));
 
         $match15_6 = new Matchs();
-        $match15_6->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match15_6->setEquipeDomicile($this->getReference('Stade Rochelais'));
         $match15_6->setEquipeExterieur($this->getReference('Grenoble'));
         $match15_6->setJournee($this->getReference('journee15'));
         $match15_6->setScoreDomicile(40);
@@ -971,7 +971,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match15_7 = new Matchs();
         $match15_7->setEquipeDomicile($this->getReference('Toulon'));
-        $match15_7->setEquipeExterieur($this->getReference('Racing_92'));
+        $match15_7->setEquipeExterieur($this->getReference('Racing 92'));
         $match15_7->setJournee($this->getReference('journee15'));
         $match15_7->setScoreDomicile(17);
         $match15_7->setScoreExterieur(11);
@@ -981,7 +981,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         // ------------------------ JOURNEE 16 -------------------------
         $match16_1 = new Matchs();
         $match16_1->setEquipeDomicile($this->getReference('Montpellier'));
-        $match16_1->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match16_1->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match16_1->setJournee($this->getReference('journee16'));
         $match16_1->setScoreDomicile(31);
         $match16_1->setScoreExterieur(26);
@@ -998,7 +998,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match16_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match16_3 = new Matchs();
-        $match16_3->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match16_3->setEquipeDomicile($this->getReference('Stade Rochelais'));
         $match16_3->setEquipeExterieur($this->getReference('Castres'));
         $match16_3->setJournee($this->getReference('journee16'));
         $match16_3->setScoreDomicile(22);
@@ -1007,7 +1007,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match16_3->setDiffuseur($this->getReference('diffuseur'));
 
         $match16_4 = new Matchs();
-        $match16_4->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match16_4->setEquipeDomicile($this->getReference('Stade Français'));
         $match16_4->setEquipeExterieur($this->getReference('Toulouse'));
         $match16_4->setJournee($this->getReference('journee16'));
         $match16_4->setScoreDomicile(15);
@@ -1032,7 +1032,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match16_6->setDiffuseur($this->getReference('diffuseur'));
 
         $match16_7 = new Matchs();
-        $match16_7->setEquipeDomicile($this->getReference('Racing_92'));
+        $match16_7->setEquipeDomicile($this->getReference('Racing 92'));
         $match16_7->setEquipeExterieur($this->getReference('Bayonne'));
         $match16_7->setJournee($this->getReference('journee16'));
         $match16_7->setDate(new \DateTime('2017/02/12 12:30'));
@@ -1041,7 +1041,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         // ------------------------ JOURNEE 17 -------------------------
         $match17_1 = new Matchs();
         $match17_1->setEquipeDomicile($this->getReference('Toulon'));
-        $match17_1->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match17_1->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match17_1->setJournee($this->getReference('journee17'));
         $match17_1->setDate(new \DateTime('2017/01/28 14:45'));
         $match17_1->setDiffuseur($this->getReference('diffuseur'));
@@ -1055,7 +1055,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match17_3 = new Matchs();
         $match17_3->setEquipeDomicile($this->getReference('Grenoble'));
-        $match17_3->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match17_3->setEquipeExterieur($this->getReference('Stade Français'));
         $match17_3->setJournee($this->getReference('journee17'));
         $match17_3->setDate(new \DateTime('2017/01/28 18:30'));
         $match17_3->setDiffuseur($this->getReference('diffuseur'));
@@ -1069,7 +1069,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match17_5 = new Matchs();
         $match17_5->setEquipeDomicile($this->getReference('LyonOU'));
-        $match17_5->setEquipeExterieur($this->getReference('Racing_92'));
+        $match17_5->setEquipeExterieur($this->getReference('Racing 92'));
         $match17_5->setJournee($this->getReference('journee17'));
         $match17_5->setDate(new \DateTime('2017/01/28 20:45'));
         $match17_5->setDiffuseur($this->getReference('diffuseur'));
@@ -1082,7 +1082,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match17_6->setDiffuseur($this->getReference('diffuseur'));
 
         $match17_7 = new Matchs();
-        $match17_7->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match17_7->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
         $match17_7->setEquipeExterieur($this->getReference('Clermont'));
         $match17_7->setJournee($this->getReference('journee17'));
         $match17_7->setDate(new \DateTime('2017/01/29 16:45'));
@@ -1090,14 +1090,14 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         // ------------------------ JOURNEE 18 -------------------------
         $match18_1 = new Matchs();
-        $match18_1->setEquipeDomicile($this->getReference('Racing_92'));
+        $match18_1->setEquipeDomicile($this->getReference('Racing 92'));
         $match18_1->setEquipeExterieur($this->getReference('Brive'));
         $match18_1->setJournee($this->getReference('journee18'));
         $match18_1->setDate(new \DateTime('2017/02/18 18:30'));
         $match18_1->setDiffuseur($this->getReference('diffuseur'));
 
         $match18_2 = new Matchs();
-        $match18_2->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match18_2->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
         $match18_2->setEquipeExterieur($this->getReference('Castres'));
         $match18_2->setJournee($this->getReference('journee18'));
         $match18_2->setDate(new \DateTime('2017/02/18 18:30'));
@@ -1111,8 +1111,8 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match18_3->setDiffuseur($this->getReference('diffuseur'));
 
         $match18_4 = new Matchs();
-        $match18_4->setEquipeDomicile($this->getReference('Stade_Rochelais'));
-        $match18_4->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match18_4->setEquipeDomicile($this->getReference('Stade Rochelais'));
+        $match18_4->setEquipeExterieur($this->getReference('Stade Français'));
         $match18_4->setJournee($this->getReference('journee18'));
         $match18_4->setDate(new \DateTime('2017/02/18 18:30'));
         $match18_4->setDiffuseur($this->getReference('diffuseur'));
@@ -1141,7 +1141,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         // ------------------------ JOURNEE 19 -------------------------
         $match19_1 = new Matchs();
         $match19_1->setEquipeDomicile($this->getReference('Toulouse'));
-        $match19_1->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match19_1->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match19_1->setJournee($this->getReference('journee19'));
         $match19_1->setDate(new \DateTime('2017/03/04 18:30'));
         $match19_1->setDiffuseur($this->getReference('diffuseur'));
@@ -1162,7 +1162,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match19_4 = new Matchs();
         $match19_4->setEquipeDomicile($this->getReference('Grenoble'));
-        $match19_4->setEquipeExterieur($this->getReference('Racing_92'));
+        $match19_4->setEquipeExterieur($this->getReference('Racing 92'));
         $match19_4->setJournee($this->getReference('journee19'));
         $match19_4->setDate(new \DateTime('2017/03/04 18:30'));
         $match19_4->setDiffuseur($this->getReference('diffuseur'));
@@ -1182,8 +1182,8 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match19_6->setDiffuseur($this->getReference('diffuseur'));
 
         $match19_7 = new Matchs();
-        $match19_7->setEquipeDomicile($this->getReference('Stade_Francais'));
-        $match19_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match19_7->setEquipeDomicile($this->getReference('Stade Français'));
+        $match19_7->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match19_7->setJournee($this->getReference('journee19'));
         $match19_7->setDate(new \DateTime('2017/03/04 18:30'));
         $match19_7->setDiffuseur($this->getReference('diffuseur'));
@@ -1197,22 +1197,22 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match20_1->setDiffuseur($this->getReference('diffuseur'));
 
         $match20_2 = new Matchs();
-        $match20_2->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match20_2->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
         $match20_2->setEquipeExterieur($this->getReference('Grenoble'));
         $match20_2->setJournee($this->getReference('journee20'));
         $match20_2->setDate(new \DateTime('2017/03/11 18:30'));
         $match20_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match20_3 = new Matchs();
-        $match20_3->setEquipeDomicile($this->getReference('Racing_92'));
-        $match20_3->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match20_3->setEquipeDomicile($this->getReference('Racing 92'));
+        $match20_3->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match20_3->setJournee($this->getReference('journee20'));
         $match20_3->setDate(new \DateTime('2017/03/11 18:30'));
         $match20_3->setDiffuseur($this->getReference('diffuseur'));
 
         $match20_4 = new Matchs();
         $match20_4->setEquipeDomicile($this->getReference('LyonOU'));
-        $match20_4->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match20_4->setEquipeExterieur($this->getReference('Stade Français'));
         $match20_4->setJournee($this->getReference('journee20'));
         $match20_4->setDate(new \DateTime('2017/03/11 18:30'));
         $match20_4->setDiffuseur($this->getReference('diffuseur'));
@@ -1240,7 +1240,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         // ------------------------ JOURNEE 21 -------------------------
         $match21_1 = new Matchs();
-        $match21_1->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match21_1->setEquipeDomicile($this->getReference('Stade Rochelais'));
         $match21_1->setEquipeExterieur($this->getReference('Brive'));
         $match21_1->setJournee($this->getReference('journee21'));
         $match21_1->setDate(new \DateTime('2017/03/18 18:30'));
@@ -1255,14 +1255,14 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match21_3 = new Matchs();
         $match21_3->setEquipeDomicile($this->getReference('Montpellier'));
-        $match21_3->setEquipeExterieur($this->getReference('Racing_92'));
+        $match21_3->setEquipeExterieur($this->getReference('Racing 92'));
         $match21_3->setJournee($this->getReference('journee21'));
         $match21_3->setDate(new \DateTime('2017/03/18 18:30'));
         $match21_3->setDiffuseur($this->getReference('diffuseur'));
 
         $match21_4 = new Matchs();
         $match21_4->setEquipeDomicile($this->getReference('Castres'));
-        $match21_4->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match21_4->setEquipeExterieur($this->getReference('Stade Français'));
         $match21_4->setJournee($this->getReference('journee21'));
         $match21_4->setDate(new \DateTime('2017/03/18 18:30'));
         $match21_4->setDiffuseur($this->getReference('diffuseur'));
@@ -1283,7 +1283,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match21_7 = new Matchs();
         $match21_7->setEquipeDomicile($this->getReference('Bayonne'));
-        $match21_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match21_7->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match21_7->setJournee($this->getReference('journee21'));
         $match21_7->setDate(new \DateTime('2017/03/18 18:30'));
         $match21_7->setDiffuseur($this->getReference('diffuseur'));
@@ -1298,27 +1298,27 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match22_2 = new Matchs();
         $match22_2->setEquipeDomicile($this->getReference('Pau'));
-        $match22_2->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match22_2->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match22_2->setJournee($this->getReference('journee22'));
         $match22_2->setDate(new \DateTime('2017/03/25 18:30'));
         $match22_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match22_3 = new Matchs();
-        $match22_3->setEquipeDomicile($this->getReference('Racing_92'));
+        $match22_3->setEquipeDomicile($this->getReference('Racing 92'));
         $match22_3->setEquipeExterieur($this->getReference('Clermont'));
         $match22_3->setJournee($this->getReference('journee22'));
         $match22_3->setDate(new \DateTime('2017/03/25 18:30'));
         $match22_3->setDiffuseur($this->getReference('diffuseur'));
 
         $match22_4 = new Matchs();
-        $match22_4->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match22_4->setEquipeDomicile($this->getReference('Stade Français'));
         $match22_4->setEquipeExterieur($this->getReference('Toulon'));
         $match22_4->setJournee($this->getReference('journee22'));
         $match22_4->setDate(new \DateTime('2017/03/25 18:30'));
         $match22_4->setDiffuseur($this->getReference('diffuseur'));
 
         $match22_5 = new Matchs();
-        $match22_5->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match22_5->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
         $match22_5->setEquipeExterieur($this->getReference('Toulouse'));
         $match22_5->setJournee($this->getReference('journee22'));
         $match22_5->setDate(new \DateTime('2017/03/25 18:30'));
@@ -1354,7 +1354,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match23_2->setDiffuseur($this->getReference('diffuseur'));
 
         $match23_3 = new Matchs();
-        $match23_3->setEquipeDomicile($this->getReference('Racing_92'));
+        $match23_3->setEquipeDomicile($this->getReference('Racing 92'));
         $match23_3->setEquipeExterieur($this->getReference('Pau'));
         $match23_3->setJournee($this->getReference('journee23'));
         $match23_3->setDate(new \DateTime('2017/04/08 18:30'));
@@ -1362,7 +1362,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match23_4 = new Matchs();
         $match23_4->setEquipeDomicile($this->getReference('Bayonne'));
-        $match23_4->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match23_4->setEquipeExterieur($this->getReference('Stade Français'));
         $match23_4->setJournee($this->getReference('journee23'));
         $match23_4->setDate(new \DateTime('2017/04/08 18:30'));
         $match23_4->setDiffuseur($this->getReference('diffuseur'));
@@ -1382,8 +1382,8 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match23_6->setDiffuseur($this->getReference('diffuseur'));
 
         $match23_7 = new Matchs();
-        $match23_7->setEquipeDomicile($this->getReference('Stade_Rochelais'));
-        $match23_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match23_7->setEquipeDomicile($this->getReference('Stade Rochelais'));
+        $match23_7->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match23_7->setJournee($this->getReference('journee23'));
         $match23_7->setDate(new \DateTime('2017/04/08 18:30'));
         $match23_7->setDiffuseur($this->getReference('diffuseur'));
@@ -1398,7 +1398,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match24_2 = new Matchs();
         $match24_2->setEquipeDomicile($this->getReference('LyonOU'));
-        $match24_2->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match24_2->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match24_2->setJournee($this->getReference('journee24'));
         $match24_2->setDate(new \DateTime('2017/04/15 18:30'));
         $match24_2->setDiffuseur($this->getReference('diffuseur'));
@@ -1411,7 +1411,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match24_3->setDiffuseur($this->getReference('diffuseur'));
 
         $match24_4 = new Matchs();
-        $match24_4->setEquipeDomicile($this->getReference('Stade_Francais'));
+        $match24_4->setEquipeDomicile($this->getReference('Stade Français'));
         $match24_4->setEquipeExterieur($this->getReference('Pau'));
         $match24_4->setJournee($this->getReference('journee24'));
         $match24_4->setDate(new \DateTime('2017/04/15 18:30'));
@@ -1419,7 +1419,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match24_5 = new Matchs();
         $match24_5->setEquipeDomicile($this->getReference('Toulouse'));
-        $match24_5->setEquipeExterieur($this->getReference('Racing_92'));
+        $match24_5->setEquipeExterieur($this->getReference('Racing 92'));
         $match24_5->setJournee($this->getReference('journee24'));
         $match24_5->setDate(new \DateTime('2017/04/15 18:30'));
         $match24_5->setDiffuseur($this->getReference('diffuseur'));
@@ -1433,7 +1433,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match24_7 = new Matchs();
         $match24_7->setEquipeDomicile($this->getReference('Brive'));
-        $match24_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match24_7->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match24_7->setJournee($this->getReference('journee24'));
         $match24_7->setDate(new \DateTime('2017/04/15 18:30'));
         $match24_7->setDiffuseur($this->getReference('diffuseur'));
@@ -1461,14 +1461,14 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match25_3->setDiffuseur($this->getReference('diffuseur'));
 
         $match25_4 = new Matchs();
-        $match25_4->setEquipeDomicile($this->getReference('Stade_Francais'));
-        $match25_4->setEquipeExterieur($this->getReference('Racing_92'));
+        $match25_4->setEquipeDomicile($this->getReference('Stade Français'));
+        $match25_4->setEquipeExterieur($this->getReference('Racing 92'));
         $match25_4->setJournee($this->getReference('journee25'));
         $match25_4->setDate(new \DateTime('2017/04/29 18:30'));
         $match25_4->setDiffuseur($this->getReference('diffuseur'));
 
         $match25_5 = new Matchs();
-        $match25_5->setEquipeDomicile($this->getReference('Bordeaux-begles'));
+        $match25_5->setEquipeDomicile($this->getReference('Bordeaux-Begles'));
         $match25_5->setEquipeExterieur($this->getReference('Toulon'));
         $match25_5->setJournee($this->getReference('journee25'));
         $match25_5->setDate(new \DateTime('2017/04/29 18:30'));
@@ -1482,7 +1482,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match25_6->setDiffuseur($this->getReference('diffuseur'));
 
         $match25_7 = new Matchs();
-        $match25_7->setEquipeDomicile($this->getReference('Stade_Rochelais'));
+        $match25_7->setEquipeDomicile($this->getReference('Stade Rochelais'));
         $match25_7->setEquipeExterieur($this->getReference('Montpellier'));
         $match25_7->setJournee($this->getReference('journee25'));
         $match25_7->setDate(new \DateTime('2017/04/29 18:30'));
@@ -1498,7 +1498,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match26_2 = new Matchs();
         $match26_2->setEquipeDomicile($this->getReference('Clermont'));
-        $match26_2->setEquipeExterieur($this->getReference('Stade_Rochelais'));
+        $match26_2->setEquipeExterieur($this->getReference('Stade Rochelais'));
         $match26_2->setJournee($this->getReference('journee26'));
         $match26_2->setDate(new \DateTime('2017/05/06 18:30'));
         $match26_2->setDiffuseur($this->getReference('diffuseur'));
@@ -1512,7 +1512,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
 
         $match26_4 = new Matchs();
         $match26_4->setEquipeDomicile($this->getReference('Montpellier'));
-        $match26_4->setEquipeExterieur($this->getReference('Stade_Francais'));
+        $match26_4->setEquipeExterieur($this->getReference('Stade Français'));
         $match26_4->setJournee($this->getReference('journee26'));
         $match26_4->setDate(new \DateTime('2017/05/06 18:30'));
         $match26_4->setDiffuseur($this->getReference('diffuseur'));
@@ -1532,8 +1532,8 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
         $match26_6->setDiffuseur($this->getReference('diffuseur'));
 
         $match26_7 = new Matchs();
-        $match26_7->setEquipeDomicile($this->getReference('Racing_92'));
-        $match26_7->setEquipeExterieur($this->getReference('Bordeaux-begles'));
+        $match26_7->setEquipeDomicile($this->getReference('Racing 92'));
+        $match26_7->setEquipeExterieur($this->getReference('Bordeaux-Begles'));
         $match26_7->setJournee($this->getReference('journee26'));
         $match26_7->setDate(new \DateTime('2017/05/06 18:30'));
         $match26_7->setDiffuseur($this->getReference('diffuseur'));

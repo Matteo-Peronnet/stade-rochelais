@@ -24,16 +24,9 @@ class Joueur
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nomprenom", type="string", length=255)
      */
-    private $nom;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="prenom", type="string", length=255)
-     */
-    private $prenom;
+    private $nomprenom;
 
     /**
      * @var string
@@ -41,20 +34,6 @@ class Joueur
      * @ORM\Column(name="photo", type="string", length=255)
      */
     private $photo;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="titulaire", type="boolean")
-     */
-    private $titulaire;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="numero", type="integer", length=255)
-     */
-    private $numero;
 
     /**
      * @var Equipe
@@ -69,6 +48,36 @@ class Joueur
      * @ORM\JoinColumn(name="position_id", referencedColumnName="id")
      */
     private $position;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="age", type="integer")
+     */
+    private $age;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="datenaissance", type="string", length=255)
+     */
+    private $datenaissance;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="poids", type="integer")
+     */
+    private $poids;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="taille", type="integer")
+     */
+    private $taille;
+
+
 
     /**
      * Get id
@@ -161,30 +170,6 @@ class Joueur
     }
 
     /**
-     * Set titulaire
-     *
-     * @param boolean $titulaire
-     *
-     * @return Joueur
-     */
-    public function setTitulaire($titulaire)
-    {
-        $this->titulaire = $titulaire;
-
-        return $this;
-    }
-
-    /**
-     * Get titulaire
-     *
-     * @return bool
-     */
-    public function getTitulaire()
-    {
-        return $this->titulaire;
-    }
-
-    /**
      * Set numero
      *
      * @param string $numero
@@ -254,5 +239,36 @@ class Joueur
     public function getPosition()
     {
         return $this->position;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->position = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add position
+     *
+     * @param \FrontOfficeBundle\Entity\Position $position
+     *
+     * @return Joueur
+     */
+    public function addPosition(\FrontOfficeBundle\Entity\Position $position)
+    {
+        $this->position[] = $position;
+
+        return $this;
+    }
+
+    /**
+     * Remove position
+     *
+     * @param \FrontOfficeBundle\Entity\Position $position
+     */
+    public function removePosition(\FrontOfficeBundle\Entity\Position $position)
+    {
+        $this->position->removeElement($position);
     }
 }

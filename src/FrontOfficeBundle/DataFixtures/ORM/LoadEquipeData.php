@@ -69,7 +69,7 @@ class LoadEquipe extends AbstractFixture implements OrderedFixtureInterface
         $racing_92->setStade("Yves Du Manoir");
 
         $stade_francais = new Equipe();
-        $stade_francais->setNom("Stade Francais");
+        $stade_francais->setNom("Stade Français");
         $stade_francais->setBlason("img/Logo/Stade_Francais.png");
         $stade_francais->setStade("Jean Bouin");
 
@@ -107,7 +107,7 @@ class LoadEquipe extends AbstractFixture implements OrderedFixtureInterface
         $manager->flush();
 
         $this->addReference('Bayonne', $bayonne);
-        $this->addReference('Bordeaux-begles', $bordeaux_begles);
+        $this->addReference('Bordeaux-Begles', $bordeaux_begles);
         $this->addReference('Brive', $brive);
         $this->addReference('Castres', $castres);
         $this->addReference('Clermont', $clermont);
@@ -115,9 +115,9 @@ class LoadEquipe extends AbstractFixture implements OrderedFixtureInterface
         $this->addReference('LyonOU', $lyonOU);
         $this->addReference('Montpellier', $montpellier);
         $this->addReference('Pau', $pau);
-        $this->addReference('Racing_92', $racing_92);
-        $this->addReference('Stade_Francais', $stade_francais);
-        $this->addReference('Stade_Rochelais', $stade_rochelais);
+        $this->addReference('Racing 92', $racing_92);
+        $this->addReference('Stade Français', $stade_francais);
+        $this->addReference('Stade Rochelais', $stade_rochelais);
         $this->addReference('Toulon', $toulon);
         $this->addReference('Toulouse', $toulouse);
     }

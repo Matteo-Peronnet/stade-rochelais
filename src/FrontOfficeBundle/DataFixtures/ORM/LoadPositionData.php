@@ -72,17 +72,40 @@ class LoadPositionData extends AbstractFixture implements OrderedFixtureInterfac
         $trois_quart_centre_droit->setNumero(13);
 
         $trois_quart_aile_droit = new Position();
-        $trois_quart_aile_droit->setNom("trois_quart_aile_droit");
+        $trois_quart_aile_droit->setNom("Trois quart aile droit");
         $trois_quart_aile_droit->setNumero(14);
 
         $arriere = new Position();
         $arriere->setNom("Arriere");
         $arriere->setNumero(15);
 
-        $remplacant = new Position();
-        $remplacant->setNom("Remplaçant");
-        $remplacant->setNumero(16);
+        $remplacant1 = new Position();
+        $remplacant1->setNom("Remplaçant1");
+        $remplacant1->setNumero(16);
 
+        $remplacant2 = new Position();
+        $remplacant2->setNom("Remplaçant2");
+        $remplacant2->setNumero(17);
+
+        $remplacant3 = new Position();
+        $remplacant3->setNom("Remplaçant3");
+        $remplacant3->setNumero(18);
+
+        $remplacant4 = new Position();
+        $remplacant4->setNom("Remplaçant4");
+        $remplacant4->setNumero(19);
+
+        $remplacant5 = new Position();
+        $remplacant5->setNom("Remplaçant5");
+        $remplacant5->setNumero(20);
+
+        $remplacant6 = new Position();
+        $remplacant6->setNom("Remplaçant6");
+        $remplacant6->setNumero(21);
+
+        $remplacant7 = new Position();
+        $remplacant7->setNom("Remplaçant7");
+        $remplacant7->setNumero(22);
 
         $manager->persist($pilier_droit);
         $this->addReference('pilier_droit',$pilier_droit);
@@ -114,8 +137,20 @@ class LoadPositionData extends AbstractFixture implements OrderedFixtureInterfac
         $this->addReference('trois_quart_aile_droit',$trois_quart_aile_droit);
         $manager->persist($arriere);
         $this->addReference('arriere',$arriere);
-        $manager->persist($remplacant);
-        $this->addReference('remplacant',$remplacant);
+        $manager->persist($remplacant1);
+        $this->addReference('remplacant1',$remplacant1);
+        $manager->persist($remplacant2);
+        $this->addReference('remplacant2',$remplacant2);
+        $manager->persist($remplacant3);
+        $this->addReference('remplacant3',$remplacant3);
+        $manager->persist($remplacant4);
+        $this->addReference('remplacant4',$remplacant4);
+        $manager->persist($remplacant5);
+        $this->addReference('remplacant5',$remplacant5);
+        $manager->persist($remplacant6);
+        $this->addReference('remplacant6',$remplacant6);
+        $manager->persist($remplacant7);
+        $this->addReference('remplacant7',$remplacant7);
 
         $manager->flush();
 

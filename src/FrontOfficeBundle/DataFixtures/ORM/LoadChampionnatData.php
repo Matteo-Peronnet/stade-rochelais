@@ -22,7 +22,7 @@ class LoadChampionnatData extends AbstractFixture implements OrderedFixtureInter
         $champ->setNom("Top 14");
         $champ->setDescription("Le Championnat de France de Rugby a XV de premiere division");
         $champ->addEquipe($this->getReference('Bayonne'));
-        $champ->addEquipe($this->getReference('Bordeaux-begles'));
+        $champ->addEquipe($this->getReference('Bordeaux-Begles'));
         $champ->addEquipe($this->getReference('Brive'));
         $champ->addEquipe($this->getReference('Castres'));
         $champ->addEquipe($this->getReference('Clermont'));
@@ -30,9 +30,9 @@ class LoadChampionnatData extends AbstractFixture implements OrderedFixtureInter
         $champ->addEquipe($this->getReference('LyonOU'));
         $champ->addEquipe($this->getReference('Montpellier'));
         $champ->addEquipe($this->getReference('Pau'));
-        $champ->addEquipe($this->getReference('Racing_92'));
-        $champ->addEquipe($this->getReference('Stade_Francais'));
-        $champ->addEquipe($this->getReference('Stade_Rochelais'));
+        $champ->addEquipe($this->getReference('Racing 92'));
+        $champ->addEquipe($this->getReference('Stade Français'));
+        $champ->addEquipe($this->getReference('Stade Rochelais'));
         $champ->addEquipe($this->getReference('Toulon'));
         $champ->addEquipe($this->getReference('Toulouse'));
 

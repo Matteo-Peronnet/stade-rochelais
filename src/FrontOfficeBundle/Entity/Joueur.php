@@ -24,16 +24,9 @@ class Joueur
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nomprenom", type="string", length=255)
      */
-    private $nom;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="prenom", type="string", length=255)
-     */
-    private $prenom;
+    private $nomprenom;
 
     /**
      * @var string
@@ -41,13 +34,6 @@ class Joueur
      * @ORM\Column(name="photo", type="string", length=255)
      */
     private $photo;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="numero", type="integer", length=255)
-     */
-    private $numero;
 
     /**
      * @var Equipe
@@ -64,6 +50,36 @@ class Joueur
     private $position;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="age", type="integer")
+     */
+    private $age;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="datenaissance", type="string", length=255)
+     */
+    private $datenaissance;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="poids", type="integer")
+     */
+    private $poids;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="taille", type="integer")
+     */
+    private $taille;
+
+
+
+    /**
      * Get id
      *
      * @return int
@@ -71,54 +87,6 @@ class Joueur
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Joueur
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     *
-     * @return Joueur
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    /**
-     * Get prenom
-     *
-     * @return string
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
     }
 
     /**
@@ -152,31 +120,7 @@ class Joueur
     {
         $this->id = $id;
     }
-
-    /**
-     * Set numero
-     *
-     * @param string $numero
-     *
-     * @return Joueur
-     */
-    public function setNumero($numero)
-    {
-        $this->numero = $numero;
-
-        return $this;
-    }
-
-    /**
-     * Get numero
-     *
-     * @return string
-     */
-    public function getNumero()
-    {
-        return $this->numero;
-    }
-
+    
     /**
      * Set equipe
      *
@@ -200,30 +144,7 @@ class Joueur
     {
         return $this->equipe;
     }
-
-    /**
-     * Set position
-     *
-     * @param \FrontOfficeBundle\Entity\Position $position
-     *
-     * @return Joueur
-     */
-    public function setPosition(\FrontOfficeBundle\Entity\Position $position = null)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
-     *
-     * @return \FrontOfficeBundle\Entity\Position
-     */
-    public function getPosition()
-    {
-        return $this->position;
-    }
+    
     /**
      * Constructor
      */
@@ -254,5 +175,125 @@ class Joueur
     public function removePosition(\FrontOfficeBundle\Entity\Position $position)
     {
         $this->position->removeElement($position);
+    }
+
+    /**
+     * Set nomprenom
+     *
+     * @param string $nomprenom
+     *
+     * @return Joueur
+     */
+    public function setNomprenom($nomprenom)
+    {
+        $this->nomprenom = $nomprenom;
+
+        return $this;
+    }
+
+    /**
+     * Get nomprenom
+     *
+     * @return string
+     */
+    public function getNomprenom()
+    {
+        return $this->nomprenom;
+    }
+
+    /**
+     * Set age
+     *
+     * @param integer $age
+     *
+     * @return Joueur
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return integer
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * Set datenaissance
+     *
+     * @param string $datenaissance
+     *
+     * @return Joueur
+     */
+    public function setDatenaissance($datenaissance)
+    {
+        $this->datenaissance = $datenaissance;
+
+        return $this;
+    }
+
+    /**
+     * Get datenaissance
+     *
+     * @return string
+     */
+    public function getDatenaissance()
+    {
+        return $this->datenaissance;
+    }
+
+    /**
+     * Set poids
+     *
+     * @param integer $poids
+     *
+     * @return Joueur
+     */
+    public function setPoids($poids)
+    {
+        $this->poids = $poids;
+
+        return $this;
+    }
+
+    /**
+     * Get poids
+     *
+     * @return integer
+     */
+    public function getPoids()
+    {
+        return $this->poids;
+    }
+
+    /**
+     * Set taille
+     *
+     * @param integer $taille
+     *
+     * @return Joueur
+     */
+    public function setTaille($taille)
+    {
+        $this->taille = $taille;
+
+        return $this;
+    }
+
+    /**
+     * Get taille
+     *
+     * @return integer
+     */
+    public function getTaille()
+    {
+        return $this->taille;
     }
 }
