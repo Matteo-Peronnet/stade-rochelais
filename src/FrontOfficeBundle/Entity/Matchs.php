@@ -48,6 +48,18 @@ class Matchs
     private $equipeExterieur;
 
     /**
+     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Formation")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $formationDomicile;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Formation")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $formationExterieur;
+
+    /**
      * @var journee
      * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Journee", cascade={"persist"})
      * @ORM\JoinColumn(name="journee_id", referencedColumnName="id", nullable=false)
@@ -357,5 +369,53 @@ class Matchs
     public function getFormation()
     {
         return $this->formation;
+    }
+
+    /**
+     * Set formationDomicile
+     *
+     * @param \FrontOfficeBundle\Entity\Formation $formationDomicile
+     *
+     * @return Matchs
+     */
+    public function setFormationDomicile(\FrontOfficeBundle\Entity\Formation $formationDomicile = null)
+    {
+        $this->formationDomicile = $formationDomicile;
+
+        return $this;
+    }
+
+    /**
+     * Get formationDomicile
+     *
+     * @return \FrontOfficeBundle\Entity\Formation
+     */
+    public function getFormationDomicile()
+    {
+        return $this->formationDomicile;
+    }
+
+    /**
+     * Set formationExterieur
+     *
+     * @param \FrontOfficeBundle\Entity\Formation $formationExterieur
+     *
+     * @return Matchs
+     */
+    public function setFormationExterieur(\FrontOfficeBundle\Entity\Formation $formationExterieur = null)
+    {
+        $this->formationExterieur = $formationExterieur;
+
+        return $this;
+    }
+
+    /**
+     * Get formationExterieur
+     *
+     * @return \FrontOfficeBundle\Entity\Formation
+     */
+    public function getFormationExterieur()
+    {
+        return $this->formationExterieur;
     }
 }

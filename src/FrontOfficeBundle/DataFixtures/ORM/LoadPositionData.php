@@ -6,7 +6,7 @@
  * Time: 00:37
  */
 
-// src/FrontOfficeBundle/DataFixtures/ORM/LoadDiffuseurData.php
+// src/FrontOfficeBundle/DataFixtures/ORM/LoadPositionData.php
 namespace FrontOfficeBundle\Bundle\DataFixtures\ORM;
 use FrontOfficeBundle\Entity\Diffuseur;
 use Doctrine\Common\DataFixtures\AbstractFixture;
@@ -40,19 +40,19 @@ class LoadPositionData extends AbstractFixture implements OrderedFixtureInterfac
         $deuxieme_ligne_droite->setNumero(5);
 
         $troisieme_ligne_gauche = new Position();
-        $troisieme_ligne_gauche->setNom("Troisieme ligne gauche");
+        $troisieme_ligne_gauche->setNom("Troisième ligne gauche");
         $troisieme_ligne_gauche->setNumero(6);
 
         $troisieme_ligne_droite = new Position();
-        $troisieme_ligne_droite->setNom("Troisieme ligne droite");
+        $troisieme_ligne_droite->setNom("Troisième ligne droite");
         $troisieme_ligne_droite->setNumero(7);
 
         $troisieme_ligne_centre = new Position();
-        $troisieme_ligne_centre->setNom("Troisieme ligne centre");
+        $troisieme_ligne_centre->setNom("Troisième ligne centre");
         $troisieme_ligne_centre->setNumero(8);
 
         $demi_melee = new Position();
-        $demi_melee->setNom("Demi de melee");
+        $demi_melee->setNom("Demi de melée");
         $demi_melee->setNumero(9);
 
         $demi_ouverture = new Position();
@@ -76,7 +76,7 @@ class LoadPositionData extends AbstractFixture implements OrderedFixtureInterfac
         $trois_quart_aile_droit->setNumero(14);
 
         $arriere = new Position();
-        $arriere->setNom("Arriere");
+        $arriere->setNom("Arrière");
         $arriere->setNumero(15);
 
         $remplacant1 = new Position();
@@ -108,49 +108,49 @@ class LoadPositionData extends AbstractFixture implements OrderedFixtureInterfac
         $remplacant7->setNumero(22);
 
         $manager->persist($pilier_droit);
-        $this->addReference('pilier_droit',$pilier_droit);
+        $this->addReference('Pilier droit',$pilier_droit);
         $manager->persist($pilier_gauche);
-        $this->addReference('pilier_gauche',$pilier_gauche);
+        $this->addReference('Pilier gauche',$pilier_gauche);
         $manager->persist($talonneur);
-        $this->addReference('talonneur',$talonneur);
+        $this->addReference('Talonneur',$talonneur);
         $manager->persist($deuxieme_ligne_gauche);
-        $this->addReference('deuxieme_ligne_gauche',$deuxieme_ligne_gauche);
+        $this->addReference('Deuxieme ligne gauche',$deuxieme_ligne_gauche);
         $manager->persist($deuxieme_ligne_droite);
-        $this->addReference('deuxieme_ligne_droite',$deuxieme_ligne_droite);
+        $this->addReference('Deuxieme ligne droite',$deuxieme_ligne_droite);
         $manager->persist($troisieme_ligne_gauche);
-        $this->addReference('troisieme_ligne_gauche',$troisieme_ligne_gauche);
+        $this->addReference('Troisième ligne gauche',$troisieme_ligne_gauche);
         $manager->persist($troisieme_ligne_droite);
-        $this->addReference('troisieme_ligne_droite',$troisieme_ligne_droite);
+        $this->addReference('Troisième ligne droite',$troisieme_ligne_droite);
         $manager->persist($troisieme_ligne_centre);
-        $this->addReference('troisieme_ligne_centre',$troisieme_ligne_centre);
+        $this->addReference('Troisième ligne centre',$troisieme_ligne_centre);
         $manager->persist($demi_melee);
-        $this->addReference('demi_melee',$demi_melee);
+        $this->addReference('Demi de mélée',$demi_melee);
         $manager->persist($demi_ouverture);
-        $this->addReference('demi_ouverture',$demi_ouverture);
+        $this->addReference('Demi d\'ouverture',$demi_ouverture);
         $manager->persist($trois_quart_aile_gauche);
-        $this->addReference('trois_quart_aile_gauche',$trois_quart_aile_gauche);
+        $this->addReference('Trois quart aile gauche',$trois_quart_aile_gauche);
         $manager->persist($trois_quart_centre_gauche);
-        $this->addReference('trois_quart_centre_gauche',$trois_quart_centre_gauche);
+        $this->addReference('Trois quart centre gauche',$trois_quart_centre_gauche);
         $manager->persist($trois_quart_centre_droit);
-        $this->addReference('trois_quart_centre_droit',$trois_quart_centre_droit);
+        $this->addReference('Trois quart centre droit',$trois_quart_centre_droit);
         $manager->persist($trois_quart_aile_droit);
-        $this->addReference('trois_quart_aile_droit',$trois_quart_aile_droit);
+        $this->addReference('Trois quart aile droit',$trois_quart_aile_droit);
         $manager->persist($arriere);
-        $this->addReference('arriere',$arriere);
+        $this->addReference('Arrière',$arriere);
         $manager->persist($remplacant1);
-        $this->addReference('remplacant1',$remplacant1);
+        $this->addReference('Remplacant1',$remplacant1);
         $manager->persist($remplacant2);
-        $this->addReference('remplacant2',$remplacant2);
+        $this->addReference('Remplacant2',$remplacant2);
         $manager->persist($remplacant3);
-        $this->addReference('remplacant3',$remplacant3);
+        $this->addReference('Remplacant3',$remplacant3);
         $manager->persist($remplacant4);
-        $this->addReference('remplacant4',$remplacant4);
+        $this->addReference('Remplacant4',$remplacant4);
         $manager->persist($remplacant5);
-        $this->addReference('remplacant5',$remplacant5);
+        $this->addReference('Remplacant5',$remplacant5);
         $manager->persist($remplacant6);
-        $this->addReference('remplacant6',$remplacant6);
+        $this->addReference('Remplacant6',$remplacant6);
         $manager->persist($remplacant7);
-        $this->addReference('remplacant7',$remplacant7);
+        $this->addReference('Remplacant7',$remplacant7);
 
         $manager->flush();
 
@@ -162,7 +162,7 @@ class LoadPositionData extends AbstractFixture implements OrderedFixtureInterfac
     {
         // the order in which fixtures will be loaded
         // the lower the number, the sooner that this fixture is loaded
-        return 6;
+        return 5;
     }
 
 }

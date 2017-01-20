@@ -90,54 +90,6 @@ class Joueur
     }
 
     /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Joueur
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     *
-     * @return Joueur
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    /**
-     * Get prenom
-     *
-     * @return string
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
-    }
-
-    /**
      * Set photo
      *
      * @param string $photo
@@ -168,31 +120,7 @@ class Joueur
     {
         $this->id = $id;
     }
-
-    /**
-     * Set numero
-     *
-     * @param string $numero
-     *
-     * @return Joueur
-     */
-    public function setNumero($numero)
-    {
-        $this->numero = $numero;
-
-        return $this;
-    }
-
-    /**
-     * Get numero
-     *
-     * @return string
-     */
-    public function getNumero()
-    {
-        return $this->numero;
-    }
-
+    
     /**
      * Set equipe
      *
@@ -216,30 +144,7 @@ class Joueur
     {
         return $this->equipe;
     }
-
-    /**
-     * Set position
-     *
-     * @param \FrontOfficeBundle\Entity\Position $position
-     *
-     * @return Joueur
-     */
-    public function setPosition(\FrontOfficeBundle\Entity\Position $position = null)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
-     *
-     * @return \FrontOfficeBundle\Entity\Position
-     */
-    public function getPosition()
-    {
-        return $this->position;
-    }
+    
     /**
      * Constructor
      */
@@ -270,5 +175,135 @@ class Joueur
     public function removePosition(\FrontOfficeBundle\Entity\Position $position)
     {
         $this->position->removeElement($position);
+    }
+
+    /**
+     * Set nomprenom
+     *
+     * @param string $nomprenom
+     *
+     * @return Joueur
+     */
+    public function setNomprenom($nomprenom)
+    {
+        $this->nomprenom = $nomprenom;
+
+        return $this;
+    }
+
+    /**
+     * Get nomprenom
+     *
+     * @return string
+     */
+    public function getNomprenom()
+    {
+        return $this->nomprenom;
+    }
+
+    /**
+     * Set age
+     *
+     * @param integer $age
+     *
+     * @return Joueur
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return integer
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * Set datenaissance
+     *
+     * @param string $datenaissance
+     *
+     * @return Joueur
+     */
+    public function setDatenaissance($datenaissance)
+    {
+        $this->datenaissance = $datenaissance;
+
+        return $this;
+    }
+
+    /**
+     * Get datenaissance
+     *
+     * @return string
+     */
+    public function getDatenaissance()
+    {
+        return $this->datenaissance;
+    }
+
+    /**
+     * Set poids
+     *
+     * @param integer $poids
+     *
+     * @return Joueur
+     */
+    public function setPoids($poids)
+    {
+        $this->poids = $poids;
+
+        return $this;
+    }
+
+    /**
+     * Get poids
+     *
+     * @return integer
+     */
+    public function getPoids()
+    {
+        return $this->poids;
+    }
+
+    /**
+     * Set taille
+     *
+     * @param integer $taille
+     *
+     * @return Joueur
+     */
+    public function setTaille($taille)
+    {
+        $this->taille = $taille;
+
+        return $this;
+    }
+
+    /**
+     * Get taille
+     *
+     * @return integer
+     */
+    public function getTaille()
+    {
+        return $this->taille;
+    }
+
+    /**
+     * Get position
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPosition()
+    {
+        return $this->position;
     }
 }

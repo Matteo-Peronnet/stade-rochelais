@@ -280,4 +280,28 @@ class Equipe implements \JsonSerializable
     {
         return $this->formation;
     }
+
+    /**
+     * Add formation
+     *
+     * @param \FrontOfficeBundle\Entity\Formation $formation
+     *
+     * @return Equipe
+     */
+    public function addFormation(\FrontOfficeBundle\Entity\Formation $formation)
+    {
+        $this->formation[] = $formation;
+
+        return $this;
+    }
+
+    /**
+     * Remove formation
+     *
+     * @param \FrontOfficeBundle\Entity\Formation $formation
+     */
+    public function removeFormation(\FrontOfficeBundle\Entity\Formation $formation)
+    {
+        $this->formation->removeElement($formation);
+    }
 }

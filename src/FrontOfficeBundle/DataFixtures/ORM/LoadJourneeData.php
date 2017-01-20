@@ -175,32 +175,32 @@ class LoadJourneeData extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($journee26);
         $manager->flush();
 
-        $this->addReference('journee', $journee);
-        $this->addReference('journee2', $journee2);
-        $this->addReference('journee3', $journee3);
-        $this->addReference('journee4', $journee4);
-        $this->addReference('journee5', $journee5);
-        $this->addReference('journee6', $journee6);
-        $this->addReference('journee7', $journee7);
-        $this->addReference('journee8', $journee8);
-        $this->addReference('journee9', $journee9);
-        $this->addReference('journee10', $journee10);
-        $this->addReference('journee11', $journee11);
-        $this->addReference('journee12', $journee12);
-        $this->addReference('journee13', $journee13);
-        $this->addReference('journee14', $journee14);
-        $this->addReference('journee15', $journee15);
-        $this->addReference('journee16', $journee16);
-        $this->addReference('journee17', $journee17);
-        $this->addReference('journee18', $journee18);
-        $this->addReference('journee19', $journee19);
-        $this->addReference('journee20', $journee20);
-        $this->addReference('journee21', $journee21);
-        $this->addReference('journee22', $journee22);
-        $this->addReference('journee23', $journee23);
-        $this->addReference('journee24', $journee24);
-        $this->addReference('journee25', $journee25);
-        $this->addReference('journee26', $journee26);
+        $this->addReference('Journée 1', $journee);
+        $this->addReference('Journée 2', $journee2);
+        $this->addReference('Journée 3', $journee3);
+        $this->addReference('Journée 4', $journee4);
+        $this->addReference('Journée 5', $journee5);
+        $this->addReference('Journée 6', $journee6);
+        $this->addReference('Journée 7', $journee7);
+        $this->addReference('Journée 8', $journee8);
+        $this->addReference('Journée 9', $journee9);
+        $this->addReference('Journée 10', $journee10);
+        $this->addReference('Journée 11', $journee11);
+        $this->addReference('Journée 12', $journee12);
+        $this->addReference('Journée 13', $journee13);
+        $this->addReference('Journée 14', $journee14);
+        $this->addReference('Journée 15', $journee15);
+        $this->addReference('Journée 16', $journee16);
+        $this->addReference('Journée 17', $journee17);
+        $this->addReference('Journée 18', $journee18);
+        $this->addReference('Journée 19', $journee19);
+        $this->addReference('Journée 20', $journee20);
+        $this->addReference('Journée 21', $journee21);
+        $this->addReference('Journée 22', $journee22);
+        $this->addReference('Journée 23', $journee23);
+        $this->addReference('Journée 24', $journee24);
+        $this->addReference('Journée 25', $journee25);
+        $this->addReference('Journée 26', $journee26);
     }
 
     public function getOrder()

@@ -24,22 +24,14 @@ class Arbitre
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nomprenom", type="string", length=255)
      */
-    private $nom;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="prenom", type="string", length=255)
-     */
-    private $prenom;
-
+    private $nomprenom;
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -47,50 +39,26 @@ class Arbitre
     }
 
     /**
-     * Set nom
+     * Set nomprenom
      *
-     * @param string $nom
+     * @param string $nomprenom
      *
      * @return Arbitre
      */
-    public function setNom($nom)
+    public function setNomprenom($nomprenom)
     {
-        $this->nom = $nom;
+        $this->nomprenom = $nomprenom;
 
         return $this;
     }
 
     /**
-     * Get nom
+     * Get nomprenom
      *
      * @return string
      */
-    public function getNom()
+    public function getNomprenom()
     {
-        return $this->nom;
-    }
-
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     *
-     * @return Arbitre
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    /**
-     * Get prenom
-     *
-     * @return string
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
+        return $this->nomprenom;
     }
 }

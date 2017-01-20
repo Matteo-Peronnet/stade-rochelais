@@ -22,20 +22,6 @@ class Formation
     private $id;
 
     /**
-     * @var Joueur
-     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Joueur", inversedBy="formation")
-     * @ORM\JoinColumn(name="joueur_id", referencedColumnName="id")
-     */
-    private $joueur;
-    
-    /**
-     * @var Position
-     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Position", inversedBy="formation")
-     * @ORM\JoinColumn(name="position_id", referencedColumnName="id")
-     */
-    private $position;
-
-    /**
      * @var Equipe
      * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Equipe", inversedBy="formation")
      * @ORM\JoinColumn(name="equipe_id", referencedColumnName="id")
@@ -43,17 +29,17 @@ class Formation
     private $equipe;
 
     /**
-     * @var Matchs
-     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Matchs", inversedBy="formation")
-     * @ORM\JoinColumn(name="matchs_id", referencedColumnName="id")
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
      */
-    private $matchs;
+    private $nom;
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -61,51 +47,27 @@ class Formation
     }
 
     /**
-     * Set joueur
+     * Set nom
      *
-     * @param \FrontOfficeBundle\Entity\Joueur $joueur
+     * @param string $nom
      *
      * @return Formation
      */
-    public function setJoueur(\FrontOfficeBundle\Entity\Joueur $joueur = null)
+    public function setNom($nom)
     {
-        $this->joueur = $joueur;
+        $this->nom = $nom;
 
         return $this;
     }
 
     /**
-     * Get joueur
+     * Get nom
      *
-     * @return \FrontOfficeBundle\Entity\Joueur
+     * @return string
      */
-    public function getJoueur()
+    public function getNom()
     {
-        return $this->joueur;
-    }
-
-    /**
-     * Set position
-     *
-     * @param \FrontOfficeBundle\Entity\Position $position
-     *
-     * @return Formation
-     */
-    public function setPosition(\FrontOfficeBundle\Entity\Position $position = null)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
-     *
-     * @return \FrontOfficeBundle\Entity\Position
-     */
-    public function getPosition()
-    {
-        return $this->position;
+        return $this->nom;
     }
 
     /**
@@ -130,29 +92,5 @@ class Formation
     public function getEquipe()
     {
         return $this->equipe;
-    }
-
-    /**
-     * Set matchs
-     *
-     * @param \FrontOfficeBundle\Entity\Matchs $matchs
-     *
-     * @return Formation
-     */
-    public function setMatchs(\FrontOfficeBundle\Entity\Matchs $matchs = null)
-    {
-        $this->matchs = $matchs;
-
-        return $this;
-    }
-
-    /**
-     * Get matchs
-     *
-     * @return \FrontOfficeBundle\Entity\Matchs
-     */
-    public function getMatchs()
-    {
-        return $this->matchs;
     }
 }

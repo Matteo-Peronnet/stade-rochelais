@@ -39,37 +39,37 @@ class LoadJoueurData extends AbstractFixture implements OrderedFixtureInterface
                 
                 switch($data[2]){
                     case "Pilier":
-                        $joueurL->addPosition($this->getReference("pilier_droit"));
-                        $joueurL->addPosition($this->getReference("pilier_gauche"));
+                        $joueurL->addPosition($this->getReference("Pilier droit"));
+                        $joueurL->addPosition($this->getReference("Pilier gauche"));
                         break;
                     case "Talonneur":
-                        $joueurL->addPosition($this->getReference("talonneur"));
+                        $joueurL->addPosition($this->getReference("Talonneur"));
                         break;
                     case "2ème ligne":
-                        $joueurL->addPosition($this->getReference("deuxieme_ligne_gauche"));
-                        $joueurL->addPosition($this->getReference("deuxieme_ligne_droite"));
+                        $joueurL->addPosition($this->getReference("Deuxieme ligne gauche"));
+                        $joueurL->addPosition($this->getReference("Deuxieme ligne droite"));
                         break;
                     case "3ème ligne":
-                        $joueurL->addPosition($this->getReference("troisieme_ligne_gauche"));
-                        $joueurL->addPosition($this->getReference("troisieme_ligne_droite"));
-                        $joueurL->addPosition($this->getReference("troisieme_ligne_centre"));
+                        $joueurL->addPosition($this->getReference("Troisième ligne gauche"));
+                        $joueurL->addPosition($this->getReference("Troisième ligne droite"));
+                        $joueurL->addPosition($this->getReference("Troisième ligne centre"));
                         break;
                     case "Mélée":
-                        $joueurL->addPosition($this->getReference("demi_melee"));
+                        $joueurL->addPosition($this->getReference("Demi de mélée"));
                         break;
                     case "Ouverture":
-                        $joueurL->addPosition($this->getReference("demi_ouverture"));
+                        $joueurL->addPosition($this->getReference("Demi d'ouverture"));
                         break;
                     case "Ailier":
-                        $joueurL->addPosition($this->getReference("trois_quart_aile_gauche"));
-                        $joueurL->addPosition($this->getReference("trois_quart_aile_droit"));
+                        $joueurL->addPosition($this->getReference("Trois quart aile gauche"));
+                        $joueurL->addPosition($this->getReference("Trois quart aile droit"));
                         break;
                     case "Centre":
-                        $joueurL->addPosition($this->getReference("trois_quart_centre_gauche"));
-                        $joueurL->addPosition($this->getReference("trois_quart_centre_droit"));
+                        $joueurL->addPosition($this->getReference("Trois quart centre gauche"));
+                        $joueurL->addPosition($this->getReference("Trois quart centre droit"));
                         break;
                     case "Arrière":
-                        $joueurL->addPosition($this->getReference("arriere"));
+                        $joueurL->addPosition($this->getReference("Arrière"));
                         break;
                 }
 
@@ -87,7 +87,7 @@ class LoadJoueurData extends AbstractFixture implements OrderedFixtureInterface
     {
         // the order in which fixtures will be loaded
         // the lower the number, the sooner that this fixture is loaded
-        return 7;
+        return 6;
     }
 
 }

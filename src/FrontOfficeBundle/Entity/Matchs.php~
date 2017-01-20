@@ -48,6 +48,18 @@ class Matchs
     private $equipeExterieur;
 
     /**
+     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Formation")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $formationDomicile;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Formation")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $formationExterieur;
+
+    /**
      * @var journee
      * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Journee", cascade={"persist"})
      * @ORM\JoinColumn(name="journee_id", referencedColumnName="id", nullable=false)
@@ -323,5 +335,39 @@ class Matchs
     public function getArbitre()
     {
         return $this->arbitre;
+    }
+
+    /**
+     * Add formation
+     *
+     * @param \FrontOfficeBundle\Entity\Formation $formation
+     *
+     * @return Matchs
+     */
+    public function addFormation(\FrontOfficeBundle\Entity\Formation $formation)
+    {
+        $this->formation[] = $formation;
+
+        return $this;
+    }
+
+    /**
+     * Remove formation
+     *
+     * @param \FrontOfficeBundle\Entity\Formation $formation
+     */
+    public function removeFormation(\FrontOfficeBundle\Entity\Formation $formation)
+    {
+        $this->formation->removeElement($formation);
+    }
+
+    /**
+     * Get formation
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFormation()
+    {
+        return $this->formation;
     }
 }

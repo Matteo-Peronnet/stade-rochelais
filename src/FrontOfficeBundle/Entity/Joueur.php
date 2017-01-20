@@ -296,4 +296,14 @@ class Joueur
     {
         return $this->taille;
     }
+
+    /**
+     * Get position
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
 }
