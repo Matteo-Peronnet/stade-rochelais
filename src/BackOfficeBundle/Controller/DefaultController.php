@@ -8,6 +8,8 @@ use FrontOfficeBundle\Form\EventListener\AddJournee;
 use FrontOfficeBundle\Entity\Matchs;
 use FrontOfficeBundle\Form\FindMatchByChampionnatJourneeType;
 use FrontOfficeBundle\Form\FindMatchType;
+use FrontOfficeBundle\Entity\Equipe;
+use FrontOfficeBundle\Form\AddEquipeType;
 use FrontOfficeBundle\Form\MatchsType;
 use FrontOfficeBundle\Form\AddMatchType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -137,9 +139,28 @@ class DefaultController extends Controller
     /**
      * @Route("/equipe")
      */
-    public function equipeAction(){
+    public function equipeAction(Request $request){
+        $equipe = new Equipe();
+        $repository = $this->getDoctrine()->getManager()->getRepository('FrontOfficeBundle:Equipe');
+        $listeEquipesTop14 = $repository->myfindAllEquipesDuTop14();
+        $form = $this->get('form.factory')->create(AddEquipeType::class,$equipe);
 
-        return $this->render('BackOfficeBundle:Default:equipe.html.twig');
+        if($request->isMethod('POST'))
+        {
+            $form->handleRequest($request);
+            if ($form->isValid())
+            {
+                var_dump($_FILES);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($equipe);
+                $em->flush();
+            }
+        }
+
+        return $this->render('BackOfficeBundle:Default:equipe.html.twig',array(
+            'form'=>$form->createView(),
+            'listeEquipesTop14' => $listeEquipesTop14
+        ));
     }
 
     /**

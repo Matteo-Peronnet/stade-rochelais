@@ -32,6 +32,7 @@ class Equipe implements \JsonSerializable
      * @var string
      *
      * @ORM\Column(name="Blason", type="string", length=255)
+     * @ORM\OneToOne(targetEntity="OC\FrontOfficeBundle\Entity\Equipe", cascade={"persist", "remove"})
      */
     private $blason;
 
@@ -41,6 +42,11 @@ class Equipe implements \JsonSerializable
      * @ORM\Column(name="Stade", type="string", length=255)
      */
     private $stade;
+
+    //On ajoute cet attribut pour y stocker le nom du fichier temporairement
+    private $tempFilename;
+
+    private $file;
 
     /**
      * @var championnat
@@ -61,6 +67,7 @@ class Equipe implements \JsonSerializable
     private $formation;
 
 
+
     /**
      * Get id
      *
@@ -69,6 +76,152 @@ class Equipe implements \JsonSerializable
     public function getId()
     {
         return $this->id;
+    }
+
+
+
+
+    /**
+     *
+     *
+     *
+     *
+     */
+    public function setFile(UploadedFile $file)
+    {
+        $this->file =$file;
+        //On vérifie si on avait deja un fichier pour cette entité
+        if(null !==$this->blason)
+        {
+            //On sauvegarde l'extension du fichier pour le supprimer plus tard
+            $this->tempFilename = $this->blason;
+
+            //On reinitialise les valeurs de l'attribut blason
+            $this->blason = null;
+        }
+    }
+
+    /**
+     *
+     *
+     *
+     *
+     */
+    public function preUpload()
+    {
+        // Si jamais il n'y a pas de fichier (champ facultatif)
+        if (null ==$this->file)
+        {
+            return;
+        }
+
+        // Le nom du fichier est son id, on doit juste stocker également son extension
+        // Pour faire propre, on devrait renommer cet attribut en "extention", plutot que "blason"
+        $this->blason = $this->file->guessExtention();
+
+    }
+
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function upload()
+    {
+        // Si jamais il n'y a pas de fichier (champ facultatif)
+        if (null ==$this->file)
+        {
+            return;
+        }
+
+        //Si on avait un ancien fichier, on le supprime
+        if (null !== $this->tempFilename)
+        {
+            $oldFile = $this->getUploadDir().'/'.$this->tempFilename;
+            if(file_exists($oldFile))
+            {
+                unlink($oldFile);
+            }
+        }
+
+        //On déplace le fichier envoyé dans le répertoire de notre choix
+        $this->file->move(
+            $this->getUploadDir(),
+            $this->blason
+        );
+    }
+
+
+
+
+    /**
+     * @ORM\PreRemove()
+     */
+    public function preRemoveUpload()
+    {
+       //On sauvegarde temporairement le nom du fichier
+        $this->tempFilename = $this->getUploadDir().'/'.$this->blason;
+    }
+
+    /**
+     * @ORM\PostRemove
+     */
+    public function removeUpload()
+    {
+        // En postRemove, on utilise notre nom sauvegardé
+        if(file_exists($this->tempFilename))
+        {
+            //On supprime le fichier
+            unlink($this->tempFilename);
+        }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTempFilename()
+    {
+        return $this->tempFilename;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param mixed $tempFilename
+     */
+    public function setTempFilename($tempFilename)
+    {
+        $this->tempFilename = $tempFilename;
+    }
+
+
+    public function getUploadDir()
+    {
+        return'img/Logo/';
+    }
+
+    /**
+     *
+     *
+     *
+     *
+     */
+    public function getWebPath()
+    {
+        return $this->getUploadDir().$this->getBlason();
     }
 
     /**
@@ -201,14 +354,6 @@ class Equipe implements \JsonSerializable
     }
 
     /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
      * Specify data which should be serialized to JSON
      * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
      * @return mixed data which can be serialized by <b>json_encode</b>,
@@ -224,6 +369,7 @@ class Equipe implements \JsonSerializable
     }
 
     /**
+
      * Add joueur
      *
      * @param \FrontOfficeBundle\Entity\Joueur $joueur
@@ -304,4 +450,5 @@ class Equipe implements \JsonSerializable
     {
         $this->formation->removeElement($formation);
     }
+
 }
