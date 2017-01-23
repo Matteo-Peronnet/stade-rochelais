@@ -66,6 +66,14 @@ class Equipe implements \JsonSerializable
      */
     private $formation;
 
+    /**
+     * @var couleur
+     *
+     * @ORM\Column(name="Couleur", type="string", length=7)
+     * @ORM\OneToOne(targetEntity="OC\FrontOfficeBundle\Entity\Equipe", cascade={"persist", "remove"})
+     */
+    private $couleur;
+
 
 
     /**
@@ -87,7 +95,7 @@ class Equipe implements \JsonSerializable
      *
      *
      */
-    public function setFile(UploadedFile $file)
+    /*public function setFile(UploadedFile $file)
     {
         $this->file =$file;
         //On vérifie si on avait deja un fichier pour cette entité
@@ -99,7 +107,7 @@ class Equipe implements \JsonSerializable
             //On reinitialise les valeurs de l'attribut blason
             $this->blason = null;
         }
-    }
+    }*/
 
     /**
      *
@@ -451,4 +459,28 @@ class Equipe implements \JsonSerializable
         $this->formation->removeElement($formation);
     }
 
+
+    /**
+     * Set couleur
+     *
+     * @param string $couleur
+     *
+     * @return Equipe
+     */
+    public function setCouleur($couleur)
+    {
+        $this->couleur = $couleur;
+
+        return $this;
+    }
+
+    /**
+     * Get couleur
+     *
+     * @return string
+     */
+    public function getCouleur()
+    {
+        return $this->couleur;
+    }
 }

@@ -34,24 +34,28 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
                 if(!empty($data[3])){
                     $logo = "web/img/Diffuseurs/".$data[3].".png";
                     
-                    $existeDeja = 0;
                     if(file_exists(utf8_decode($logo))){
+                        $existeDeja = 0; $i = 0;
+                        
                         foreach ($diffuseurs as $diffuseur){
-                            if($diffuseur == $data[3]){
-                                $existeDeja = 1;
+                            if($diffuseur->getNom() == $data[3]){
+                                $existeDeja = $i;
                             }
+                            $i++;
+                        }
+
+                        if($existeDeja==0){
+                            $diffuseur = new Diffuseur();
+                            $diffuseur->setNom($data[3]);
+                            $diffuseur->setLogo($logo);
+                            $manager->persist($diffuseur);
+                            $match->setDiffuseur($diffuseur);
+                            $diffuseurs[] = $diffuseur;
+                        }else{
+                            $match->setDiffuseur($diffuseurs[$existeDeja]);
                         }
                     }
-                    if($existeDeja==0){
-                        $diffuseur = new Diffuseur();
-                        $diffuseur->setNom($data[3]);
-                        $diffuseur->setLogo($logo);
-                        $manager->persist($diffuseur);
-                        $match->setDiffuseur($diffuseur);
-                        $diffuseurs[] = $data[3];
-                    }else{
-                        $match->setDiffuseur(NULL);
-                    }
+
                 }else{
                     $match->setDiffuseur(NULL);
                 }
@@ -64,20 +68,22 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
                 $match->setDate(new \DateTime($data[6]));
                 
                 if(!empty($data[7])){
-                    $existeDeja = 0;
+                    $existeDeja = 0; $i = 0;
+                    
                     foreach ($arbitres as $arbitre){
-                        if($arbitre == $data[7]){
-                            $existeDeja = 1;
+                        if($arbitre->getNomprenom() == $data[7]){
+                            $existeDeja = $i;
                         }
+                        $i++;
                     }
                     if($existeDeja==0){
                         $arbitre = new Arbitre();
                         $arbitre->setNomprenom($data[7]);
                         $manager->persist($arbitre);
                         $match->setArbitre($arbitre);
-                        $arbitres[] = $data[7];
+                        $arbitres[] = $arbitre;
                     }else{
-                        $match->setArbitre(NULL);
+                        $match->setArbitre($arbitres[$existeDeja]);
                     }
                 }else{
                     $match->setArbitre(NULL);

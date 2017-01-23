@@ -83,7 +83,7 @@ class Matchs
 
     /**
      * @var Arbitre
-     * @ORM\OneToOne(targetEntity="FrontOfficeBundle\Entity\Arbitre")
+     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Arbitre")
      */
     private $arbitre;
 
