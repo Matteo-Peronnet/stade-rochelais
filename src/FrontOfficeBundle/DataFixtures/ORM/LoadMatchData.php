@@ -35,7 +35,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
                     $logo = "web/img/Diffuseurs/".$data[3].".png";
                     
                     if(file_exists(utf8_decode($logo))){
-                        $existeDeja = 0; $i = 0;
+                        $existeDeja = -1; $i = 0;
                         
                         foreach ($diffuseurs as $diffuseur){
                             if($diffuseur->getNom() == $data[3]){
@@ -44,7 +44,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
                             $i++;
                         }
 
-                        if($existeDeja==0){
+                        if($existeDeja==(-1)){
                             $diffuseur = new Diffuseur();
                             $diffuseur->setNom($data[3]);
                             $diffuseur->setLogo(substr($logo,3));
@@ -68,7 +68,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
                 $match->setDate(new \DateTime($data[6]));
                 
                 if(!empty($data[7])){
-                    $existeDeja = 0; $i = 0;
+                    $existeDeja = -1; $i = 0;
                     
                     foreach ($arbitres as $arbitre){
                         if($arbitre->getNomprenom() == $data[7]){
@@ -76,7 +76,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
                         }
                         $i++;
                     }
-                    if($existeDeja==0){
+                    if($existeDeja==(-1)){
                         $arbitre = new Arbitre();
                         $arbitre->setNomprenom($data[7]);
                         $manager->persist($arbitre);

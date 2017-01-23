@@ -32,9 +32,9 @@ class LoadJoueurData extends AbstractFixture implements OrderedFixtureInterface
                 $photo = "web/img/Joueurs/".$data[0]."/".$data[1].".jpg";
 
                 if(file_exists(utf8_decode($photo))){
-                    $joueurL->setPhoto($photo);
+                    $joueurL->setPhoto(substr($photo,3));
                 }else{
-                    $joueurL->setPhoto("web/img/Joueurs/PhotoDefaut.png");
+                    $joueurL->setPhoto("img/Joueurs/PhotoDefaut.png");
                 }
                 
                 switch($data[2]){
