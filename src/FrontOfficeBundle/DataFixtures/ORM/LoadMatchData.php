@@ -47,7 +47,7 @@ class LoadMatchData extends AbstractFixture implements OrderedFixtureInterface
                         if($existeDeja==0){
                             $diffuseur = new Diffuseur();
                             $diffuseur->setNom($data[3]);
-                            $diffuseur->setLogo($logo);
+                            $diffuseur->setLogo(substr($logo,3));
                             $manager->persist($diffuseur);
                             $match->setDiffuseur($diffuseur);
                             $diffuseurs[] = $diffuseur;

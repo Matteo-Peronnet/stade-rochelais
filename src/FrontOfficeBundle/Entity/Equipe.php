@@ -69,7 +69,7 @@ class Equipe implements \JsonSerializable
     /**
      * @var couleur
      *
-     * @ORM\Column(name="Couleur", type="string", length=7)
+     * @ORM\Column(name="Couleur", type="string", length=8)
      * @ORM\OneToOne(targetEntity="OC\FrontOfficeBundle\Entity\Equipe", cascade={"persist", "remove"})
      */
     private $couleur;
