@@ -28,8 +28,9 @@
                                 <p class="resume-match-info">{{ matchs[0].scoreDomicile }}-{{ matchs[0].scoreExterieur }}</p>
                             {% endif %}
                             <div class="resume-match-diffuseurs">
-                                {% if matchs[0].diffuseur.logo != null %}
-                                    <img src="{{ asset(matchs[0].diffuseur.logo) }}">
+                                {% if matchs[0].diffuseur.logo is not defined or matchs[0].diffuseur.logo %}
+                                    {% else %}
+                                        <img src="{{ asset(matchs[0].diffuseur.logo) }}">
                                 {% endif %}
                             </div>
                             <a href="#"><span class="btn-header-detail btn-reserver">Réserver</span></a>
@@ -42,249 +43,1197 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 270">
                     <defs>
                         <style>
-                            .cls-1, .cls-8 {
+                            .cls-1, .cls-9 {
                                 fill: #019501;
                             }
-                            .cls-13, .cls-2, .cls-3 {
+
+                            .cls-2, .cls-4 {
                                 fill: #fff;
                             }
-                            .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+
+                            .cls-3 {
+                                opacity: 0.25;
+                            }
+
+                            .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
                                 stroke: #fff;
                                 stroke-miterlimit: 10;
                             }
-                            .cls-3, .cls-4, .cls-6, .cls-7, .cls-8 {
+
+                            .cls-10, .cls-12, .cls-13, .cls-24, .cls-26, .cls-4, .cls-43, .cls-44, .cls-5, .cls-7, .cls-8, .cls-9 {
                                 stroke-width: 2px;
                             }
-                            .cls-4, .cls-5, .cls-6, .cls-7 {
+
+                            .cls-11, .cls-25, .cls-42, .cls-5, .cls-6, .cls-7, .cls-8 {
                                 fill: none;
                             }
-                            .cls-5 {
+
+                            .cls-6 {
                                 stroke-width: 0.75px;
                             }
-                            .cls-6 {
+
+                            .cls-7 {
                                 stroke-dasharray: 5 5;
                             }
-                            .cls-7, .cls-8 {
+
+                            .cls-8, .cls-9 {
                                 stroke-dasharray: 5;
                             }
-                            .cls-9 {
-                                fill: #fecb00;
-                            }
+
                             .cls-10 {
-                                font-size: 10px;
+                                fill: #c1272d;
                             }
-                            .cls-10, .cls-13 {
+
+                            .cls-10, .cls-12, .cls-13, .cls-20, .cls-24, .cls-26 {
+                                stroke: #000;
+                            }
+
+                            .cls-11 {
+                                stroke: #c1272d;
+                            }
+
+                            .cls-12 {
+                                fill: red;
+                            }
+
+                            .cls-14, .cls-19, .cls-20, .cls-45 {
+                                font-size: 12px;
+                            }
+
+                            .cls-14 {
+                                fill: #f2f2f2;
+                            }
+
+                            .cls-14, .cls-15, .cls-20, .cls-27, .cls-45 {
                                 font-family: MyriadPro-Regular, Myriad Pro;
                             }
-                            .cls-11 {
+
+                            .cls-15 {
+                                font-size: 14px;
+                            }
+
+                            .cls-16 {
+                                letter-spacing: 0em;
+                            }
+
+                            .cls-17 {
+                                letter-spacing: 0em;
+                            }
+
+                            .cls-18 {
+                                letter-spacing: -0.01em;
+                            }
+
+                            .cls-21 {
+                                letter-spacing: 0em;
+                            }
+
+                            .cls-22 {
+                                letter-spacing: -0.01em;
+                            }
+
+                            .cls-23 {
+                                letter-spacing: 0em;
+                            }
+
+                            .cls-24 {
+                                fill: {{ matchs[0].equipeDomicile.couleur }};
+                            }
+
+                            .cls-25 {
+                                stroke: {{ matchs[0].equipeDomicile.couleur }};
+                            }
+
+                            .cls-26 {
+                                fill: {{ matchs[0].equipeDomicile.couleur }};
+                            }
+
+                            .cls-27 {
+                                font-size: 10px;
+                            }
+
+                            .cls-28 {
+                                letter-spacing: -0.1em;
+                            }
+
+                            .cls-29 {
                                 letter-spacing: -0.07em;
                             }
-                            .cls-12 {
-                                fill: #1d1d1b;
+
+                            .cls-30 {
+                                letter-spacing: -0.07em;
                             }
-                            .cls-13 {
-                                font-size: 12px;
+
+                            .cls-31 {
+                                letter-spacing: -0.05em;
+                            }
+
+                            .cls-32 {
+                                letter-spacing: -0.07em;
+                            }
+
+                            .cls-33 {
+                                letter-spacing: -0.06em;
+                            }
+
+                            .cls-34 {
+                                letter-spacing: -0.05em;
+                            }
+
+                            .cls-35 {
+                                letter-spacing: -0.08em;
+                            }
+
+                            .cls-36 {
+                                letter-spacing: -0.05em;
+                            }
+
+                            .cls-37 {
+                                letter-spacing: -0.06em;
+                            }
+
+                            .cls-38 {
+                                letter-spacing: -0.01em;
+                            }
+
+                            .cls-39 {
+                                letter-spacing: -0.05em;
+                            }
+
+                            .cls-40 {
+                                letter-spacing: 0em;
+                            }
+
+                            .cls-41, .cls-43 {
+                                fill: {{ matchs[0].equipeExterieur.couleur }};
+                            }
+
+                            .cls-42, .cls-43, .cls-44 {
+                                stroke: #000;
+                            }
+
+                            .cls-44 {
+                                fill: #1a1a1a;
                             }
                         </style>
                     </defs>
-                    <title>terrain</title>
+                    <title>terrain_v2</title>
                     <g id="Base">
                         <g>
-                            <rect class="cls-1" x="0.5" y="0.5" width="499" height="199"/>
-                            <path class="cls-2" d="M499,1V199H1V1H499m1-1H0V200H500V0Z"/>
+                            <rect class="cls-1" x="0.5" y="0.5" width="499" height="269"/>
+                            <path class="cls-2" d="M499,1V269H1V1H499m1-1H0V270H500V0Z"/>
                         </g>
+                        <image class="cls-3" height="357" transform="translate(41 41) scale(0.44)" xlink:href="{{ asset(matchs[0].equipeDomicile.blason) }}"/>
+                        <image class="cls-3" height="758" transform="translate(321 40) scale(0.21)" xlink:href="{{ asset(matchs[0].equipeExterieur.blason) }}"/>
+                        <line class="cls-4" x1="39" y1="40" x2="460" y2="40"/>
+                        <line class="cls-5" x1="40" y1="201" x2="40" y2="41"/>
+                        <line class="cls-5" x1="460" y1="200" x2="40" y2="200"/>
+                        <line class="cls-5" x1="460" y1="201" x2="460" y2="39"/>
+                        <line class="cls-5" x1="80" y1="40" x2="80" y2="200"/>
+                        <line class="cls-5" x1="420" y1="40" x2="420" y2="200"/>
+                        <line class="cls-6" x1="420" y1="110" x2="440" y2="102"/>
+                        <line class="cls-6" x1="420" y1="130" x2="440" y2="138"/>
+                        <line class="cls-6" x1="430" y1="106" x2="430" y2="134"/>
+                        <line class="cls-6" x1="80" y1="130" x2="60" y2="138"/>
+                        <line class="cls-6" x1="80" y1="110" x2="60" y2="102"/>
+                        <line class="cls-6" x1="70" y1="106" x2="70" y2="134"/>
+                        <line class="cls-5" x1="250" y1="40" x2="250" y2="200"/>
+                        <line class="cls-5" x1="145" y1="40" x2="145" y2="200"/>
+                        <line class="cls-5" x1="365" y1="40" x2="365" y2="200"/>
                         <g>
-                            <rect class="cls-1" x="0.5" y="0.5" width="499" height="199"/>
-                            <path class="cls-2" d="M499,1V199H1V1H499m1-1H0V200H500V0Z"/>
+                            <line class="cls-5" x1="400" y1="40" x2="400" y2="42.5"/>
+                            <line class="cls-7" x1="400" y1="47.5" x2="400" y2="195"/>
+                            <line class="cls-5" x1="400" y1="197.5" x2="400" y2="200"/>
                         </g>
-                        <line class="cls-3" x1="39" y1="20" x2="460" y2="20"/>
-                        <line class="cls-4" x1="40" y1="181" x2="40" y2="21"/>
-                        <line class="cls-4" x1="460" y1="180" x2="40" y2="180"/>
-                        <line class="cls-4" x1="460" y1="181" x2="460" y2="19"/>
-                        <line class="cls-4" x1="80" y1="20" x2="80" y2="180"/>
-                        <line class="cls-4" x1="420" y1="20" x2="420" y2="180"/>
-                        <line class="cls-5" x1="420" y1="90" x2="440" y2="82"/>
-                        <line class="cls-5" x1="420" y1="110" x2="440" y2="118"/>
-                        <line class="cls-5" x1="430" y1="86" x2="430" y2="114"/>
-                        <line class="cls-5" x1="80" y1="110" x2="60" y2="118"/>
-                        <line class="cls-5" x1="80" y1="90" x2="60" y2="82"/>
-                        <line class="cls-5" x1="70" y1="86" x2="70" y2="114"/>
-                        <line class="cls-4" x1="250" y1="20" x2="250" y2="180"/>
-                        <line class="cls-4" x1="145" y1="20" x2="145" y2="180"/>
-                        <line class="cls-4" x1="365" y1="20" x2="365" y2="180"/>
-                        <g>
-                            <line class="cls-4" x1="400" y1="20" x2="400" y2="22.5"/>
-                            <line class="cls-6" x1="400" y1="27.5" x2="400" y2="175"/>
-                            <line class="cls-4" x1="400" y1="177.5" x2="400" y2="180"/>
+                        <line class="cls-8" x1="100" y1="42" x2="100" y2="202"/>
+                        <line class="cls-9" x1="220.5" y1="41.5" x2="220.5" y2="201.5"/>
+                        <line class="cls-9" x1="280.5" y1="42.5" x2="280.5" y2="202.5"/>
+                        <g id="Calque_47" data-name="Calque 47" data-toggle="popover-arbitre" data-placement='left' data-container="body" title="{% if(matchs[0].arbitre.nomprenom  is not defined or matchs[0].arbitre.nomprenom is null) %}Non déterminé{% else %}{{ matchs[0].arbitre.nomprenom }}{% endif %}">
+                            <g id="layer16">
+                                <path id="path3390" class="cls-10" d="M247.82,219.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,247.82,219.91Z"/>
+                            </g>
+                            <g id="layer6">
+                                <path id="path2509" class="cls-11" d="M248.28,221.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C245.15,224.76,245.83,222.65,248.28,221.4Z"/>
+                            </g>
+                            <g id="layer4">
+                                <path id="path2503" class="cls-12" d="M247.39,221.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C240.86,223,244.21,222.18,247.39,221.06Z"/>
+                            </g>
+                            <g id="layer5">
+                                <path id="path2506" class="cls-12" d="M252.12,221a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1">
+                                <path id="path2500" class="cls-13" d="M247.82,219.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-14" transform="translate(246 236.33)">A</text>
                         </g>
-                        <line class="cls-7" x1="100" y1="20" x2="100" y2="180"/>
-                        <line class="cls-8" x1="220.5" y1="19.5" x2="220.5" y2="179.5"/>
-                        <line class="cls-8" x1="280.5" y1="19.5" x2="280.5" y2="179.5"/>
+
+                        <text class="cls-15" text-anchor="middle" transform="translate(250 23)"><tspan class="cls-16">Stade {{ matchs[0].equipeDomicile.stade }}</tspan></text>
+                        <text class="cls-20" transform="translate(41 33)"><tspan class="cls-21">{{ matchs[0].equipeDomicile.nom }}</tspan></text>
+                        <text class="cls-20" text-anchor="end" transform="translate(460 33)"><tspan class="cls-21">{{ matchs[0].equipeExterieur.nom }}</tspan></text>
                     </g>
                     <g id="equipeDomicile">
-                        {% for leJoueur in matchs[0].equipeDomicile.joueur %}
-                            {% if(leJoueur.position.numero==15) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M100,109.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,100,109.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="100" y="103">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==14) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M130,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,130,169.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="130" y="163">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==13) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M130,139.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,130,139.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="130" y="133">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==12) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M130,79.88A9.88,9.88,0,1,1,139.88,70,9.89,9.89,0,0,1,130,79.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="130" y="73">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==11) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M130,49.88A9.88,9.88,0,1,1,139.88,40,9.89,9.89,0,0,1,130,49.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="130" y="43">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==10) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M160,74.88A9.88,9.88,0,1,1,169.88,65,9.89,9.89,0,0,1,160,74.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="160" y="68">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==9) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M160,139.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,160,139.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="160" y="133">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==8) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M190,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,190,169.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="190" y="163">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==7) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M190,108.88A9.88,9.88,0,1,1,199.88,99,9.89,9.89,0,0,1,190,108.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="190" y="102">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==6) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M210,139.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,210,139.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="210" y="133">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==5) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M190,49.88A9.88,9.88,0,1,1,199.88,40,9.89,9.89,0,0,1,190,49.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="190" y="43">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==4) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M210,74.88A9.88,9.88,0,1,1,219.88,65,9.89,9.89,0,0,1,210,74.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="210" y="68">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==3) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M235,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,235,169.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="235" y="163">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==2) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M235,109.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,235,109.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="235" y="103">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                            {% if(leJoueur.position.numero==1) %}
-                                <g data-toggle="popover" data-placement='left' data-container="body" title="{{ leJoueur.nom }} {{ leJoueur.prenom }}" data-content="<img src={{ asset(leJoueur.photo) }}>">
-                                    <path class="cls-9" d="M235,49.88A9.88,9.88,0,1,1,244.88,40,9.89,9.89,0,0,1,235,49.88Z"/>
-                                    <text class="cls-10" text-anchor="middle" x="235" y="43">{{ leJoueur.numero }}</text>
-                                </g>
-                            {% endif %}
-                        {% endfor %}
+                        {% for joueurDomicile in  joueurDomicile %}
+                            {% if(joueurDomicile.position.numero == 11) %}
+                        <g id="Calque_9" data-name="Calque 9" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">
+                            <g id="layer16-2" data-name="layer16">
+                                <path id="path3390-2" data-name="path3390" class="cls-24" d="M128.82,48.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L143,53.11A41.1,41.1,0,0,0,133.08,50l-.49-1.08A7.45,7.45,0,0,1,128.82,48.91Z"/>
+                            </g>
+                            <g id="layer6-2" data-name="layer6">
+                                <path id="path2509-2" data-name="path2509" class="cls-25" d="M129.28,50.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C126.15,53.76,126.83,51.65,129.28,50.4Z"/>
+                            </g>
+                            <g id="layer4-2" data-name="layer4">
+                                <path id="path2503-2" data-name="path2503" class="cls-26" d="M128.39,50.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C121.86,52,125.21,51.18,128.39,50.06Z"/>
+                            </g>
+                            <g id="layer5-2" data-name="layer5">
+                                <path id="path2506-2" data-name="path2506" class="cls-26" d="M133.12,50a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-2" data-name="layer1">
+                                <path id="path2500-2" data-name="path2500" class="cls-13" d="M128.82,48.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-27" transform="translate(126.38 63.1)"><tspan class="cls-28">1</tspan><tspan x="4.12" y="0">1</tspan></text>
+                        </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 15) %}
+                        <g id="Calque_8" data-name="Calque 8"  data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-3" data-name="layer16">
+                                <path id="path3390-3" data-name="path3390" class="cls-24" d="M97.82,107.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,97.82,107.91Z"/>
+                            </g>
+                            <g id="layer6-3" data-name="layer6">
+                                <path id="path2509-3" data-name="path2509" class="cls-25" d="M98.28,109.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C95.15,112.76,95.83,110.65,98.28,109.4Z"/>
+                            </g>
+                            <g id="layer4-3" data-name="layer4">
+                                <path id="path2503-3" data-name="path2503" class="cls-26" d="M97.39,109.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C90.86,111,94.21,110.18,97.39,109.06Z"/>
+                            </g>
+                            <g id="layer5-3" data-name="layer5">
+                                <path id="path2506-3" data-name="path2506" class="cls-26" d="M102.12,109a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-3" data-name="layer1">
+                                <path id="path2500-3" data-name="path2500" class="cls-13" d="M97.82,107.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-27" transform="translate(95.2 123.1)"><tspan class="cls-29">1</tspan><tspan x="4.47" y="0">5</tspan></text>
+                        </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 12) %}
+                        <g id="Calque_5" data-name="Calque 5"  data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-4" data-name="layer16">
+                                <path id="path3390-4" data-name="path3390" class="cls-24" d="M127.82,77.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L142,82.11A41.1,41.1,0,0,0,132.08,79l-.49-1.08A7.45,7.45,0,0,1,127.82,77.91Z"/>
+                            </g>
+                            <g id="layer6-4" data-name="layer6">
+                                <path id="path2509-4" data-name="path2509" class="cls-25" d="M128.28,79.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C125.15,82.76,125.83,80.65,128.28,79.4Z"/>
+                            </g>
+                            <g id="layer4-4" data-name="layer4">
+                                <path id="path2503-4" data-name="path2503" class="cls-26" d="M127.39,79.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C120.86,81,124.21,80.18,127.39,79.06Z"/>
+                            </g>
+                            <g id="layer5-4" data-name="layer5">
+                                <path id="path2506-4" data-name="path2506" class="cls-26" d="M132.12,79a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-4" data-name="layer1">
+                                <path id="path2500-4" data-name="path2500" class="cls-13" d="M127.82,77.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-27" transform="translate(125.23 93.1)"><tspan class="cls-30">1</tspan><tspan x="4.4" y="0">2</tspan></text>
+                        </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 9) %}
+                        <g id="Calque_10" data-name="Calque 10" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-5" data-name="layer16">
+                                <path id="path3390-5" data-name="path3390" class="cls-24" d="M157.82,72.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L172,77.11A41.1,41.1,0,0,0,162.08,74l-.49-1.08A7.45,7.45,0,0,1,157.82,72.91Z"/>
+                            </g>
+                            <g id="layer6-5" data-name="layer6">
+                                <path id="path2509-5" data-name="path2509" class="cls-25" d="M158.28,74.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C155.15,77.76,155.83,75.65,158.28,74.4Z"/>
+                            </g>
+                            <g id="layer4-5" data-name="layer4">
+                                <path id="path2503-5" data-name="path2503" class="cls-26" d="M157.39,74.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C150.86,76,154.21,75.18,157.39,74.06Z"/>
+                            </g>
+                            <g id="layer5-5" data-name="layer5">
+                                <path id="path2506-5" data-name="path2506" class="cls-26" d="M162.12,74a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-5" data-name="layer1">
+                                <path id="path2500-5" data-name="path2500" class="cls-13" d="M157.82,72.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-27" transform="translate(157.44 88.1)">9</text>
+                        </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 4) %}
+                        <g id="Calque_17" data-name="Calque 17" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-6" data-name="layer16">
+                                <path id="path3390-6" data-name="path3390" class="cls-24" d="M207.82,72.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L222,77.11A41.1,41.1,0,0,0,212.08,74l-.49-1.08A7.45,7.45,0,0,1,207.82,72.91Z"/>
+                            </g>
+                            <g id="layer6-6" data-name="layer6">
+                                <path id="path2509-6" data-name="path2509" class="cls-25" d="M208.28,74.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C205.15,77.76,205.83,75.65,208.28,74.4Z"/>
+                            </g>
+                            <g id="layer4-6" data-name="layer4">
+                                <path id="path2503-6" data-name="path2503" class="cls-26" d="M207.39,74.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C200.86,76,204.21,75.18,207.39,74.06Z"/>
+                            </g>
+                            <g id="layer5-6" data-name="layer5">
+                                <path id="path2506-6" data-name="path2506" class="cls-26" d="M212.12,74a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-6" data-name="layer1">
+                                <path id="path2500-6" data-name="path2500" class="cls-13" d="M207.82,72.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-27" transform="translate(207.44 88.1)">4</text>
+                        </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 6) %}
+                        <g id="Calque_18" data-name="Calque 18" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-7" data-name="layer16">
+                                <path id="path3390-7" data-name="path3390" class="cls-24" d="M187.82,47.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L202,52.11A41.1,41.1,0,0,0,192.08,49l-.49-1.08A7.45,7.45,0,0,1,187.82,47.91Z"/>
+                            </g>
+                            <g id="layer6-7" data-name="layer6">
+                                <path id="path2509-7" data-name="path2509" class="cls-25" d="M188.28,49.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C185.15,52.76,185.83,50.65,188.28,49.4Z"/>
+                            </g>
+                            <g id="layer4-7" data-name="layer4">
+                                <path id="path2503-7" data-name="path2503" class="cls-26" d="M187.39,49.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C180.86,51,184.21,50.18,187.39,49.06Z"/>
+                            </g>
+                            <g id="layer5-7" data-name="layer5">
+                                <path id="path2506-7" data-name="path2506" class="cls-26" d="M192.12,49a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-7" data-name="layer1">
+                                <path id="path2500-7" data-name="path2500" class="cls-13" d="M187.82,47.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-27" transform="translate(187.44 63.1)">6</text>
+                        </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 1) %}
+                       <g id="Calque_19" data-name="Calque 19" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-8" data-name="layer16">
+                                <path id="path3390-8" data-name="path3390" class="cls-24" d="M232.82,47.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L247,52.11A41.1,41.1,0,0,0,237.08,49l-.49-1.08A7.45,7.45,0,0,1,232.82,47.91Z"/>
+                            </g>
+                            <g id="layer6-8" data-name="layer6">
+                                <path id="path2509-8" data-name="path2509" class="cls-25" d="M233.28,49.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C230.15,52.76,230.83,50.65,233.28,49.4Z"/>
+                            </g>
+                            <g id="layer4-8" data-name="layer4">
+                                <path id="path2503-8" data-name="path2503" class="cls-26" d="M232.39,49.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C225.86,51,229.21,50.18,232.39,49.06Z"/>
+                            </g>
+                            <g id="layer5-8" data-name="layer5">
+                                <path id="path2506-8" data-name="path2506" class="cls-26" d="M237.12,49a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-8" data-name="layer1">
+                                <path id="path2500-8" data-name="path2500" class="cls-13" d="M232.82,47.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-27" transform="translate(232.44 63.1)">1</text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 2) %}
+                        <g id="Calque_16" data-name="Calque 16" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-9" data-name="layer16">
+                                <path id="path3390-9" data-name="path3390" class="cls-24" d="M232.82,107.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,232.82,107.91Z"/>
+                            </g>
+                            <g id="layer6-9" data-name="layer6">
+                                <path id="path2509-9" data-name="path2509" class="cls-25" d="M233.28,109.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C230.15,112.76,230.83,110.65,233.28,109.4Z"/>
+                            </g>
+                            <g id="layer4-9" data-name="layer4">
+                                <path id="path2503-9" data-name="path2503" class="cls-26" d="M232.39,109.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C225.86,111,229.21,110.18,232.39,109.06Z"/>
+                            </g>
+                            <g id="layer5-9" data-name="layer5">
+                                <path id="path2506-9" data-name="path2506" class="cls-26" d="M237.12,109a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-9" data-name="layer1">
+                                <path id="path2500-9" data-name="path2500" class="cls-13" d="M232.82,107.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-27" transform="translate(232.44 123.1)">2</text>
+                        </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 8) %}
+                       <g id="Calque_13" data-name="Calque 13" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-10" data-name="layer16">
+                                <path id="path3390-10" data-name="path3390" class="cls-24" d="M187.82,106.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,187.82,106.91Z"/>
+                            </g>
+                            <g id="layer6-10" data-name="layer6">
+                                <path id="path2509-10" data-name="path2509" class="cls-25" d="M188.28,108.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C185.15,111.76,185.83,109.65,188.28,108.4Z"/>
+                            </g>
+                            <g id="layer4-10" data-name="layer4">
+                                <path id="path2503-10" data-name="path2503" class="cls-26" d="M187.39,108.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C180.86,110,184.21,109.18,187.39,108.06Z"/>
+                            </g>
+                            <g id="layer5-10" data-name="layer5">
+                                <path id="path2506-10" data-name="path2506" class="cls-26" d="M192.12,108a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-10" data-name="layer1">
+                                <path id="path2500-10" data-name="path2500" class="cls-13" d="M187.82,106.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-27" transform="translate(187.44 122.1)">8</text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 10) %}
+                         <g id="Calque_11" data-name="Calque 11" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-11" data-name="layer16">
+                                <path id="path3390-11" data-name="path3390" class="cls-24" d="M157.82,136.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,157.82,136.91Z"/>
+                            </g>
+                            <g id="layer6-11" data-name="layer6">
+                                <path id="path2509-11" data-name="path2509" class="cls-25" d="M158.28,138.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C155.15,141.76,155.83,139.65,158.28,138.4Z"/>
+                            </g>
+                            <g id="layer4-11" data-name="layer4">
+                                <path id="path2503-11" data-name="path2503" class="cls-26" d="M157.39,138.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C150.86,140,154.21,139.18,157.39,138.06Z"/>
+                            </g>
+                            <g id="layer5-11" data-name="layer5">
+                                <path id="path2506-11" data-name="path2506" class="cls-26" d="M162.12,138a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-11" data-name="layer1">
+                                <path id="path2500-11" data-name="path2500" class="cls-13" d="M157.82,136.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                             <text class="cls-27" transform="translate(155.1 153.1)"><tspan class="cls-31">1</tspan><tspan x="4.67" y="0">0</tspan></text>
+                         </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 13) %}
+                       <g id="Calque_6" data-name="Calque 6" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-12" data-name="layer16">
+                                <path id="path3390-12" data-name="path3390" class="cls-24" d="M128.82,137.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,128.82,137.91Z"/>
+                            </g>
+                            <g id="layer6-12" data-name="layer6">
+                                <path id="path2509-12" data-name="path2509" class="cls-25" d="M129.28,139.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C126.15,142.76,126.83,140.65,129.28,139.4Z"/>
+                            </g>
+                            <g id="layer4-12" data-name="layer4">
+                                <path id="path2503-12" data-name="path2503" class="cls-26" d="M128.39,139.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C121.86,141,125.21,140.18,128.39,139.06Z"/>
+                            </g>
+                            <g id="layer5-12" data-name="layer5">
+                                <path id="path2506-12" data-name="path2506" class="cls-26" d="M133.12,139a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-12" data-name="layer1">
+                                <path id="path2500-12" data-name="path2500" class="cls-13" d="M128.82,137.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-27" transform="translate(125.21 153.1)"><tspan class="cls-32">1</tspan><tspan x="4.44" y="0">3</tspan></text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 14) %}
+                      <g id="Calque_7" data-name="Calque 7" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-13" data-name="layer16">
+                                <path id="path3390-13" data-name="path3390" class="cls-24" d="M127.82,167.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,127.82,167.91Z"/>
+                            </g>
+                            <g id="layer6-13" data-name="layer6">
+                                <path id="path2509-13" data-name="path2509" class="cls-25" d="M128.28,169.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C125.15,172.76,125.83,170.65,128.28,169.4Z"/>
+                            </g>
+                            <g id="layer4-13" data-name="layer4">
+                                <path id="path2503-13" data-name="path2503" class="cls-26" d="M127.39,169.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C120.86,171,124.21,170.18,127.39,169.06Z"/>
+                            </g>
+                            <g id="layer5-13" data-name="layer5">
+                                <path id="path2506-13" data-name="path2506" class="cls-26" d="M132.12,169a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-13" data-name="layer1">
+                                <path id="path2500-13" data-name="path2500" class="cls-13" d="M127.82,167.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                          <text class="cls-27" transform="translate(125.16 183.1)"><tspan class="cls-33">1</tspan><tspan x="4.55" y="0">4</tspan></text>
+                      </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 7) %}
+                       <g id="Calque_12" data-name="Calque 12" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-14" data-name="layer16">
+                                <path id="path3390-14" data-name="path3390" class="cls-24" d="M187.82,166.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,187.82,166.91Z"/>
+                            </g>
+                            <g id="layer6-14" data-name="layer6">
+                                <path id="path2509-14" data-name="path2509" class="cls-25" d="M188.28,168.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C185.15,171.76,185.83,169.65,188.28,168.4Z"/>
+                            </g>
+                            <g id="layer4-14" data-name="layer4">
+                                <path id="path2503-14" data-name="path2503" class="cls-26" d="M187.39,168.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C180.86,170,184.21,169.18,187.39,168.06Z"/>
+                            </g>
+                            <g id="layer5-14" data-name="layer5">
+                                <path id="path2506-14" data-name="path2506" class="cls-26" d="M192.12,168a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-14" data-name="layer1">
+                                <path id="path2500-14" data-name="path2500" class="cls-13" d="M187.82,166.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-27" transform="translate(187.44 183.1)">7</text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 3) %}
+                       <g id="Calque_15" data-name="Calque 15" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-15" data-name="layer16">
+                                <path id="path3390-15" data-name="path3390" class="cls-24" d="M232.82,167.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,232.82,167.91Z"/>
+                            </g>
+                            <g id="layer6-15" data-name="layer6">
+                                <path id="path2509-15" data-name="path2509" class="cls-25" d="M233.28,169.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C230.15,172.76,230.83,170.65,233.28,169.4Z"/>
+                            </g>
+                            <g id="layer4-15" data-name="layer4">
+                                <path id="path2503-15" data-name="path2503" class="cls-26" d="M232.39,169.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C225.86,171,229.21,170.18,232.39,169.06Z"/>
+                            </g>
+                            <g id="layer5-15" data-name="layer5">
+                                <path id="path2506-15" data-name="path2506" class="cls-26" d="M237.12,169a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-15" data-name="layer1">
+                                <path id="path2500-15" data-name="path2500" class="cls-13" d="M232.82,167.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-27" transform="translate(232.44 183.1)">3</text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 5) %}
+                       <g id="Calque_14" data-name="Calque 14" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-16" data-name="layer16">
+                                <path id="path3390-16" data-name="path3390" class="cls-24" d="M207.82,138.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,207.82,138.91Z"/>
+                            </g>
+                            <g id="layer6-16" data-name="layer6">
+                                <path id="path2509-16" data-name="path2509" class="cls-25" d="M208.28,140.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C205.15,143.76,205.83,141.65,208.28,140.4Z"/>
+                            </g>
+                            <g id="layer4-16" data-name="layer4">
+                                <path id="path2503-16" data-name="path2503" class="cls-26" d="M207.39,140.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C200.86,142,204.21,141.18,207.39,140.06Z"/>
+                            </g>
+                            <g id="layer5-16" data-name="layer5">
+                                <path id="path2506-16" data-name="path2506" class="cls-26" d="M212.12,140a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-16" data-name="layer1">
+                                <path id="path2500-16" data-name="path2500" class="cls-13" d="M207.82,138.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-27" transform="translate(207.44 153.1)">5</text>
+                       </g>
+                        {% endif %}
+                        <g id="Calque_41" data-name="Calque 41">
+                            <g id="layer16-17" data-name="layer16">
+                                <path id="path3390-17" data-name="path3390" class="cls-24" d="M191.82,209.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,191.82,209.91Z"/>
+                            </g>
+                            <g id="layer6-17" data-name="layer6">
+                                <path id="path2509-17" data-name="path2509" class="cls-25" d="M192.28,211.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C189.15,214.76,189.83,212.65,192.28,211.4Z"/>
+                            </g>
+                            <g id="layer4-17" data-name="layer4">
+                                <path id="path2503-17" data-name="path2503" class="cls-26" d="M191.39,211.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C184.86,213,188.21,212.18,191.39,211.06Z"/>
+                            </g>
+                            <g id="layer5-17" data-name="layer5">
+                                <path id="path2506-17" data-name="path2506" class="cls-26" d="M196.12,211a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-17" data-name="layer1">
+                                <path id="path2500-17" data-name="path2500" class="cls-13" d="M191.82,209.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-27" transform="translate(191.54 225.1)">E</text>
 
-                    </g>
-                    <g id="equipeExterieur" >
-                        <g data-toggle="popover" data-placement='right' data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M400,109.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,400,109.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="400" y="103">12</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M380,49.88A9.88,9.88,0,1,1,389.88,40,9.89,9.89,0,0,1,380,49.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="380" y="43">12</text>
+                        {% if(joueurDomicile.position.numero == 16) %}
+                       <g id="Calque_42" data-name="Calque 42" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-18" data-name="layer16">
+                                <path id="path3390-18" data-name="path3390" class="cls-24" d="M161.82,209.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,161.82,209.91Z"/>
+                            </g>
+                            <g id="layer6-18" data-name="layer6">
+                                <path id="path2509-18" data-name="path2509" class="cls-25" d="M162.28,211.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C159.15,214.76,159.83,212.65,162.28,211.4Z"/>
+                            </g>
+                            <g id="layer4-18" data-name="layer4">
+                                <path id="path2503-18" data-name="path2503" class="cls-26" d="M161.39,211.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C154.86,213,158.21,212.18,161.39,211.06Z"/>
+                            </g>
+                            <g id="layer5-18" data-name="layer5">
+                                <path id="path2506-18" data-name="path2506" class="cls-26" d="M166.12,211a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-18" data-name="layer1">
+                                <path id="path2500-18" data-name="path2500" class="cls-13" d="M161.82,209.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-27" transform="translate(159.12 225.1)"><tspan class="cls-34">1</tspan><tspan x="4.63" y="0">6</tspan></text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 17) %}
+                       <g id="Calque_43" data-name="Calque 43" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-19" data-name="layer16">
+                                <path id="path3390-19" data-name="path3390" class="cls-24" d="M131.82,209.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,131.82,209.91Z"/>
+                            </g>
+                            <g id="layer6-19" data-name="layer6">
+                                <path id="path2509-19" data-name="path2509" class="cls-25" d="M132.28,211.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C129.15,214.76,129.83,212.65,132.28,211.4Z"/>
+                            </g>
+                            <g id="layer4-19" data-name="layer4">
+                                <path id="path2503-19" data-name="path2503" class="cls-26" d="M131.39,211.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C124.86,213,128.21,212.18,131.39,211.06Z"/>
+                            </g>
+                            <g id="layer5-19" data-name="layer5">
+                                <path id="path2506-19" data-name="path2506" class="cls-26" d="M136.12,211a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-19" data-name="layer1">
+                                <path id="path2500-19" data-name="path2500" class="cls-13" d="M131.82,209.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-27" transform="translate(129.26 225.1)"><tspan class="cls-35">1</tspan><tspan x="4.35" y="0">7</tspan></text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 18) %}
+                       <g id="Calque_44" data-name="Calque 44" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-20" data-name="layer16">
+                                <path id="path3390-20" data-name="path3390" class="cls-24" d="M101.82,209.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,101.82,209.91Z"/>
+                            </g>
+                            <g id="layer6-20" data-name="layer6">
+                                <path id="path2509-20" data-name="path2509" class="cls-25" d="M102.28,211.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C99.15,214.76,99.83,212.65,102.28,211.4Z"/>
+                            </g>
+                            <g id="layer4-20" data-name="layer4">
+                                <path id="path2503-20" data-name="path2503" class="cls-26" d="M101.39,211.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C94.86,213,98.21,212.18,101.39,211.06Z"/>
+                            </g>
+                            <g id="layer5-20" data-name="layer5">
+                                <path id="path2506-20" data-name="path2506" class="cls-26" d="M106.12,211a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-20" data-name="layer1">
+                                <path id="path2500-20" data-name="path2500" class="cls-13" d="M101.82,209.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-27" transform="translate(99.13 225.1)"><tspan class="cls-36">1</tspan><tspan x="4.61" y="0">8</tspan></text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 19) %}
+                       <g id="Calque_45" data-name="Calque 45" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-21" data-name="layer16">
+                                <path id="path3390-21" data-name="path3390" class="cls-24" d="M191.82,239.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,191.82,239.91Z"/>
+                            </g>
+                            <g id="layer6-21" data-name="layer6">
+                                <path id="path2509-21" data-name="path2509" class="cls-25" d="M192.28,241.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C189.15,244.76,189.83,242.65,192.28,241.4Z"/>
+                            </g>
+                            <g id="layer4-21" data-name="layer4">
+                                <path id="path2503-21" data-name="path2503" class="cls-26" d="M191.39,241.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C184.86,243,188.21,242.18,191.39,241.06Z"/>
+                            </g>
+                            <g id="layer5-21" data-name="layer5">
+                                <path id="path2506-21" data-name="path2506" class="cls-26" d="M196.12,241a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-21" data-name="layer1">
+                                <path id="path2500-21" data-name="path2500" class="cls-13" d="M191.82,239.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-27" transform="translate(188.18 255.1)"><tspan class="cls-37">1</tspan><tspan x="4.52" y="0">9</tspan></text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 20) %}
+                         <g id="Calque_46" data-name="Calque 46" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-22" data-name="layer16">
+                                <path id="path3390-22" data-name="path3390" class="cls-24" d="M161.82,239.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,161.82,239.91Z"/>
+                            </g>
+                            <g id="layer6-22" data-name="layer6">
+                                <path id="path2509-22" data-name="path2509" class="cls-25" d="M162.28,241.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C159.15,244.76,159.83,242.65,162.28,241.4Z"/>
+                            </g>
+                            <g id="layer4-22" data-name="layer4">
+                                <path id="path2503-22" data-name="path2503" class="cls-26" d="M161.39,241.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C154.86,243,158.21,242.18,161.39,241.06Z"/>
+                            </g>
+                            <g id="layer5-22" data-name="layer5">
+                                <path id="path2506-22" data-name="path2506" class="cls-26" d="M166.12,241a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-22" data-name="layer1">
+                                <path id="path2500-22" data-name="path2500" class="cls-13" d="M161.82,239.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                             <text class="cls-27" transform="translate(159.43 255.1)"><tspan class="cls-38">2</tspan><tspan x="5.01" y="0">0</tspan></text>
+                         </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 21) %}
+                       <g id="Calque_50" data-name="Calque 50" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-23" data-name="layer16">
+                                <path id="path3390-23" data-name="path3390" class="cls-24" d="M131.82,239.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,131.82,239.91Z"/>
+                            </g>
+                            <g id="layer6-23" data-name="layer6">
+                                <path id="path2509-23" data-name="path2509" class="cls-25" d="M132.28,241.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C129.15,244.76,129.83,242.65,132.28,241.4Z"/>
+                            </g>
+                            <g id="layer4-23" data-name="layer4">
+                                <path id="path2503-23" data-name="path2503" class="cls-26" d="M131.39,241.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C124.86,243,128.21,242.18,131.39,241.06Z"/>
+                            </g>
+                            <g id="layer5-23" data-name="layer5">
+                                <path id="path2506-23" data-name="path2506" class="cls-26" d="M136.12,241a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-23" data-name="layer1">
+                                <path id="path2500-23" data-name="path2500" class="cls-13" d="M131.82,239.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <g id="layer16-24" data-name="layer16">
+                                <path id="path3390-24" data-name="path3390" class="cls-24" d="M131.82,239.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,131.82,239.91Z"/>
+                            </g>
+                            <g id="layer6-24" data-name="layer6">
+                                <path id="path2509-24" data-name="path2509" class="cls-25" d="M132.28,241.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C129.15,244.76,129.83,242.65,132.28,241.4Z"/>
+                            </g>
+                            <g id="layer4-24" data-name="layer4">
+                                <path id="path2503-24" data-name="path2503" class="cls-26" d="M131.39,241.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C124.86,243,128.21,242.18,131.39,241.06Z"/>
+                            </g>
+                            <g id="layer5-24" data-name="layer5">
+                                <path id="path2506-24" data-name="path2506" class="cls-26" d="M136.12,241a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-24" data-name="layer1">
+                                <path id="path2500-24" data-name="path2500" class="cls-13" d="M131.82,239.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-27" transform="translate(129.61 254.1)"><tspan class="cls-39">2</tspan><tspan x="4.65" y="0">1</tspan></text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurDomicile.position.numero == 22) %}
+                        <g id="Calque_51" data-name="Calque 51" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
+                            <g id="layer16-25" data-name="layer16">
+                                <path id="path3390-25" data-name="path3390" class="cls-24" d="M101.82,239.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,101.82,239.91Z"/>
+                            </g>
+                            <g id="layer6-25" data-name="layer6">
+                                <path id="path2509-25" data-name="path2509" class="cls-25" d="M102.28,241.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C99.15,244.76,99.83,242.65,102.28,241.4Z"/>
+                            </g>
+                            <g id="layer4-25" data-name="layer4">
+                                <path id="path2503-25" data-name="path2503" class="cls-26" d="M101.39,241.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C94.86,243,98.21,242.18,101.39,241.06Z"/>
+                            </g>
+                            <g id="layer5-25" data-name="layer5">
+                                <path id="path2506-25" data-name="path2506" class="cls-26" d="M106.12,241a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-25" data-name="layer1">
+                                <path id="path2500-25" data-name="path2500" class="cls-13" d="M101.82,239.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <g id="layer16-26" data-name="layer16">
+                                <path id="path3390-26" data-name="path3390" class="cls-24" d="M101.82,239.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,101.82,239.91Z"/>
+                            </g>
+                            <g id="layer6-26" data-name="layer6">
+                                <path id="path2509-26" data-name="path2509" class="cls-25" d="M102.28,241.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C99.15,244.76,99.83,242.65,102.28,241.4Z"/>
+                            </g>
+                            <g id="layer4-26" data-name="layer4">
+                                <path id="path2503-26" data-name="path2503" class="cls-26" d="M101.39,241.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C94.86,243,98.21,242.18,101.39,241.06Z"/>
+                            </g>
+                            <g id="layer5-26" data-name="layer5">
+                                <path id="path2506-26" data-name="path2506" class="cls-26" d="M106.12,241a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-26" data-name="layer1">
+                                <path id="path2500-26" data-name="path2500" class="cls-13" d="M101.82,239.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-27" transform="translate(98.39 255.1)"><tspan class="cls-40">2</tspan><tspan x="5.08" y="0">2</tspan></text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M380,79.88A9.88,9.88,0,1,1,389.88,70,9.89,9.89,0,0,1,380,79.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="380" y="73">12</text>
+                        {% endif %}
+                        {% endfor %}
+                   </g>
+                    <g id="equipeExterieur">
+                        {% for joueurExterieur in  joueurExterieur %}
+                        {% if(joueurExterieur.position.numero == 3) %}
+                        <g id="Calque_22" data-name="Calque 22" data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>
+
+                            <g id="layer16-27" data-name="layer16">
+                                <path id="path3390-27" data-name="path3390" class="cls-41" d="M262.82,48.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L277,53.11A41.1,41.1,0,0,0,267.08,50l-.49-1.08A7.45,7.45,0,0,1,262.82,48.91Z"/>
+                            </g>
+                            <g id="layer6-27" data-name="layer6">
+                                <path id="path2509-27" data-name="path2509" class="cls-42" d="M263.28,50.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C260.15,53.76,260.83,51.65,263.28,50.4Z"/>
+                            </g>
+                            <g id="layer4-27" data-name="layer4">
+                                <path id="path2503-27" data-name="path2503" class="cls-43" d="M262.39,50.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C255.86,52,259.21,51.18,262.39,50.06Z"/>
+                            </g>
+                            <g id="layer5-27" data-name="layer5">
+                                <path id="path2506-27" data-name="path2506" class="cls-43" d="M267.12,50a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-27" data-name="layer1">
+                                <path id="path2500-27" data-name="path2500" class="cls-44" d="M262.82,48.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(261.5 64)">3</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M380,139.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,380,139.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="380" y="133">12</text>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 7) %}
+                       <g id="Calque_24" data-name="Calque 24"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>
+                            <g id="layer16-28" data-name="layer16">
+                                <path id="path3390-28" data-name="path3390" class="cls-41" d="M307.82,48.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L322,53.11A41.1,41.1,0,0,0,312.08,50l-.49-1.08A7.45,7.45,0,0,1,307.82,48.91Z"/>
+                            </g>
+                            <g id="layer6-28" data-name="layer6">
+                                <path id="path2509-28" data-name="path2509" class="cls-42" d="M308.28,50.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C305.15,53.76,305.83,51.65,308.28,50.4Z"/>
+                            </g>
+                            <g id="layer4-28" data-name="layer4">
+                                <path id="path2503-28" data-name="path2503" class="cls-43" d="M307.39,50.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C300.86,52,304.21,51.18,307.39,50.06Z"/>
+                            </g>
+                            <g id="layer5-28" data-name="layer5">
+                                <path id="path2506-28" data-name="path2506" class="cls-43" d="M312.12,50a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-28" data-name="layer1">
+                                <path id="path2500-28" data-name="path2500" class="cls-44" d="M307.82,48.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-45" transform="translate(306.5 64)">7</text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 14) %}
+                         <g id="Calque_30" data-name="Calque 30"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-29" data-name="layer16">
+                                <path id="path3390-29" data-name="path3390" class="cls-41" d="M376.82,48.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L391,53.11A41.1,41.1,0,0,0,381.08,50l-.49-1.08A7.45,7.45,0,0,1,376.82,48.91Z"/>
+                            </g>
+                            <g id="layer6-29" data-name="layer6">
+                                <path id="path2509-29" data-name="path2509" class="cls-42" d="M377.28,50.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C374.15,53.76,374.83,51.65,377.28,50.4Z"/>
+                            </g>
+                            <g id="layer4-29" data-name="layer4">
+                                <path id="path2503-29" data-name="path2503" class="cls-43" d="M376.39,50.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C369.86,52,373.21,51.18,376.39,50.06Z"/>
+                            </g>
+                            <g id="layer5-29" data-name="layer5">
+                                <path id="path2506-29" data-name="path2506" class="cls-43" d="M381.12,50a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-29" data-name="layer1">
+                                <path id="path2500-29" data-name="path2500" class="cls-44" d="M376.82,48.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                             <text class="cls-45" transform="translate(372.5 65)">14</text>
+                         </g>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 2) %}
+                         <g id="Calque_20" data-name="Calque 20"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-30" data-name="layer16">
+                                <path id="path3390-30" data-name="path3390" class="cls-41" d="M262.82,108.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,262.82,108.91Z"/>
+                            </g>
+                            <g id="layer6-30" data-name="layer6">
+                                <path id="path2509-30" data-name="path2509" class="cls-42" d="M263.28,110.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C260.15,113.76,260.83,111.65,263.28,110.4Z"/>
+                            </g>
+                            <g id="layer4-30" data-name="layer4">
+                                <path id="path2503-30" data-name="path2503" class="cls-43" d="M262.39,110.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C255.86,112,259.21,111.18,262.39,110.06Z"/>
+                            </g>
+                            <g id="layer5-30" data-name="layer5">
+                                <path id="path2506-30" data-name="path2506" class="cls-43" d="M267.12,110a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-30" data-name="layer1">
+                                <path id="path2500-30" data-name="path2500" class="cls-44" d="M262.82,108.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                             <text class="cls-45" transform="translate(261.5 124)">2</text>
+                         </g>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 8) %}
+                       <g id="Calque_25" data-name="Calque 25"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-31" data-name="layer16">
+                                <path id="path3390-31" data-name="path3390" class="cls-41" d="M307.82,109.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,307.82,109.91Z"/>
+                            </g>
+                            <g id="layer6-31" data-name="layer6">
+                                <path id="path2509-31" data-name="path2509" class="cls-42" d="M308.28,111.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C305.15,114.76,305.83,112.65,308.28,111.4Z"/>
+                            </g>
+                            <g id="layer4-31" data-name="layer4">
+                                <path id="path2503-31" data-name="path2503" class="cls-43" d="M307.39,111.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C300.86,113,304.21,112.18,307.39,111.06Z"/>
+                            </g>
+                            <g id="layer5-31" data-name="layer5">
+                                <path id="path2506-31" data-name="path2506" class="cls-43" d="M312.12,111a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-31" data-name="layer1">
+                                <path id="path2500-31" data-name="path2500" class="cls-44" d="M307.82,109.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-45" transform="translate(306.5 125)">8</text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 5) %}
+                        <g id="Calque_23" data-name="Calque 23"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-32" data-name="layer16">
+                                <path id="path3390-32" data-name="path3390" class="cls-41" d="M287.82,77.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L302,82.11A41.1,41.1,0,0,0,292.08,79l-.49-1.08A7.45,7.45,0,0,1,287.82,77.91Z"/>
+                            </g>
+                            <g id="layer6-32" data-name="layer6">
+                                <path id="path2509-32" data-name="path2509" class="cls-42" d="M288.28,79.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C285.15,82.76,285.83,80.65,288.28,79.4Z"/>
+                            </g>
+                            <g id="layer4-32" data-name="layer4">
+                                <path id="path2503-32" data-name="path2503" class="cls-43" d="M287.39,79.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C280.86,81,284.21,80.18,287.39,79.06Z"/>
+                            </g>
+                            <g id="layer5-32" data-name="layer5">
+                                <path id="path2506-32" data-name="path2506" class="cls-43" d="M292.12,79a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-32" data-name="layer1">
+                                <path id="path2500-32" data-name="path2500" class="cls-44" d="M287.82,77.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(286.5 93)">5</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M380,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,380,169.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="380" y="163">12</text>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 10) %}
+                        <g id="Calque_29" data-name="Calque 29"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-33" data-name="layer16">
+                                <path id="path3390-33" data-name="path3390" class="cls-41" d="M338.82,77.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L353,82.11A41.1,41.1,0,0,0,343.08,79l-.49-1.08A7.45,7.45,0,0,1,338.82,77.91Z"/>
+                            </g>
+                            <g id="layer6-33" data-name="layer6">
+                                <path id="path2509-33" data-name="path2509" class="cls-42" d="M339.28,79.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C336.15,82.76,336.83,80.65,339.28,79.4Z"/>
+                            </g>
+                            <g id="layer4-33" data-name="layer4">
+                                <path id="path2503-33" data-name="path2503" class="cls-43" d="M338.39,79.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C331.86,81,335.21,80.18,338.39,79.06Z"/>
+                            </g>
+                            <g id="layer5-33" data-name="layer5">
+                                <path id="path2506-33" data-name="path2506" class="cls-43" d="M343.12,79a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-33" data-name="layer1">
+                                <path id="path2500-33" data-name="path2500" class="cls-44" d="M338.82,77.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(334.5 94)">10</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M340,144.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,340,144.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="340" y="138">12</text>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 13) %}
+                        <g id="Calque_31" data-name="Calque 31"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-34" data-name="layer16">
+                                <path id="path3390-34" data-name="path3390" class="cls-41" d="M377.82,78.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73L392,83.11A41.1,41.1,0,0,0,382.08,80l-.49-1.08A7.45,7.45,0,0,1,377.82,78.91Z"/>
+                            </g>
+                            <g id="layer6-34" data-name="layer6">
+                                <path id="path2509-34" data-name="path2509" class="cls-42" d="M378.28,80.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C375.15,83.76,375.83,81.65,378.28,80.4Z"/>
+                            </g>
+                            <g id="layer4-34" data-name="layer4">
+                                <path id="path2503-34" data-name="path2503" class="cls-43" d="M377.39,80.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C370.86,82,374.21,81.18,377.39,80.06Z"/>
+                            </g>
+                            <g id="layer5-34" data-name="layer5">
+                                <path id="path2506-34" data-name="path2506" class="cls-43" d="M382.12,80a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-34" data-name="layer1">
+                                <path id="path2500-34" data-name="path2500" class="cls-44" d="M377.82,78.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(373.5 96)">13</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M340,79.88A9.88,9.88,0,1,1,349.88,70,9.89,9.89,0,0,1,340,79.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="340" y="73">12</text>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 9) %}
+                         <g id="Calque_28" data-name="Calque 28"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-35" data-name="layer16">
+                                <path id="path3390-35" data-name="path3390" class="cls-41" d="M337.82,143.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,337.82,143.91Z"/>
+                            </g>
+                            <g id="layer6-35" data-name="layer6">
+                                <path id="path2509-35" data-name="path2509" class="cls-42" d="M338.28,145.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C335.15,148.76,335.83,146.65,338.28,145.4Z"/>
+                            </g>
+                            <g id="layer4-35" data-name="layer4">
+                                <path id="path2503-35" data-name="path2503" class="cls-43" d="M337.39,145.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C330.86,147,334.21,146.18,337.39,145.06Z"/>
+                            </g>
+                            <g id="layer5-35" data-name="layer5">
+                                <path id="path2506-35" data-name="path2506" class="cls-43" d="M342.12,145a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-35" data-name="layer1">
+                                <path id="path2500-35" data-name="path2500" class="cls-44" d="M337.82,143.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                             <text class="cls-45" transform="translate(336.5 159)">9</text>
+                         </g>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 12) %}
+                        <g id="Calque_34" data-name="Calque 34"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-36" data-name="layer16">
+                                <path id="path3390-36" data-name="path3390" class="cls-41" d="M377.82,138.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,377.82,138.91Z"/>
+                            </g>
+                            <g id="layer6-36" data-name="layer6">
+                                <path id="path2509-36" data-name="path2509" class="cls-42" d="M378.28,140.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C375.15,143.76,375.83,141.65,378.28,140.4Z"/>
+                            </g>
+                            <g id="layer4-36" data-name="layer4">
+                                <path id="path2503-36" data-name="path2503" class="cls-43" d="M377.39,140.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C370.86,142,374.21,141.18,377.39,140.06Z"/>
+                            </g>
+                            <g id="layer5-36" data-name="layer5">
+                                <path id="path2506-36" data-name="path2506" class="cls-43" d="M382.12,140a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-36" data-name="layer1">
+                                <path id="path2500-36" data-name="path2500" class="cls-44" d="M377.82,138.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(373.5 155)">12</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M310,49.88A9.88,9.88,0,1,1,319.88,40,9.89,9.89,0,0,1,310,49.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="310" y="43">12</text>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 15) %}
+                         <g id="Calque_32" data-name="Calque 32"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-37" data-name="layer16">
+                                <path id="path3390-37" data-name="path3390" class="cls-41" d="M397.82,108.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,397.82,108.91Z"/>
+                            </g>
+                            <g id="layer6-37" data-name="layer6">
+                                <path id="path2509-37" data-name="path2509" class="cls-42" d="M398.28,110.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C395.15,113.76,395.83,111.65,398.28,110.4Z"/>
+                            </g>
+                            <g id="layer4-37" data-name="layer4">
+                                <path id="path2503-37" data-name="path2503" class="cls-43" d="M397.39,110.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C390.86,112,394.21,111.18,397.39,110.06Z"/>
+                            </g>
+                            <g id="layer5-37" data-name="layer5">
+                                <path id="path2506-37" data-name="path2506" class="cls-43" d="M402.12,110a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-37" data-name="layer1">
+                                <path id="path2500-37" data-name="path2500" class="cls-44" d="M397.82,108.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                             <text class="cls-45" transform="translate(393.5 125)">15</text>
+                         </g>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 6) %}
+                        <g id="Calque_27" data-name="Calque 27"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-38" data-name="layer16">
+                                <path id="path3390-38" data-name="path3390" class="cls-41" d="M307.82,168.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,307.82,168.91Z"/>
+                            </g>
+                            <g id="layer6-38" data-name="layer6">
+                                <path id="path2509-38" data-name="path2509" class="cls-42" d="M308.28,170.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C305.15,173.76,305.83,171.65,308.28,170.4Z"/>
+                            </g>
+                            <g id="layer4-38" data-name="layer4">
+                                <path id="path2503-38" data-name="path2503" class="cls-43" d="M307.39,170.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C300.86,172,304.21,171.18,307.39,170.06Z"/>
+                            </g>
+                            <g id="layer5-38" data-name="layer5">
+                                <path id="path2506-38" data-name="path2506" class="cls-43" d="M312.12,170a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-38" data-name="layer1">
+                                <path id="path2500-38" data-name="path2500" class="cls-44" d="M307.82,168.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(306.5 184)">6</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M310,110.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,310,110.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="310" y="104">12</text>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 11) %}
+                        <g id="Calque_33" data-name="Calque 33"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-39" data-name="layer16">
+                                <path id="path3390-39" data-name="path3390" class="cls-41" d="M377.82,167.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,377.82,167.91Z"/>
+                            </g>
+                            <g id="layer6-39" data-name="layer6">
+                                <path id="path2509-39" data-name="path2509" class="cls-42" d="M378.28,169.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C375.15,172.76,375.83,170.65,378.28,169.4Z"/>
+                            </g>
+                            <g id="layer4-39" data-name="layer4">
+                                <path id="path2503-39" data-name="path2503" class="cls-43" d="M377.39,169.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C370.86,171,374.21,170.18,377.39,169.06Z"/>
+                            </g>
+                            <g id="layer5-39" data-name="layer5">
+                                <path id="path2506-39" data-name="path2506" class="cls-43" d="M382.12,169a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-39" data-name="layer1">
+                                <path id="path2500-39" data-name="path2500" class="cls-44" d="M377.82,167.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(373.5 184)">11</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M290,79.88A9.88,9.88,0,1,1,299.88,70,9.89,9.89,0,0,1,290,79.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="290" y="73">12</text>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 4) %}
+                       <g id="Calque_26" data-name="Calque 26"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-40" data-name="layer16">
+                                <path id="path3390-40" data-name="path3390" class="cls-41" d="M287.82,143.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,287.82,143.91Z"/>
+                            </g>
+                            <g id="layer6-40" data-name="layer6">
+                                <path id="path2509-40" data-name="path2509" class="cls-42" d="M288.28,145.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C285.15,148.76,285.83,146.65,288.28,145.4Z"/>
+                            </g>
+                            <g id="layer4-40" data-name="layer4">
+                                <path id="path2503-40" data-name="path2503" class="cls-43" d="M287.39,145.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C280.86,147,284.21,146.18,287.39,145.06Z"/>
+                            </g>
+                            <g id="layer5-40" data-name="layer5">
+                                <path id="path2506-40" data-name="path2506" class="cls-43" d="M292.12,145a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-40" data-name="layer1">
+                                <path id="path2500-40" data-name="path2500" class="cls-44" d="M287.82,143.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-45" transform="translate(286.5 160)">4</text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 1) %}
+                       <g id="Calque_21" data-name="Calque 21"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-41" data-name="layer16">
+                                <path id="path3390-41" data-name="path3390" class="cls-41" d="M262.82,168.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,262.82,168.91Z"/>
+                            </g>
+                            <g id="layer6-41" data-name="layer6">
+                                <path id="path2509-41" data-name="path2509" class="cls-42" d="M263.28,170.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C260.15,173.76,260.83,171.65,263.28,170.4Z"/>
+                            </g>
+                            <g id="layer4-41" data-name="layer4">
+                                <path id="path2503-41" data-name="path2503" class="cls-43" d="M262.39,170.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C255.86,172,259.21,171.18,262.39,170.06Z"/>
+                            </g>
+                            <g id="layer5-41" data-name="layer5">
+                                <path id="path2506-41" data-name="path2506" class="cls-43" d="M267.12,170a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-41" data-name="layer1">
+                                <path id="path2500-41" data-name="path2500" class="cls-44" d="M262.82,168.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                           <text class="cls-45" transform="translate(261.5 185)">1</text>
+                       </g>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 16) %}
+                        <g id="Calque_35" data-name="Calque 35"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-42" data-name="layer16">
+                                <path id="path3390-42" data-name="path3390" class="cls-41" d="M329.82,209.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,329.82,209.91Z"/>
+                            </g>
+                            <g id="layer6-42" data-name="layer6">
+                                <path id="path2509-42" data-name="path2509" class="cls-42" d="M330.28,211.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C327.15,214.76,327.83,212.65,330.28,211.4Z"/>
+                            </g>
+                            <g id="layer4-42" data-name="layer4">
+                                <path id="path2503-42" data-name="path2503" class="cls-43" d="M329.39,211.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C322.86,213,326.21,212.18,329.39,211.06Z"/>
+                            </g>
+                            <g id="layer5-42" data-name="layer5">
+                                <path id="path2506-42" data-name="path2506" class="cls-43" d="M334.12,211a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-42" data-name="layer1">
+                                <path id="path2500-42" data-name="path2500" class="cls-44" d="M329.82,209.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(325.5 227)">16</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M310,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,310,169.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="310" y="163">12</text>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 17) %}
+                        <g id="Calque_36" data-name="Calque 36"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-43" data-name="layer16">
+                                <path id="path3390-43" data-name="path3390" class="cls-41" d="M359.82,209.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,359.82,209.91Z"/>
+                            </g>
+                            <g id="layer6-43" data-name="layer6">
+                                <path id="path2509-43" data-name="path2509" class="cls-42" d="M360.28,211.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C357.15,214.76,357.83,212.65,360.28,211.4Z"/>
+                            </g>
+                            <g id="layer4-43" data-name="layer4">
+                                <path id="path2503-43" data-name="path2503" class="cls-43" d="M359.39,211.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C352.86,213,356.21,212.18,359.39,211.06Z"/>
+                            </g>
+                            <g id="layer5-43" data-name="layer5">
+                                <path id="path2506-43" data-name="path2506" class="cls-43" d="M364.12,211a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-43" data-name="layer1">
+                                <path id="path2500-43" data-name="path2500" class="cls-44" d="M359.82,209.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(355.5 227)">17</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M290,144.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,290,144.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="290" y="138">12</text>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 18) %}
+                      <g id="Calque_37" data-name="Calque 37"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-44" data-name="layer16">
+                                <path id="path3390-44" data-name="path3390" class="cls-41" d="M389.82,209.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,389.82,209.91Z"/>
+                            </g>
+                            <g id="layer6-44" data-name="layer6">
+                                <path id="path2509-44" data-name="path2509" class="cls-42" d="M390.28,211.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C387.15,214.76,387.83,212.65,390.28,211.4Z"/>
+                            </g>
+                            <g id="layer4-44" data-name="layer4">
+                                <path id="path2503-44" data-name="path2503" class="cls-43" d="M389.39,211.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C382.86,213,386.21,212.18,389.39,211.06Z"/>
+                            </g>
+                            <g id="layer5-44" data-name="layer5">
+                                <path id="path2506-44" data-name="path2506" class="cls-43" d="M394.12,211a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-44" data-name="layer1">
+                                <path id="path2500-44" data-name="path2500" class="cls-44" d="M389.82,209.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                          <text class="cls-45" transform="translate(385.5 227)">18</text>
+                      </g>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 19) %}
+                        <g id="Calque_38" data-name="Calque 38"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-45" data-name="layer16">
+                                <path id="path3390-45" data-name="path3390" class="cls-41" d="M299.82,239.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,299.82,239.91Z"/>
+                            </g>
+                            <g id="layer6-45" data-name="layer6">
+                                <path id="path2509-45" data-name="path2509" class="cls-42" d="M300.28,241.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C297.15,244.76,297.83,242.65,300.28,241.4Z"/>
+                            </g>
+                            <g id="layer4-45" data-name="layer4">
+                                <path id="path2503-45" data-name="path2503" class="cls-43" d="M299.39,241.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C292.86,243,296.21,242.18,299.39,241.06Z"/>
+                            </g>
+                            <g id="layer5-45" data-name="layer5">
+                                <path id="path2506-45" data-name="path2506" class="cls-43" d="M304.12,241a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-45" data-name="layer1">
+                                <path id="path2500-45" data-name="path2500" class="cls-44" d="M299.82,239.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(295.5 257)">19</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M265,49.88A9.88,9.88,0,1,1,274.88,40,9.89,9.89,0,0,1,265,49.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="265" y="43">12</text>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 20) %}
+                         <g id="Calque_39" data-name="Calque 39"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-46" data-name="layer16">
+                                <path id="path3390-46" data-name="path3390" class="cls-41" d="M329.82,239.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,329.82,239.91Z"/>
+                            </g>
+                            <g id="layer6-46" data-name="layer6">
+                                <path id="path2509-46" data-name="path2509" class="cls-42" d="M330.28,241.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C327.15,244.76,327.83,242.65,330.28,241.4Z"/>
+                            </g>
+                            <g id="layer4-46" data-name="layer4">
+                                <path id="path2503-46" data-name="path2503" class="cls-43" d="M329.39,241.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C322.86,243,326.21,242.18,329.39,241.06Z"/>
+                            </g>
+                            <g id="layer5-46" data-name="layer5">
+                                <path id="path2506-46" data-name="path2506" class="cls-43" d="M334.12,241a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-46" data-name="layer1">
+                                <path id="path2500-46" data-name="path2500" class="cls-44" d="M329.82,239.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                             <text class="cls-45" transform="translate(325.5 257)">20</text>
+                         </g>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 21) %}
+                        <g id="Calque_48" data-name="Calque 48"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-47" data-name="layer16">
+                                <path id="path3390-47" data-name="path3390" class="cls-41" d="M359.82,239.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,359.82,239.91Z"/>
+                            </g>
+                            <g id="layer6-47" data-name="layer6">
+                                <path id="path2509-47" data-name="path2509" class="cls-42" d="M360.28,241.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C357.15,244.76,357.83,242.65,360.28,241.4Z"/>
+                            </g>
+                            <g id="layer4-47" data-name="layer4">
+                                <path id="path2503-47" data-name="path2503" class="cls-43" d="M359.39,241.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C352.86,243,356.21,242.18,359.39,241.06Z"/>
+                            </g>
+                            <g id="layer5-47" data-name="layer5">
+                                <path id="path2506-47" data-name="path2506" class="cls-43" d="M364.12,241a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-47" data-name="layer1">
+                                <path id="path2500-47" data-name="path2500" class="cls-44" d="M359.82,239.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(355.5 257)">21</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M265,109.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,265,109.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="265" y="103">12</text>
+                        {% endif %}
+                        {% if(joueurExterieur.position.numero == 22) %}
+                         <g id="Calque_49" data-name="Calque 49"  data-toggle="popover" data-placement='right' data-container="body" title="{{ joueurExterieur.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurExterieur.joueur.photo) }}'><br/>Age : {{ joueurExterieur.joueur.age }} ans<br/>Poids : {{ joueurExterieur.joueur.poids }} kg<br/>Taille : {{ joueurExterieur.joueur.poids }} cm<br/>{{ joueurExterieur.joueur.datenaissance }}">>>
+                            <g id="layer16-48" data-name="layer16">
+                                <path id="path3390-48" data-name="path3390" class="cls-41" d="M389.82,239.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,389.82,239.91Z"/>
+                            </g>
+                            <g id="layer6-48" data-name="layer6">
+                                <path id="path2509-48" data-name="path2509" class="cls-42" d="M390.28,241.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C387.15,244.76,387.83,242.65,390.28,241.4Z"/>
+                            </g>
+                            <g id="layer4-48" data-name="layer4">
+                                <path id="path2503-48" data-name="path2503" class="cls-43" d="M389.39,241.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C382.86,243,386.21,242.18,389.39,241.06Z"/>
+                            </g>
+                            <g id="layer5-48" data-name="layer5">
+                                <path id="path2506-48" data-name="path2506" class="cls-43" d="M394.12,241a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-48" data-name="layer1">
+                                <path id="path2500-48" data-name="path2500" class="cls-44" d="M389.82,239.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                             <text class="cls-45" transform="translate(385.5 257)">22</text>
+                         </g>
+                        {% endif %}
+                        <g id="Calque_40" data-name="Calque 40">
+                            <g id="layer16-49" data-name="layer16">
+                                <path id="path3390-49" data-name="path3390" class="cls-41" d="M299.82,209.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,299.82,209.91Z"/>
+                            </g>
+                            <g id="layer6-49" data-name="layer6">
+                                <path id="path2509-49" data-name="path2509" class="cls-42" d="M300.28,211.4a4.6,4.6,0,0,0,2.94-.05c1.91.52,3.14,2.69,4.87,4.87-.75,5.2-.44,9.64-.52,14.42a17.69,17.69,0,0,1-11.07-.12c-.12-4.41.27-9.22-.75-14.07C297.15,214.76,297.83,212.65,300.28,211.4Z"/>
+                            </g>
+                            <g id="layer4-49" data-name="layer4">
+                                <path id="path2503-49" data-name="path2503" class="cls-43" d="M299.39,211.06l.87.37c-2.57,1.18-3.82,4.53-5.53,6.35l-2.63.72-2.25-4.07C292.86,213,296.21,212.18,299.39,211.06Z"/>
+                            </g>
+                            <g id="layer5-49" data-name="layer5">
+                                <path id="path2506-49" data-name="path2506" class="cls-43" d="M304.12,211a42.29,42.29,0,0,1,9.88,3.1l-2.24,4.1-2.62-.72c-2.22-2.46-3.72-5.69-5.93-6.14l.9-.34Z"/>
+                            </g>
+                            <g id="layer1-49" data-name="layer1">
+                                <path id="path2500-49" data-name="path2500" class="cls-44" d="M299.82,209.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
+                            </g>
+                            <text class="cls-45" transform="translate(299 227)">E</text>
                         </g>
-                        <g data-toggle="popover" data-container="body" title="Popover Header" data-content="Some content inside the popover">
-                            <path class="cls-12" d="M265,169.88a9.88,9.88,0,1,1,9.88-9.87A9.89,9.89,0,0,1,265,169.88Z"/>
-                            <text class="cls-13" text-anchor="middle" x="265" y="163">12</text>
-                        </g>
-                    </g>
+                        {% endfor %}
+                     </g>
                 </svg>
+
             </div>
         </div>
     </section>

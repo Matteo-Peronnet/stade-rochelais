@@ -34,7 +34,7 @@ class LoadEquipe extends AbstractFixture implements OrderedFixtureInterface
         $brive->setNom("Brive");
         $brive->setBlason("img/Logo/Brive.png");
         $brive->setStade("Amédée Domenech");
-        $brive->setCouleur("#4FFFFFF");
+        $brive->setCouleur("#FFF");
 
         $castres = new Equipe();
         $castres->setNom("Castres");

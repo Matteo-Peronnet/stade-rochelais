@@ -19,11 +19,25 @@ class MatchController extends Controller
         $id = $request->attributes->get('id');
 
         $matchs = $repository_match->getMatchID($id);
-        $joueurs = $repository_joueur->findAll();
+
+        $joueurs_domicile = $repository_match->getJoueurMatchDomicile($id);
+        $joueurs_exterieur = $repository_match->getJoueurMatchExterieur($id);
+
+        $joueurs_domicileTab = [];
+        $joueurs_exterieurTab = [];
+
+
+        for($i=0;$i<=count($joueurs_domicile)-2;$i++){
+            $joueurs_domicileTab[$i] = $joueurs_domicile[$i+1];
+            $joueurs_exterieurTab[$i] = $joueurs_exterieur[$i+1];
+        }
+
+
 
         return $this->render('FrontOfficeBundle:Match:match.html.twig', array(
             'matchs'=>$matchs,
-            'joueurs'=>$joueurs
+            'joueurDomicile'=>$joueurs_domicileTab,
+            'joueurExterieur'=>$joueurs_exterieurTab
         ));
     }
 

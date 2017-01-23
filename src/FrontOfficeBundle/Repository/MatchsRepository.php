@@ -73,4 +73,29 @@ class MatchsRepository extends \Doctrine\ORM\EntityRepository
             return $query->getResult();
         }
     }
+
+    public function getJoueurMatchDomicile($idMatch){
+        $queryBuilder = $this->createQueryBuilder('m');
+        $queryBuilder
+            ->where("m.id = :idMatch")
+            ->innerJoin("FrontOfficeBundle:Formation","f","with","f.id = m.formationDomicile")
+            ->join("FrontOfficeBundle:Composition","c","with","c.formation = f.id")
+            ->addSelect("c")
+            ->setParameter("idMatch",$idMatch);
+
+        $query = $queryBuilder->getQuery();
+        return $query->getResult();
+    }
+    public function getJoueurMatchExterieur($idMatch){
+        $queryBuilder = $this->createQueryBuilder('m');
+        $queryBuilder
+            ->where("m.id = :idMatch")
+            ->innerJoin("FrontOfficeBundle:Formation","f","with","f.id = m.formationExterieur")
+            ->join("FrontOfficeBundle:Composition","c","with","c.formation = f.id")
+            ->addSelect("c")
+            ->setParameter("idMatch",$idMatch);
+
+        $query = $queryBuilder->getQuery();
+        return $query->getResult();
+    }
 }
