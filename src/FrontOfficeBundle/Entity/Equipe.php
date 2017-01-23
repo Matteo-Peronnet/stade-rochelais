@@ -95,19 +95,20 @@ class Equipe implements \JsonSerializable
      *
      *
      */
-    /*public function setFile(UploadedFile $file)
-    {
-        $this->file =$file;
-        //On vérifie si on avait deja un fichier pour cette entité
-        if(null !==$this->blason)
-        {
-            //On sauvegarde l'extension du fichier pour le supprimer plus tard
-            $this->tempFilename = $this->blason;
+//    public function setFile(UploadedFile $file)
+//    {
+//        $this->file =$file;
+//        //On vérifie si on avait deja un fichier pour cette entité
+//        if(null !==$this->blason)
+//        {
+//            //On sauvegarde l'extension du fichier pour le supprimer plus tard
+//            $this->tempFilename = $this->blason;
+//
+//            //On reinitialise les valeurs de l'attribut blason
+//            $this->blason = null;
+//        }
+//    }
 
-            //On reinitialise les valeurs de l'attribut blason
-            $this->blason = null;
-        }
-    }*/
 
     /**
      *
@@ -266,7 +267,6 @@ class Equipe implements \JsonSerializable
     public function setBlason($blason)
     {
         $this->blason = $blason;
-
         return $this;
     }
 
