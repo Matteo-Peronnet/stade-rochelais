@@ -10,4 +10,19 @@ namespace FrontOfficeBundle\Repository;
  */
 class ChampionnatRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function myFindAll(){
+        $queryBuilder=$this->createQueryBuilder('champ');
+        $query=$queryBuilder->getQuery();
+        $results=$query->getResult();
+        return $results;
+    }
+
+    public function getChampionnatIDBIS($nomChampionnat){
+        $queryBuilder = $this->createQueryBuilder('c');
+        $queryBuilder->where('c.nom!=:nomChampionnat')
+            ->setParameter('nomChampionnat',$nomChampionnat);
+        $query = $queryBuilder->getQuery();
+
+        return $query->getResult();
+    }
 }

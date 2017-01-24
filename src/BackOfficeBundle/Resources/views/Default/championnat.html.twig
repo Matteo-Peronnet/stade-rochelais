@@ -1,148 +1,198 @@
 {% extends "BackOfficeBundle:Layout:layout.html.twig" %}
 {% block body %}
     <div class="container-fluid">
-    <div class="row">
-    <div class="sidebar-left col-md-3 ">
-        {% include "BackOfficeBundle:Layout:menu.html.twig" %}
-    </div>
-    <div class="sidebar-right col-md-9 no-padding">
-        {% include "BackOfficeBundle:Layout:header.html.twig" %}
-    </div>
-        <div class="box col-md-4 margin-15 no-padding">
-            <h1>Ajouter un championnat</h1>
-            <form method="post" action="#">
-                <p>
-                    <label for="NomChampionnat">Nom Championnat : </label>
-                    <input>
-                </p>
-                <p>
-                    <label for="descriptionChampionnat">Description : </label>
-                    <input>
-                </p>
-                <footer>
-                    <input class="btn-annuler" type="reset" value="Annuler">
-                    <input class="btn-ajouter" type="submit" value="Ajouter">
-                </footer>
-            </form>
+        <div class="row">
+            <div class="sidebar-left col-md-3 ">
+                {% include "BackOfficeBundle:Layout:menu.html.twig" %}
+            </div>
+            <div class="sidebar-right col-md-9 no-padding">
+                {% include "BackOfficeBundle:Layout:header.html.twig" %}
+            </div>
+            <div class="box col-md-4 margin-15 no-padding">
+                <h1>Ajouter un championnat</h1>
+                <form method="POST" action="#" enctype="multipart/form-data" >
+                    {{ form_start(formAddChamp) }}
+                    <p>{{ form_row(formAddChamp.nom) }}</p>
+                    <p>{{ form_row(formAddChamp.description) }}</p>
+                    <p>{{ form_row(formAddChamp.submitFile) }}</p>
+                    <footer>
+                        {{ form_row(formAddChamp.annuler, { 'label': 'Annuler' }) }}
+                        {{ form_row(formAddChamp.ajouter, { 'label': 'Ajouter' }) }}
+                        {{ form_end(formAddChamp) }}
+                    </footer>
+                </form>
+            </div>
+            <div class="box col-md-4 margin-15 no-padding">
+                <h1>Liste des championnats :</h1>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for leChamp in listeChamp %}
+                        <tr>
+                            <td>{{ leChamp.nom }}</td>
+                            <td>
+                                <a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}" height="30px" width="30px"></a>
+                                <a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}" height="30px" width="30px"></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="box col-md-4 margin-15 no-padding">
+                <h1>Liste des équipes du top 14</h1>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Blason</th>
+                        <th>Nom</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for lesEquipesTOP14 in listeEquipeTOP14 %}
+                        <tr>
+                            <td><img src="{{ asset(lesEquipesTOP14.blason) }}" height="40px"></td>
+                            <td>{{ lesEquipesTOP14.nom }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="box col-md-4 margin-15 no-padding">
+                <h1>Liste de toute les équipes</h1>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Blason</th>
+                        <th>Nom</th>
+                        <th>Championnat</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for lesEquipes in listeEquipe %}
+                        <tr>
+                            <td><img src="{{ asset(lesEquipes.blason) }}" height="40px"></td>
+                            <td>{{ lesEquipes.nom }}</td>
+                            <td>{{ lesEquipes.championnat }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {#<div class="box col-md-4 margin-15 no-padding">#}
+                {#<h1>Ajouter une journée à un championnat</h1>#}
+                {#<form method="post" action="#">#}
+                    {#{{ form_start(formAddJourToChamp) }}#}
+                    {#<p>{{ form_row(formAddJourToChamp.championnat) }}#}
+                    {#<p>#}
+                    {#<p>{{ form_row(formAddJourToChamp.nom) }}</p>#}
+                    {#<footer>#}
+                        {#{{ form_row(formAddJourToChamp.annuler, { 'label': 'Annuler' }) }}#}
+                        {#{{ form_row(formAddJourToChamp.ajouter, { 'label': 'Ajouter' }) }}#}
+                        {#{{ form_rest(formAddJourToChamp) }}#}
+                    {#</footer>#}
+                {#</form>#}
+            {#</div>#}
+            {#<div class="box col-md-4 margin-15 no-padding">#}
+                {#<h1>#}
+                    {#Liste des journées du championnat :#}
+                    {#<select class="pull-right" name="championnat" id="championnat">#}
+                        {#<option value="TOP14">TOP14</option>#}
+                        {#<option value="U18">PRO D2</option>#}
+                        {#<option value="U16">CHAMPIONS CUP</option>#}
+                    {#</select>#}
+                {#</h1>#}
+                {#<table class="table">#}
+                    {#<thead>#}
+                    {#<tr>#}
+                        {#<th>Nom</th>#}
+                        {#<th>Action</th>#}
+                    {#</tr>#}
+                    {#</thead>#}
+                    {#<tbody>#}
+                    {#<tr>#}
+                        {#<td>1ere Journée</td>#}
+                        {#<td>#}
+                            {#<a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}" height="30px" width="30px"></a>#}
+                            {#<a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}" height="30px" width="30px"></a>#}
+                        {#</td>#}
+                    {#</tr>#}
+                    {#</tbody>#}
+                {#</table>#}
+            {#</div>#}
+            {#<div class="box col-md-4 margin-15 no-padding">#}
+                {#<h1>Ajouter une équipe à un championnat</h1>#}
+                {#<form method="post" action="#">#}
+                    {#{{ form_start(formAddTeamToChamp) }}#}
+                    {#<p>{{ form_row(formAddTeamToChamp.championnat) }}</p>#}
+                    {#<p>{{ form_row(formAddTeamToChamp.equipe) }}</p>#}
+                    {#<footer>#}
+                        {#{{ form_row(formAddTeamToChamp.annuler, { 'label': 'Annuler' }) }}#}
+                        {#{{ form_row(formAddTeamToChamp.ajouter, { 'label': 'Ajouter' }) }}#}
+                        {#{{ form_rest(formAddTeamToChamp) }}#}
+                    {#</footer>#}
+                {#</form>#}
+            {#</div>#}
+            {#<div class="box col-md-4 margin-15 no-padding">#}
+                {#<h1>#}
+                    {#Liste des équipe du championnat :#}
+                    {#<select class="pull-right" name="championnat" id="championnat">#}
+                        {#<option value="TOP14">TOP14</option>#}
+                        {#<option value="U18">PRO D2</option>#}
+                        {#<option value="U16">CHAMPIONS CUP</option>#}
+                    {#</select>#}
+                {#</h1>#}
+                {#<table class="table">#}
+                    {#<thead>#}
+                    {#<tr>#}
+                        {#<th>Nom</th>#}
+                        {#<th>Action</th>#}
+                    {#</tr>#}
+                    {#</thead>#}
+                    {#<tbody>#}
+                    {#<tr>#}
+                        {#<td>1ere Journée</td>#}
+                        {#<td>#}
+                            {#<a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}" height="30px" width="30px"></a>#}
+                            {#<a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}" height="30px" width="30px"></a>#}
+                        {#</td>#}
+                    {#</tr>#}
+                    {#</tbody>#}
+                {#</table>#}
+            {#</div>#}
         </div>
-        <div class="box col-md-4 margin-15 no-padding">
-            <h1>Ajouter une journée à un championnat</h1>
-            <form method="post" action="#">
-                <p>
-                    <label for="NomChampionnat">Nom Championnat : </label>
-                    <select>
-                        <option>TOP 14</option>
-                        <option>PRO D2</option>
-                        <option>CHAMPIONS CUP</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="NomJournee">Nom Journée : </label>
-                    <input>
-                </p>
-                <footer>
-                    <input class="btn-annuler" type="reset" value="Annuler">
-                    <input class="btn-ajouter" type="submit" value="Ajouter">
-                </footer>
-            </form>
-        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {#<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>#}
+    {#{{ parent() }}#}
+    {#<script>#}
+        {#$(function () {#}
+            {#var $championnat = $("#{{ formAddTeamToChamp.championnat.vars.id }}");#}
+            {#var $equipe = $("#{{ formAddTeamToChamp.equipe.vars.id }}");#}
 
-        <div class="box col-md-4 margin-15 no-padding">
-            <h1>Liste des championnats :
-            </h1>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>TOP14</td>
-                    <td>
-                        <a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
-                        <a href="#">
-                            <img src="css/icon/icon-backend-supprimer.png">
-                    </td>
-                </tr>
-                <tr>
-                    <td>PRO D2</td>
-                    <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
-                        <a href="#"><img src="css/icon/icon-backend-supprimer.png"></td>
-                </tr>
-                <tr>
-                    <td>CHAMPIONS CUP</td>
-                    <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
-                        <a href="#"><img src="css/icon/icon-backend-supprimer.png"></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="box col-md-4 margin-15 no-padding">
-            <h1>Liste des journées du championnat :
-                <select class="pull-right" name="championnat" id="championnat">
-                    <option value="TOP14">TOP14</option>
-                    <option value="U18">PRO D2</option>
-                    <option value="U16">CHAMPIONS CUP</option>
-                </select>
-            </h1>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1ere Journée</td>
-                    <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
-                        <a href="#"><img src="css/icon/icon-backend-supprimer.png"></td>
-                </tr>
-                <tr>
-                    <td>2eme Journée</td>
-                    <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
-                        <a href="#"><img src="css/icon/icon-backend-supprimer.png"></td>
-                </tr>
-                <tr>
-                    <td>3eme Journée</td>
-                    <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
-                        <a href="#"><img src="css/icon/icon-backend-supprimer.png"></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="box col-md-4 margin-15 no-padding">
-            <h1>Ajouter une équipe à un championnat</h1>
-            <form method="post" action="#">
-                <p>
-                    <label for="NomChampionnat">Championnat : </label>
-                    <select>
-                        <option>TOP 14</option>
-                        <option>PRO D2</option>
-                        <option>CHAMPIONS CUP</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="NomEquipe">Equipe : </label>
-                    <select>
-                        <option value="Toulon">Toulon</option>
-                        <option value="StadeRochelais">StadeRochelais</option>
-                        <option value="Clermont">Clermont</option>
-                        <option value="Montpellier">Montpellier</option>
-                        <option value="Racing 92">Racing 92</option>
-                        <option value="Toulouse">Toulouse</option>
-                        <option value="Pau">Pau</option>
-                        <option value="Grenoble">Grenoble</option>
-                    </select>
-                </p>
-                <footer>
-                    <input class="btn-annuler" type="reset" value="Annuler">
-                    <input class="btn-ajouter" type="submit" value="Ajouter">
-                </footer>
-            </form>
-        </div>
-    </div>
-</div>
+            {#$championnat.on("change", function (evt) {#}
+                {#var data = {};#}
+                {#data["championnat"] = $championnat.val(); //#}
+                {#$.ajax({#}
+                    {#url: "{{ path('api_get_equipe') }}",#}
+                    {#type: "POST",#}
+                    {#data: data,#}
+                    {#success: function (datas) {#}
+                        {#$equipe.find('option').remove();#}
+                        {#datas.forEach(function (e) {#}
+                            {#console.log($equipe);#}
+                            {#var o = $("<option/>", {text: e.nom, value: e.id});#}
+                            {#o.appendTo($equipe);#}
+                        {#});#}
+                    {#}#}
+                {#});#}
+            {#});#}
+        {#})#}
+    {#</script>#}
 {% endblock %}

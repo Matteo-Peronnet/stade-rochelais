@@ -10,14 +10,23 @@ namespace FrontOfficeBundle\Repository;
  */
 class EquipeRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function myFindAllEquipesDuTop14(){
-        //création du queryBuilder paramétré avec l'alias de l'entité événement
+    public function getEquipeNotInChampionnat($championnat){
+        $qb = $this->createQueryBuilder("e");
+        $qb
+            ->innerJoin('e.championnat', 'c')
+            ->andWhere($qb->expr()->notIn("c.id", ":championnat"))
+            ->setParameter("championnat",$championnat);
+
+        $query=$qb->getQuery();
+
+        return $query->getResult();
+    }
+
+    public function myFindAllEquipe(){
         $queryBuilder=$this->createQueryBuilder('equipe');
-        //récupération de la query à partir du queryBuilder
         $query=$queryBuilder->getQuery();
-        //récupération du résultat à partir de la query
         $results=$query->getResult();
-        //on retourne les résultats
         return $results;
     }
+
 }
