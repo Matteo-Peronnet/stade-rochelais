@@ -3,6 +3,11 @@
 namespace FrontOfficeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 
 /**
  * Joueur
@@ -37,14 +42,14 @@ class Joueur
 
     /**
      * @var Equipe
-     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Equipe", inversedBy="joueur")
+     * @ORM\ManyToOne(targetEntity="FrontOfficeBundle\Entity\Equipe",cascade={"persist"}, inversedBy="joueur")
      * @ORM\JoinColumn(name="equipe_id", referencedColumnName="id")
      */
     private $equipe;
 
     /**
      * @var Position
-     * @ORM\ManyToMany(targetEntity="FrontOfficeBundle\Entity\Position", inversedBy="joueur")
+     * @ORM\ManyToMany(targetEntity="FrontOfficeBundle\Entity\Position",cascade={"persist"}, inversedBy="joueur")
      * @ORM\JoinColumn(name="position_id", referencedColumnName="id")
      */
     private $position;
@@ -77,7 +82,32 @@ class Joueur
      */
     private $taille;
 
+    protected $file_upload_csv_joueur;
 
+    public function upload(UploadedFile $file)
+    {
+        $fileName = $file->getClientOriginalName();
+        $dir = __DIR__.'../../../../web/uploads/csv/';
+        $file->move($dir, $fileName);
+
+        return $fileName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFileUploadCsvJoueur()
+    {
+        return $this->file_upload_csv_joueur;
+    }
+
+    /**
+     * @param mixed $file_upload_csv_joueur
+     */
+    public function setFileUploadCsvJoueur($file_upload_csv_joueur)
+    {
+        $this->file_upload_csv_joueur = $file_upload_csv_joueur;
+    }
 
     /**
      * Get id

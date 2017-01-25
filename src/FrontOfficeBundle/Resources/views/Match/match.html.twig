@@ -578,7 +578,7 @@
                            <text class="cls-27" transform="translate(207.44 153.1)">5</text>
                        </g>
                         {% endif %}
-                        <g id="Calque_41" data-name="Calque 41">
+                        <g id="Calque_41" data-name="Calque 41" data-toggle="popover-arbitre" data-placement='left' data-container="body" title="{% if(matchs[0].equipeDomicile.entraineur.nomprenom  is not defined or matchs[0].equipeDomicile.entraineur.nomprenom is null) %}Non déterminé{% else %}{{ matchs[0].equipeDomicile.entraineur.nomprenom }}{% endif %}" data-content="">>
                             <g id="layer16-17" data-name="layer16">
                                 <path id="path3390-17" data-name="path3390" class="cls-24" d="M191.82,209.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,191.82,209.91Z"/>
                             </g>
@@ -595,7 +595,6 @@
                                 <path id="path2500-17" data-name="path2500" class="cls-13" d="M191.82,209.9l-.4,1.14a5,5,0,0,0,4.66-.07l-.49-1.07a7.61,7.61,0,0,1-3.78,0Z"/>
                             </g>
                             <text class="cls-27" transform="translate(191.54 225.1)">E</text>
-
                         </g>
                         {% if(joueurDomicile.position.numero == 16) %}
                        <g id="Calque_42" data-name="Calque 42" data-toggle="popover" data-placement='left' data-container="body" title="{{ joueurDomicile.joueur.nomprenom }}" data-content="<img src='{{ asset(joueurDomicile.joueur.photo) }}'><br/>Age : {{ joueurDomicile.joueur.age }} ans<br/>Poids : {{ joueurDomicile.joueur.poids }} kg<br/>Taille : {{ joueurDomicile.joueur.poids }} cm<br/>{{ joueurDomicile.joueur.datenaissance }}">>
@@ -1212,7 +1211,7 @@
                              <text class="cls-45" transform="translate(385.5 257)">22</text>
                          </g>
                         {% endif %}
-                        <g id="Calque_40" data-name="Calque 40">
+                        <g id="Calque_40" data-name="Calque 40" data-toggle="popover-arbitre" data-placement='right' data-container="body" title="{% if(matchs[0].equipeExterieur.entraineur.nomprenom  is not defined or matchs[0].equipeExterieur.entraineur.nomprenom is null) %}Non déterminé{% else %}{{ matchs[0].equipeExterieur.entraineur.nomprenom }}{% endif %}" data-content="">>>
                             <g id="layer16-49" data-name="layer16">
                                 <path id="path3390-49" data-name="path3390" class="cls-41" d="M299.82,209.91l-.4,1.14c-3.19,1.13-6.32,1.9-9.57,3.38l2.26,4.08,2.64-.74c1.09,3.94.77,8.36,1.16,12.55,3.72,1.54,9.07,1.58,12.26.07.33-4.3.16-8.57,1-12.9l2.61.73,2.23-4.11a41.1,41.1,0,0,0-9.91-3.12l-.49-1.08A7.45,7.45,0,0,1,299.82,209.91Z"/>
                             </g>

@@ -1,0 +1,70 @@
+{% extends "BackOfficeBundle:Layout:layout.html.twig" %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="sidebar-left col-md-3 ">
+                {% include "BackOfficeBundle:Layout:menu.html.twig" %}
+            </div>
+            <div class="sidebar-right col-md-9 no-padding">
+                {% include "BackOfficeBundle:Layout:header.html.twig" %}
+            </div>
+            <div class="box col-md-3 margin-15 no-padding">
+                <h1>Ajouter Joueur</h1>
+                <form method="post" enctype="multipart/form-data">
+                    <p>
+                        {{ form_start(form_upload_csv) }}
+                        {{ form_row(form_upload_csv.file_upload_csv_joueur) }}
+
+                    </p>
+                    {{ form_widget(form_upload_csv._token) }}
+
+                    <footer>
+                        {{ form_row(form_upload_csv.annuler, { 'label': 'Annuler' }) }}
+                        {{ form_row(form_upload_csv.ajouter, { 'label': 'Prévisualiser' }) }}
+                    </footer>
+                    {{ form_end(form_upload_csv) }}
+                </form>
+            </div>
+            <div class="box col-md-5 margin-15 no-padding">
+                <h1>Prévisualisation des joueurs à insérer</h1>
+                <form method="post" enctype="multipart/form-data">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Nom Prénom</th>
+                            <th>Age</th>
+                            <th>Naissance</th>
+                            <th>Poids</th>
+                            <th>Taille</th>
+                            <th>Equipe</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for leJoueur in listeJoueur %}
+                        <tr>
+
+                                <td>{{ leJoueur.nomprenom }}</td>
+                                <td>{{ leJoueur.age }}</td>
+                                <td>{{ leJoueur.datenaissance }}</td>
+                                <td>{{ leJoueur.poids }}</td>
+                                <td>{{ leJoueur.taille }}</td>
+                                <td><img height="35px" src="{{ asset(leJoueur.equipe.blason) }}"></td>
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {{ form_start(form_confirm_upload_csv) }}
+                    {{ form_widget(form_confirm_upload_csv._token) }}
+                    {{ form_row(form_confirm_upload_csv.annuler, { 'label': 'Annuler' }) }}
+                    {{ form_row(form_confirm_upload_csv.ajouter, { 'label': 'Ajouter' }) }}
+                    {{ form_end(form_confirm_upload_csv) }}
+                    <footer>
+
+                    </footer>
+                </form>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
