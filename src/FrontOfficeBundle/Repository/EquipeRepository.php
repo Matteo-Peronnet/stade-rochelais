@@ -22,7 +22,7 @@ class EquipeRepository extends \Doctrine\ORM\EntityRepository
         return $query->getResult();
     }
 
-    public function myFindAllEquipe(){
+    public function myFindAllEquipesDuTop14(){
         $queryBuilder=$this->createQueryBuilder('equipe');
         $query=$queryBuilder->getQuery();
         $results=$query->getResult();

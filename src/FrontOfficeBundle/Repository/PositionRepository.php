@@ -10,4 +10,5 @@ namespace FrontOfficeBundle\Repository;
  */
 class PositionRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

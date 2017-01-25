@@ -10,6 +10,7 @@ use FrontOfficeBundle\Entity\Matchs;
 use FrontOfficeBundle\Entity\Diffuseur;
 use FrontOfficeBundle\Form\FindMatchByChampionnatJourneeType;
 use FrontOfficeBundle\Form\FindMatchType;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use FrontOfficeBundle\Form\AddEquipeType;
 use FrontOfficeBundle\Form\MatchsType;
 use FrontOfficeBundle\Form\AddMatchType;
@@ -148,23 +149,28 @@ class DefaultController extends Controller
      * @Route("/equipe")
      */
     public function equipeAction(Request $request){
-        $equipe = new Equipe();
+
         $repository = $this->getDoctrine()->getManager()->getRepository('FrontOfficeBundle:Equipe');
         $listeEquipesTop14 = $repository->myfindAllEquipesDuTop14();
-        $form = $this->get('form.factory')->create(AddEquipeType::class,$equipe);
 
-        if($request->isMethod('POST'))
-        {
+        // FORMULAIRE EQUIPE
+        $equipe = new Equipe();
+        $form = $this->createForm(AddEquipeType::class,$equipe);
+
+        if($request->isMethod('POST')) {
             $form->handleRequest($request);
-            if ($form->isValid())
-            {
-                var_dump($_FILES);
+            if ($form->isSubmitted()) {
                 $em = $this->getDoctrine()->getManager();
+                // $file stores the uploaded PDF file
+                /** @var \Symfony\Component\HttpFoundation\File\UploadedFile $file */
+                $file = $form['file_upload_image']->getData();
+                $fileName = $equipe->upload($file);
+                $equipe->setBlason('/web/uploads/Logo'.$fileName);
                 $em->persist($equipe);
                 $em->flush();
+
             }
         }
-
         return $this->render('BackOfficeBundle:Default:equipe.html.twig',array(
             'form'=>$form->createView(),
             'listeEquipesTop14' => $listeEquipesTop14

@@ -8,36 +8,57 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-md-offset-1 col-centered">
+
                         <div class="effectif-name is-active ">
-                            <a href="">Tous</a>
+                            <a href="{{ path(app.request.get('_route'), app.request.get('_route_params'))}}">Tous</a>
                         </div>
+                        {% for laPosition in listePosition %}
+                            {% if(laPosition.numero == 2) %}
                         <div class="effectif-name">
-                            <a href="">Talonneur</a>
+                            <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Talonneur</a>
                         </div>
+                            {% endif %}
+                            {% if(laPosition.numero == 3 ) %}
                         <div class="effectif-name">
-                            <a href="">Pilier</a>
+                            <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Pilier</a>
                         </div>
-                        <div class="effectif-name">
-                            <a href="">2e ligne</a>
-                        </div>
-                        <div class="effectif-name">
-                            <a href="">3e ligne</a>
-                        </div>
-                        <div class="effectif-name">
-                            <a href="">Demi mêler</a>
-                        </div>
-                        <div class="effectif-name">
-                            <a href="">Ouvreur</a>
-                        </div>
-                        <div class="effectif-name">
-                            <a href="">Centre</a>
-                        </div>
-                        <div class="effectif-name">
-                            <a href="">Ailier</a>
-                        </div>
-                        <div class="effectif-name">
-                            <a href="">Arrière</a>
-                        </div>
+                            {% endif %}
+                        {% if(laPosition.numero == 4 ) %}
+                            <div class="effectif-name">
+                                <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">2e ligne</a>
+                            </div>
+                        {% endif %}
+                        {% if(laPosition.numero == 6 ) %}
+                            <div class="effectif-name">
+                                <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">3e ligne</a>
+                            </div>
+                        {% endif %}
+                        {% if(laPosition.numero == 9 ) %}
+                            <div class="effectif-name">
+                                <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Demi mêler</a>
+                            </div>
+                        {% endif %}
+                        {% if(laPosition.numero == 10 ) %}
+                            <div class="effectif-name">
+                                <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Ouvreur</a>
+                            </div>
+                        {% endif %}
+                        {% if(laPosition.numero == 12 ) %}
+                            <div class="effectif-name">
+                                <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Centre</a>
+                            </div>
+                        {% endif %}
+                        {% if(laPosition.numero == 11 ) %}
+                            <div class="effectif-name">
+                                <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Ailier</a>
+                            </div>
+                        {% endif %}
+                        {% if(laPosition.numero == 15 ) %}
+                            <div class="effectif-name">
+                                <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Arrière</a>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -45,50 +66,19 @@
         </section>
         <section class="content-joueur">
             <div class="container">
+                {% for leJoueur in listeJoueurs %}
                 <div class="col-md-3">
                     <div class="block-joueur">
                         <header>
-                            <h2>Joueur Blabla</h2>
+                            <h2>{{ leJoueur.nomprenom }}</h2>
                         </header>
-                        <img class="ombrage" src="C:\wamp64\www\IUT\StadeRochelais\web\img\Joueurs\Stade Rochelais\Jordan Sénéca.jpg">
-                        <p><strong>Age : </strong>28 ans
-                            <strong>Poids : </strong>95kg
+                        <img class="ombrage" src="{{ asset(leJoueur.photo) }}">
+                        <p><strong>Age : </strong>{{ leJoueur.age }} ans
+                            <strong>Poids : </strong>{{ leJoueur.poids }}kg
                         </p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="block-joueur">
-                        <header>
-                            <h2>Joueur Blabla</h2>
-                        </header>
-                        <img class="ombrage" src="C:\wamp64\www\IUT\StadeRochelais\web\img\Joueurs\Stade Rochelais\Jordan Sénéca.jpg">
-                        <p><strong>Age : </strong>28 ans
-                            <strong>Poids : </strong>95kg
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="block-joueur">
-                        <header>
-                            <h2>Joueur Blabla</h2>
-                        </header>
-                        <img class="ombrage" src="C:\wamp64\www\IUT\StadeRochelais\web\img\Joueurs\Stade Rochelais\Jordan Sénéca.jpg">
-                        <p><strong>Age : </strong>28 ans
-                            <strong>Poids : </strong>95kg
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="block-joueur">
-                        <header>
-                            <h2>Joueur Blabla</h2>
-                        </header>
-                        <img class="ombrage" src="C:\wamp64\www\IUT\StadeRochelais\web\img\Joueurs\Stade Rochelais\Jordan Sénéca.jpg">
-                        <p><strong>Age : </strong>28 ans
-                            <strong>Poids : </strong>95kg
-                        </p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </section>
     </section>

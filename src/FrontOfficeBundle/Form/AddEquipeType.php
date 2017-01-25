@@ -23,18 +23,17 @@ class AddEquipeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-           ->add('nom',\Symfony\Component\Form\Extension\Core\Type\TextType::class)
+
+            ->add('nom',\Symfony\Component\Form\Extension\Core\Type\TextType::class)
             ->add('stade',\Symfony\Component\Form\Extension\Core\Type\TextType::class)
+            ->add('file_upload_image', FileType::class, array('label' => 'Fichier image'))
             ->add('annuler',ResetType::class,array(
                 'attr' => array(
                     'class' => 'btn-annuler')))
+
             ->add('ajouter',SubmitType::class,array(
                 'attr' => array(
-                    'class' => 'btn-ajouter')))
-            ->add('file',FileType::class, array(
-                'label' => 'Logo',
-                'mapped' => false
-            ));
+                    'class' => 'btn-ajouter')));
 
     }
 

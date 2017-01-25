@@ -21,4 +21,28 @@ class JoueurRepository extends \Doctrine\ORM\EntityRepository
 
         return $query->getResult();
     }
+    public function findJoueurStadeRochelais($equipe){
+        $queryBuilder = $this->createQueryBuilder('j');
+        $queryBuilder->innerJoin('FrontOfficeBundle:Equipe','e')
+            ->andWhere('j.equipe=e.id')
+            ->andWhere('e.nom=:equipe')
+            ->setParameter("equipe",$equipe);
+
+        $query=$queryBuilder->getQuery();
+
+        return $query->getResult();
+    }
+    public function findJoueurPositionStadeRochelais($equipe,$position){
+        $queryBuilder = $this->createQueryBuilder('j');
+        $queryBuilder
+            ->where('j.equipe=40')
+            ->innerJoin('FrontOfficeBundle:Position','p')
+            ->add('where',$queryBuilder->expr()->in('j.id',':position'))
+            ->setParameter('position',$position);
+
+        $query=$queryBuilder->getQuery();
+
+        return $query->getResult();
+
+    }
 }
