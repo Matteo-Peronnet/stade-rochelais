@@ -23,86 +23,98 @@ class LoadEquipeData extends AbstractFixture implements OrderedFixtureInterface
         $bayonne->setBlason("img/Logo/Bayonne.png");
         $bayonne->setStade("Jean-Dauger");
         $bayonne->setCouleur("#86D0F3");
+        $bayonne->setEntraineur($this->getReference('Entraineur Bayonne'));
 
         $bordeaux_begles = new Equipe();
         $bordeaux_begles->setNom("Bordeaux-Begles");
         $bordeaux_begles->setBlason("img/Logo/Bordeaux-Begles.png");
         $bordeaux_begles->setStade("André-Moga");
         $bordeaux_begles->setCouleur("#4D1B25");
+        $bordeaux_begles->setEntraineur($this->getReference('Entraineur Bordeaux-Begles'));
 
         $brive = new Equipe();
         $brive->setNom("Brive");
         $brive->setBlason("img/Logo/Brive.png");
         $brive->setStade("Amédée Domenech");
         $brive->setCouleur("#FFF");
+        $brive->setEntraineur($this->getReference('Entraineur Brive'));
 
         $castres = new Equipe();
         $castres->setNom("Castres");
         $castres->setBlason("img/Logo/Castres.png");
         $castres->setStade("Jean Pierre-Antoine");
         $castres->setCouleur("#155A9F");
+        $castres->setEntraineur($this->getReference('Entraineur Castres'));
 
         $clermont = new Equipe();
         $clermont->setNom("Clermont");
         $clermont->setBlason("img/Logo/Clermont.png");
         $clermont->setStade("Parc des Sports Marcel Michelin");
         $clermont->setCouleur("#FAE927");
+        $clermont->setEntraineur($this->getReference('Entraineur Clermont'));
 
         $grenoble = new Equipe();
         $grenoble->setNom("Grenoble");
         $grenoble->setBlason("img/Logo/Grenoble.png");
         $grenoble->setStade("Des Alpes");
         $grenoble->setCouleur("#BD2735");
+        $grenoble->setEntraineur($this->getReference('Entraineur Grenoble'));
 
         $lyonOU = new Equipe();
         $lyonOU->setNom("LyonOU");
         $lyonOU->setBlason("img/Logo/LyonOU.png");
         $lyonOU->setStade("Gerland");
         $lyonOU->setCouleur("#C00418");
+        $lyonOU->setEntraineur($this->getReference('Entraineur LyonOU'));
 
         $montpellier = new Equipe();
         $montpellier->setNom("Montpellier");
         $montpellier->setBlason("img/Logo/Montpellier.png");
         $montpellier->setStade("Altrad Stadium");
         $montpellier->setCouleur("#002C5B");
+        $montpellier->setEntraineur($this->getReference('Entraineur Montpellier'));
 
         $pau = new Equipe();
         $pau->setNom("Pau");
         $pau->setBlason("img/Logo/Pau.png");
         $pau->setStade("du Hameau");
         $pau->setCouleur("#007236");
+        $pau->setEntraineur($this->getReference('Entraineur Pau'));
 
         $racing_92 = new Equipe();
         $racing_92->setNom("Racing 92");
         $racing_92->setBlason("img/Logo/Racing_92.png");
         $racing_92->setStade("Yves Du Manoir");
         $racing_92->setCouleur("#C1DFF7");
+        $racing_92->setEntraineur($this->getReference('Entraineur Racing 92'));
 
         $stade_francais = new Equipe();
         $stade_francais->setNom("Stade Français");
         $stade_francais->setBlason("img/Logo/Stade_Francais.png");
         $stade_francais->setStade("Jean Bouin");
         $stade_francais->setCouleur("#EA6698");
+        $stade_francais->setEntraineur($this->getReference('Entraineur Stade Français'));
 
         $stade_rochelais = new Equipe();
         $stade_rochelais->setNom("Stade Rochelais");
         $stade_rochelais->setBlason("img/Logo/Stade_Rochelais.png");
         $stade_rochelais->setStade("Marcel Deflandre");
         $stade_rochelais->setCouleur("#FFCC00");
+        $stade_rochelais->setEntraineur($this->getReference('Entraineur Stade Rochelais'));
 
         $toulon = new Equipe();
         $toulon->setNom("Toulon");
         $toulon->setBlason("img/Logo/Toulon.png");
         $toulon->setStade("Mayol");
         $toulon->setCouleur("#EF1C25");
+        $toulon->setEntraineur($this->getReference('Entraineur Toulon'));
 
         $toulouse = new Equipe();
         $toulouse->setNom("Toulouse");
         $toulouse->setBlason("img/Logo/Toulouse.png");
         $toulouse->setStade("Ernest Wallon");
         $toulouse->setCouleur("#D30C14");
-
-
+        $toulouse->setEntraineur($this->getReference('Entraineur Toulouse'));
 
         $manager->persist($bayonne);
         $manager->persist($bordeaux_begles);

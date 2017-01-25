@@ -165,7 +165,7 @@ class DefaultController extends Controller
                 /** @var \Symfony\Component\HttpFoundation\File\UploadedFile $file */
                 $file = $form['file_upload_image']->getData();
                 $fileName = $equipe->upload($file);
-                $equipe->setBlason('/web/uploads/Logo'.$fileName);
+                $equipe->setBlason('/web/uploads/Logo/'.$fileName);
                 $em->persist($equipe);
                 $em->flush();
 
