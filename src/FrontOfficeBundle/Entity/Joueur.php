@@ -343,5 +343,10 @@ class Joueur
     public function setPosition($position)
     {
         $this->position = $position;
+
+    }
+
+    public function getPositionIndex($i){
+        return $this->position[$i];
     }
 }

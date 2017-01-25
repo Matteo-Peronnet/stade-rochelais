@@ -9,52 +9,52 @@
                 <div class="row">
                     <div class="col-md-12 col-md-offset-1 col-centered">
 
-                        <div class="effectif-name is-active ">
+                        <div class="effectif-name  {% if(positionMenu=="tout") %}is-active{% endif %}">
                             <a href="{{ path(app.request.get('_route'), app.request.get('_route_params'))}}">Tous</a>
                         </div>
                         {% for laPosition in listePosition %}
                             {% if(laPosition.numero == 2) %}
-                        <div class="effectif-name">
+                        <div class="effectif-name {% if(positionMenu==laPosition.numero) %}is-active{% endif %}">
                             <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Talonneur</a>
                         </div>
                             {% endif %}
                             {% if(laPosition.numero == 3 ) %}
-                        <div class="effectif-name">
+                        <div class="effectif-name {% if(positionMenu==laPosition.numero) %}is-active{% endif %}">
                             <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Pilier</a>
                         </div>
                             {% endif %}
                         {% if(laPosition.numero == 4 ) %}
-                            <div class="effectif-name">
+                            <div class="effectif-name {% if(positionMenu==laPosition.numero) %}is-active{% endif %}">
                                 <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">2e ligne</a>
                             </div>
                         {% endif %}
                         {% if(laPosition.numero == 6 ) %}
-                            <div class="effectif-name">
+                            <div class="effectif-name {% if(positionMenu==laPosition.numero) %}is-active{% endif %}">
                                 <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">3e ligne</a>
                             </div>
                         {% endif %}
                         {% if(laPosition.numero == 9 ) %}
-                            <div class="effectif-name">
-                                <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Demi mêler</a>
+                            <div class="effectif-name {% if(positionMenu==laPosition.numero) %}is-active{% endif %}">
+                                <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Demi mêlée</a>
                             </div>
                         {% endif %}
                         {% if(laPosition.numero == 10 ) %}
-                            <div class="effectif-name">
+                            <div class="effectif-name {% if(positionMenu==laPosition.numero) %}is-active{% endif %}">
                                 <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Ouvreur</a>
                             </div>
                         {% endif %}
                         {% if(laPosition.numero == 12 ) %}
-                            <div class="effectif-name">
+                            <div class="effectif-name {% if(positionMenu==laPosition.numero) %}is-active{% endif %}">
                                 <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Centre</a>
                             </div>
                         {% endif %}
                         {% if(laPosition.numero == 11 ) %}
-                            <div class="effectif-name">
+                            <div class="effectif-name {% if(positionMenu==laPosition.numero) %}is-active{% endif %}">
                                 <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Ailier</a>
                             </div>
                         {% endif %}
                         {% if(laPosition.numero == 15 ) %}
-                            <div class="effectif-name">
+                            <div class="effectif-name {% if(positionMenu==laPosition.numero) %}is-active{% endif %}">
                                 <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')) ~ '?p=' ~  laPosition.numero}}">Arrière</a>
                             </div>
                         {% endif %}

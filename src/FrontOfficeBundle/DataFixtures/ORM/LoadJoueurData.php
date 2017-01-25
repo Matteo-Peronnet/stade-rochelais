@@ -54,7 +54,7 @@ class LoadJoueurData extends AbstractFixture implements OrderedFixtureInterface
                         $joueurL->addPosition($this->getReference("Troisième ligne droite"));
                         $joueurL->addPosition($this->getReference("Troisième ligne centre"));
                         break;
-                    case "Mélée":
+                    case "Mêlée":
                         $joueurL->addPosition($this->getReference("Demi de mélée"));
                         break;
                     case "Ouverture":
