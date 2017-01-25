@@ -3,6 +3,8 @@
 namespace FrontOfficeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Championnat
@@ -46,6 +48,33 @@ class Championnat
      * @ORM\ManyToMany(targetEntity="FrontOfficeBundle\Entity\Equipe", cascade={"persist"}, inversedBy="championnat")
      */
     private $equipe;
+
+    protected $submitFile;
+
+    public function upload(UploadedFile $file)
+    {
+        $fileName = $file->getClientOriginalName();
+        $dir = __DIR__.'../../../../web/uploads/csv/';
+        $file->move($dir, $fileName);
+
+        return $fileName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getsubmitFile()
+    {
+        return $this->submitFile;
+    }
+
+    /**
+     * @param mixed $submitFile
+     */
+    public function setsubmitFile($submitFile)
+    {
+        $this->submitFile = $submitFile;
+    }
 
     /**
      * Get id

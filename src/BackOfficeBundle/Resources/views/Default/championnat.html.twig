@@ -78,7 +78,10 @@
                         <tr>
                             <td><img src="{{ asset(lesEquipes.blason) }}" height="40px"></td>
                             <td>{{ lesEquipes.nom }}</td>
-                            <td>{{ lesEquipes.championnat }}</td>
+                            <td>{% for championnatEquipe in lesEquipes.championnat %}
+                                    {{ championnatEquipe.nom }}
+                            {% endfor %}
+                           </td>
                         </tr>
                     {% endfor %}
                     </tbody>

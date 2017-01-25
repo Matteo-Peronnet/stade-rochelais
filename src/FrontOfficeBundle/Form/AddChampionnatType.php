@@ -26,11 +26,6 @@ class AddChampionnatType extends AbstractType
                 'allow_extra_fields' => true,
                 'mapped'=> false
             ))
-//            ->add('equipe', CollectionType::class, array(
-//                'entry_type' => FileType::class,
-//                'mapped' => false,
-//                'label' => 'Liste des équipes'
-//            ))
             ->add('ajouter', SubmitType::class, array(
                 'attr' => array(
                     'class' => 'btn-ajouter'
