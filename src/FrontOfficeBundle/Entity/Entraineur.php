@@ -5,12 +5,12 @@ namespace FrontOfficeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Arbitre
+ * Entraineur
  *
- * @ORM\Table(name="arbitre")
- * @ORM\Entity(repositoryClass="FrontOfficeBundle\Repository\ArbitreRepository")
+ * @ORM\Table(name="entraineur")
+ * @ORM\Entity(repositoryClass="FrontOfficeBundle\Repository\EntraineurRepository")
  */
-class Arbitre
+class Entraineur
 {
     /**
      * @var int
@@ -28,10 +28,11 @@ class Arbitre
      */
     private $nomprenom;
 
+
     /**
      * Get id
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -43,7 +44,7 @@ class Arbitre
      *
      * @param string $nomprenom
      *
-     * @return Arbitre
+     * @return Entraineur
      */
     public function setNomprenom($nomprenom)
     {
@@ -62,3 +63,4 @@ class Arbitre
         return $this->nomprenom;
     }
 }
+

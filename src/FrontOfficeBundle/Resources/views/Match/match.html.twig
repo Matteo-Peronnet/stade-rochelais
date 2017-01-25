@@ -28,7 +28,7 @@
                                 <p class="resume-match-info">{{ matchs[0].scoreDomicile }}-{{ matchs[0].scoreExterieur }}</p>
                             {% endif %}
                             <div class="resume-match-diffuseurs">
-                                {% if matchs[0].diffuseur.logo is not defined or matchs[0].diffuseur.logo %}
+                                {% if matchs[0].diffuseur.logo is not defined or matchs[0].diffuseur.logo is null %}
                                     {% else %}
                                         <img src="{{ asset(matchs[0].diffuseur.logo) }}">
                                 {% endif %}

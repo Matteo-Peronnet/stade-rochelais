@@ -14,84 +14,39 @@
             <div class="row">
                 <div class="box col-md-7 margin-15 no-padding">
                     <h1>Ajouter un diffuseur</h1>
-                    <form method="post" action="#">
+                    <form method="post" enctype="multipart/form-data">
                         <p>
-                            <label for="NomEquipe">Nom Equipe : </label>
-                            <input>
-                        </p>
-                        <p>
-                            <label for="NomStade">Nom Stade : </label>
-                            <input>
-                        </p>
-                        <p>
-                            <label for="blason">Blason : </label>
-                            <button type="button" class="btn btn-lg btn-default">Parcourir</button>
+                            {{ form_start(form) }}
+                            {{ form_row(form.nom) }}
+                            {{ form_row(form.file_upload_logo_diffuseur) }}
                         </p>
                         <footer>
-                            <input class="btn-annuler" type="reset" value="Annuler">
-                            <input class="btn-ajouter" type="submit" value="Ajouter">
+                            {{ form_row(form.annuler, { 'label': 'Annuler' }) }}
+                            {{ form_row(form.ajouter, { 'label': 'Ajouter' }) }}
                         </footer>
+                        {{ form_end(form) }}
                     </form>
                 </div>
 
                 <div class="box draw meet-blue col-md-7 margin-15 no-padding">
-                    <h1>Liste des équipes
-                        <select class="pull-right" name="championnat" id="championnat">
-                            <option value="TOP14">TOP14</option>
-                            <option value="U18">PRO D2</option>
-                            <option value="U16">CHAMPIONS CUP</option>
-                        </select>
-                    </h1>
                     <table class="table">
                         <thead>
                         <tr>
                             <th>Blason</th>
                             <th>Nom</th>
-                            <th>Stade</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td><img src="img/logo/StadeRochelais.png" height="42px" width="33px"></td>
-                            <td>Stade Rochelais</td>
-                            <td>Stade Marcel Deflandre</td>
-                            <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}" height="30px" width="30px"></a>
-                                <a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="img/logo/StadeFrancais.png" height="42px" width="34px"></td>
-                            <td>Paris</td>
-                            <td>Stade Jean-Bouin</td>
-                            <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}" height="30px" width="30px"></a>
-                                <a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="img/logo/Brive.png" height="42px" width="35px"></td>
-                            <td>Brive</td>
-                            <td>Stadium Municipal Amédée-Domenech</td>
-                            <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}" height="30px" width="30px"></a>
-                                <a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}"></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="img/logo/LyonOU.png" height="42px" width="26px"></td>
-                            <td>Lyon</td>
-                            <td>Stade Gerland</td>
-                            <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
-                                <a href="#"><img src="css/icon/icon-backend-supprimer.png"></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="img/logo/Clermont.png" height="42px" width="33px"></td>
-                            <td>Clermont</td>
-                            <td>Stade Marcel-Michelin</td>
-                            <td><a href="#"><img src="css/icon/icon-backend-edit.png" height="30px" width="30px"></a>
-                                <a href="#"><img src="css/icon/icon-backend-supprimer.png"></a>
-                            </td>
-                        </tr>
+                        {% for diffuseur in diffuseurs %}
+                            <tr>
+                                <td><img src="{{ asset(diffuseur.logo) }}" height="40px"></td>
+                                <td>{{ diffuseur.nom }}</td>
+                                <td><a href="#"><img src="{{ asset('css/icon/icon-backend-edit.png') }}" height="30px" width="30px"></a>
+                                    <a href="#"><img src="{{ asset('css/icon/icon-backend-supprimer.png') }}" height="30px" width="30px"></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
                 </div>

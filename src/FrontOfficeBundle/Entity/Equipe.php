@@ -72,7 +72,13 @@ class Equipe implements \JsonSerializable
      * @ORM\Column(name="Couleur", type="string", length=8)
      * @ORM\OneToOne(targetEntity="OC\FrontOfficeBundle\Entity\Equipe", cascade={"persist", "remove"})
      */
-    private $couleur;
+    private $couleur = "#000000";
+
+    /**
+     * @var Entraineur
+     * @ORM\OneToOne(targetEntity="FrontOfficeBundle\Entity\Entraineur")
+     */
+    private $entraineur;
 
 
 
@@ -483,4 +489,30 @@ class Equipe implements \JsonSerializable
     {
         return $this->couleur;
     }
+
+    /**
+     * Set entraineur
+     *
+     * @param \FrontOfficeBundle\Entity\Entraineur $entraineur
+     *
+     * @return Equipe
+     */
+    public function setEntraineur(\FrontOfficeBundle\Entity\Entraineur $entraineur = null)
+    {
+        $this->entraineur = $entraineur;
+
+        return $this;
+    }
+
+    /**
+     * Get entraineur
+     *
+     * @return \FrontOfficeBundle\Entity\Entraineur
+     */
+    public function getEntraineur()
+    {
+        return $this->entraineur;
+    }
+    
+    
 }

@@ -3,6 +3,8 @@
 namespace FrontOfficeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 /**
  * Diffuseur
@@ -92,5 +94,32 @@ class Diffuseur
     public function getLogo()
     {
         return $this->logo;
+    }
+
+    protected $file_upload_logo_diffuseur;
+
+    public function upload(UploadedFile $file)
+    {
+        $fileName = $file->getClientOriginalName();
+        $dir = __DIR__.'../../../../web/uploads/Diffuseur';
+        $file->move($dir, $fileName);
+
+        return $fileName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFileUploadLogoDiffuseur()
+    {
+        return $this->file_upload_logo_diffuseur;
+    }
+
+    /**
+     * @param mixed $file_upload_logo_diffuseur
+     */
+    public function setFileUploadLogoDiffuseur($file_upload_logo_diffuseur)
+    {
+        $this->file_upload_logo_diffuseur = $file_upload_logo_diffuseur;
     }
 }

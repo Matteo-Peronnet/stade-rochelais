@@ -69,10 +69,16 @@ class Equipe implements \JsonSerializable
     /**
      * @var couleur
      *
-     * @ORM\Column(name="Couleur", type="string", length=7)
+     * @ORM\Column(name="Couleur", type="string", length=8)
      * @ORM\OneToOne(targetEntity="OC\FrontOfficeBundle\Entity\Equipe", cascade={"persist", "remove"})
      */
     private $couleur;
+
+    /**
+     * @var Entraineur
+     * @ORM\OneToOne(targetEntity="FrontOfficeBundle\Entity\Entraineur")
+     */
+    private $entraineur;
 
 
 
@@ -95,19 +101,20 @@ class Equipe implements \JsonSerializable
      *
      *
      */
-    /*public function setFile(UploadedFile $file)
-    {
-        $this->file =$file;
-        //On vérifie si on avait deja un fichier pour cette entité
-        if(null !==$this->blason)
-        {
-            //On sauvegarde l'extension du fichier pour le supprimer plus tard
-            $this->tempFilename = $this->blason;
+//    public function setFile(UploadedFile $file)
+//    {
+//        $this->file =$file;
+//        //On vérifie si on avait deja un fichier pour cette entité
+//        if(null !==$this->blason)
+//        {
+//            //On sauvegarde l'extension du fichier pour le supprimer plus tard
+//            $this->tempFilename = $this->blason;
+//
+//            //On reinitialise les valeurs de l'attribut blason
+//            $this->blason = null;
+//        }
+//    }
 
-            //On reinitialise les valeurs de l'attribut blason
-            $this->blason = null;
-        }
-    }*/
 
     /**
      *
@@ -266,7 +273,6 @@ class Equipe implements \JsonSerializable
     public function setBlason($blason)
     {
         $this->blason = $blason;
-
         return $this;
     }
 
@@ -459,4 +465,28 @@ class Equipe implements \JsonSerializable
         $this->formation->removeElement($formation);
     }
 
+
+    /**
+     * Set couleur
+     *
+     * @param string $couleur
+     *
+     * @return Equipe
+     */
+    public function setCouleur($couleur)
+    {
+        $this->couleur = $couleur;
+
+        return $this;
+    }
+
+    /**
+     * Get couleur
+     *
+     * @return string
+     */
+    public function getCouleur()
+    {
+        return $this->couleur;
+    }
 }
