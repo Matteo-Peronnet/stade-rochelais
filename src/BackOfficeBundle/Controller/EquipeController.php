@@ -50,12 +50,16 @@ class EquipeController extends Controller
         if ($request->isMethod('POST')) {
             $form->handleRequest($request);
             if ($form->isSubmitted()) {
+                $this->get('session')->getFlashBag()->add(
+                    'success',
+                    'L\'equipe a bien été ajouté'
+                );
                 $em = $this->getDoctrine()->getManager();
                 // $file stores the uploaded PDF file
                 /** @var \Symfony\Component\HttpFoundation\File\UploadedFile $file */
                 $file = $form['file_upload_image']->getData();
                 $fileName = $equipe->upload($file);
-                $equipe->setBlason('/web/uploads/Logo/' . $fileName);
+                $equipe->setBlason('/uploads/Logo/' . $fileName);
                 $em->persist($equipe);
                 $em->flush();
 

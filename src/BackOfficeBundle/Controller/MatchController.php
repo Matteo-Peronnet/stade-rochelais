@@ -49,6 +49,10 @@ class MatchController extends Controller
         if ($request->isMethod('POST')) {
             $form->handleRequest($request);
             if ($form->isValid()) {
+                $this->get('session')->getFlashBag()->add(
+                    'success',
+                    'Le Match à bien été ajouté'
+                );
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($match);
                 $em->flush();

@@ -15,6 +15,9 @@
                         <div class="box col-md-5 margin-15 no-padding">
                             <h1>Ajouter un Match</h1>
                             <form method="post" action="#">
+                                {% for flashMessage in app.session.flashbag.get('success') %}
+                                    <h2 style="color:green;">{{ flashMessage }}</h2>
+                                {% endfor %}
                                 {{ form_start(form) }}
                                 <p>{{ form_row(form.championnat) }}</p>
                                 <p>{{ form_row(form.journee) }}</p>
@@ -32,7 +35,7 @@
                             </form>
                         </div>
 
-                        <div class="box col-md-11 margin-15 no-padding">
+                        <div class="box col-md-12 margin-15 no-padding">
                             <h1>Saisir Score</h1>
                             <div class="box-parametre">
                                 <p>Rechercher par équipe
@@ -56,6 +59,7 @@
                                     <th>Score</th>
                                     <th>Exterieur</th>
                                     <th>Logo</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>

@@ -44,6 +44,10 @@ class DiffuseurController extends Controller
         //$form->bind($request);
 
         if ($form->isValid()) {
+            $this->get('session')->getFlashBag()->add(
+                'success',
+                'Le diffuseur a bien été ajouté'
+            );
             // $file stores the uploaded PDF file
             /** @var \Symfony\Component\HttpFoundation\File\UploadedFile $file */
 

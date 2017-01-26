@@ -14,6 +14,9 @@
             <div class="row">
                 <div class="box col-md-7 margin-15 no-padding">
                     <h1>Ajouter une équipe</h1>
+                    {% for flashMessage in app.session.flashbag.get('success') %}
+                        <h2 style="color:green;">{{ flashMessage }}</h2>
+                    {% endfor %}
                     <form method="post" enctype="multipart/form-data">
                         {{ form_start(form) }}
                         <p>{{ form_row(form.nom) }}</p>
@@ -30,13 +33,7 @@
                 </div>
 
                 <div class="box draw meet-blue col-md-7 margin-15 no-padding">
-                    <h1>Liste des équipes
-                        <select class="pull-right" name="championnat" id="championnat">
-                            <option value="TOP14">TOP14</option>
-                            <option value="U18">PRO D2</option>
-                            <option value="U16">CHAMPIONS CUP</option>
-                        </select>
-                    </h1>
+                    <h1>Liste des équipes du TOP 14</h1>
                     <table class="table">
                         <thead>
                         <tr>

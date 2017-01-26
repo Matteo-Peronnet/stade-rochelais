@@ -11,58 +11,56 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="header-background">
-        <div class="header-menu">
-            <div class="container">
-                <div class="row">
-                    <div class="menu-logo col-sm-1 col-md-2">
-                        <img src="{{ asset("img/logo/StadeRochelais.png") }}" height="120px" width="94px">
-                    </div>
-                    <div class="menu col-md-10">
-                        <ul>
-                            <li class="is-active"><a href="{{ app.request.getBaseURL() }}">Accueil</a></li>
-                            <li><a href="{{ app.request.getBaseURL() }}/calendrier">CALENDRIER</a></li>
-                            <li><a href="#">Clubs</a></li>
-                            <li><a href="#">Entreprise</a></li>
-                            <li><a href="#">Medias</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-content">
-            <div class="container">
-                <div class="row">
-                    <div class="header-equipe col-md-3">
-                        <p class="header-equipe-nom">{{ prochainMatch.equipeDomicile.nom }}</p>
-                        <img src="{{ asset(prochainMatch.equipeDomicile.blason) }}" height="170px">
-                    </div>
-                    <div class="header-next-match col-md-4 col-md-offset-1">
-                        <div class="box">
-                            <div class="box-border-bottom box-spacing box-top">
-                                <p>prochain match</p>
-                            </div>
-                            <div class="box-border-bottom box-spacing box-middle">
-                                <p>{{ jourProchainMatch }} {{ prochainMatch.date|date("d/m/Y") }}</p>
-                            </div>
-                            <div class="box-bottom box-spacing">
-                                <p>{{ prochainMatch.date|date("H:i") }}</p>
-                            </div>
+<div class="site-pusher">
+    <header>
+        <div class="header-background">
+            {% include "FrontOfficeBundle:Layout:menu.html.twig" %}
+            <div class="header-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="header-equipe col-md-3">
+                            <p class="header-equipe-nom">{{ prochainMatch.equipeDomicile.nom }}</p>
+                            <img src="{{ asset(prochainMatch.equipeDomicile.blason) }}" height="170px">
                         </div>
-                        <p class="header-next-match-stade">Stade : {{ prochainMatch.equipeDomicile.stade }}</p>
-                        <a href="{{ app.request.getBaseURL() }}/match/{{ prochainMatch.id }}"><span class="btn-header-detail">PLUS D'INFOS</span></a>
-                    </div>
-                    <div class="header-equipe col-md-3 col-md-offset-1">
-                        <p class="header-equipe-nom">{{ prochainMatch.equipeExterieur.nom }}</p>
-                        <img src="{{ asset(prochainMatch.equipeExterieur.blason) }}" height="170px">
+                        <div class="header-next-match col-md-4 col-md-offset-1">
+                            <div class="box">
+                                <div class="box-border-bottom box-spacing box-top">
+                                    <p>prochain match</p>
+                                </div>
+                                <div class="box-border-bottom box-spacing box-middle">
+                                    <p>{{ jourProchainMatch }} {{ prochainMatch.date|date("d/m/Y") }}</p>
+                                </div>
+                                <div class="box-bottom box-spacing">
+                                    <p>{{ prochainMatch.date|date("H:i") }}</p>
+                                </div>
+                            </div>
+                            <p class="header-next-match-stade">Stade : {{ prochainMatch.equipeDomicile.stade }}</p>
+                            <a href="{{ app.request.getBaseURL() }}/match/{{ prochainMatch.id }}"><span class="btn-header-detail">PLUS D'INFOS</span></a>
+                        </div>
+                        <div class="header-equipe col-md-3 col-md-offset-1">
+                            <p class="header-equipe-nom">{{ prochainMatch.equipeExterieur.nom }}</p>
+                            <img src="{{ asset(prochainMatch.equipeExterieur.blason) }}" height="170px">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 {% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
+    <div id="site-cache" class="site-cache"></div>
+</div>
+{% block javascripts %}
+    (function($){
+    $('#header-menu-title').click(function(e){
+    e.preventDefault();
+    $('body').toggleClass('width--sidebar');
+    });
+
+    $('#site-cache').click(function(e){
+    $('body').removeClass('width--sidebar');
+    })
+
+    })(jQuery)
+{% endblock %}
 </body>
 </html>

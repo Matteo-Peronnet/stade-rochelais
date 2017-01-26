@@ -12,6 +12,9 @@
                 <h1>Ajouter Joueur</h1>
                 <form method="post" enctype="multipart/form-data">
                     <p>
+                        {% for flashMessage in app.session.flashbag.get('success') %}
+                        <h2 style="color:green;">{{ flashMessage }}</h2>
+                        {% endfor %}
                         {{ form_start(form_upload_csv) }}
                         {{ form_row(form_upload_csv.file_upload_csv_joueur) }}
 
@@ -27,6 +30,9 @@
             </div>
             <div class="box col-md-5 margin-15 no-padding">
                 <h1>Prévisualisation des joueurs à insérer</h1>
+                {% for flashMessage in app.session.flashbag.get('success') %}
+                    <h2 style="color:green;">{{ flashMessage }}</h2>
+                {% endfor %}
                 <form method="post" enctype="multipart/form-data">
                     <table class="table">
                         <thead>

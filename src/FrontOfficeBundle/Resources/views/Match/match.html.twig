@@ -30,7 +30,7 @@
                             <div class="resume-match-diffuseurs">
                                 {% if matchs[0].diffuseur.logo is not defined or matchs[0].diffuseur.logo is null %}
                                     {% else %}
-                                        <img src="{{ asset(matchs[0].diffuseur.logo) }}">
+                                        <img height="55px" src="{{ asset(matchs[0].diffuseur.logo) }}">
                                 {% endif %}
                             </div>
                             <a href="#"><span class="btn-header-detail btn-reserver">Réserver</span></a>

@@ -48,6 +48,11 @@ class JoueurController extends Controller
 
         if ($request->isMethod('POST')) {
             if ($form_upload_csv->isValid() && $form_upload_csv->isSubmitted()) {
+                $this->get('session')->getFlashBag()->add(
+                    'success',
+                    'La prévisualisation est bien ajoutée'
+                );
+
                 /** @var \Symfony\Component\HttpFoundation\File\UploadedFile $file */
                 $file = $form_upload_csv['file_upload_csv_joueur']->getData();
                 $fileName = $joueur->upload($file);
@@ -56,14 +61,19 @@ class JoueurController extends Controller
 
             }
             if ($form_confirm_upload_csv->isValid() && $form_confirm_upload_csv->isSubmitted()) {
+                $this->get('session')->getFlashBag()->add(
+                    'success',
+                    'Les joueurs ont bien été ajoutés'
+                );
                 $em = $this->getDoctrine()->getManager();
                 $listeJoueur = $_SESSION['listeJoueur'];
                 for($i=0;$i<count($listeJoueur)-1;$i++){
-                    $em->persist($listeJoueur[$i]);
+                    $joueur = $em->merge($listeJoueur[$i]);
+                    $em->persist($joueur);
                 }
                 $em->flush();
                 $listeJoueur = array();
-                $_SESSION['listeJoueur'] = $listeJoueur;
+                unset($_SESSION['listeJoueur']);
             }
         }
         return $this->render('BackOfficeBundle:Default:joueur.html.twig', array(
@@ -137,3 +147,4 @@ class JoueurController extends Controller
         return $listeJoueur;
     }
 }
+

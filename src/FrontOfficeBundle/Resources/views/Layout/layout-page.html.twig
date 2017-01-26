@@ -11,39 +11,35 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="header-background">
-        <div class="header-menu">
-            <div class="container">
-                <div class="row">
-                    <div class="menu-logo col-sm-1 col-md-2">
-                        <img src="{{ asset("img/logo/StadeRochelais.png") }}" height="120px" width="94px">
-                    </div>
-                    <div class="menu col-md-10">
-                        <ul>
-                            <li class="is-active"><a href="{{ app.request.getBaseURL() }}">Accueil</a></li>
-                            <li><a href="{{ app.request.getBaseURL() }}/calendrier">CALENDRIER</a></li>
-                            <li><a href="#">Clubs</a></li>
-                            <li><a href="#">Entreprise</a></li>
-                            <li><a href="#">Medias</a></li>
-                        </ul>
+    <header>
+        <div class="header-background">
+            {% include "FrontOfficeBundle:Layout:menu.html.twig" %}
+            <div class="header-content header-page">
+                <div class="container">
+                    <div class="row">
+                        <div class="header-page-name col-md-12">
+                            <h1>{% block titrePage %}DéTail calendrier top 14{% endblock %}</h1>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="header-content header-page">
-            <div class="container">
-                <div class="row">
-                    <div class="header-page-name col-md-12">
-                        <h1>{% block titrePage %}DéTail calendrier top 14{% endblock %}</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
+    </header>
 {% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
+    <div id="site-cache" class="site-cache"></div>
+</div>
+    {% block javascripts %}
+        (function($){
+        $('#header-menu-title').click(function(e){
+        e.preventDefault();
+        $('body').toggleClass('width--sidebar');
+        });
+
+        $('#site-cache').click(function(e){
+        $('body').removeClass('width--sidebar');
+        })
+
+        })(jQuery)
+    {% endblock %}
 </body>
 </html>

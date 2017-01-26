@@ -995,8 +995,8 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0; }
-  ul li {
-    float: left; }
+ul li {
+  float: left; }
 
 a {
   text-decoration: none;
@@ -1057,27 +1057,27 @@ h1 {
   font-weight: 600;
   color: #FFF;
   display: inline-block; }
-  .menu li {
-    float: left; }
-    .menu li a {
-      margin-right: 25px;
-      text-transform: uppercase; }
-      .menu li a:hover {
-        color: #fecb00; }
-        .menu li a:hover:after {
-          content: url("icon/icon-arrowdown-hover.png"); }
-    .menu li a:after {
-      padding-left: 10px;
-      content: url("icon/icon-arrowdown.png"); }
-    .menu li.is-active {
-      color: #fecb00; }
+.menu li {
+  float: left; }
+.menu li a {
+  margin-right: 25px;
+  text-transform: uppercase; }
+.menu li a:hover {
+  color: #fecb00; }
+.menu li a:hover:after {
+  content: url("icon/icon-arrowdown-hover.png"); }
+.menu li a:after {
+  padding-left: 10px;
+  content: url("icon/icon-arrowdown.png"); }
+.menu li.is-active {
+  color: #fecb00; }
 
 .header-content {
   clear: both;
   margin-top: 160px;
   text-transform: uppercase; }
-  .header-content p, .header-content h1 {
-    margin: 0; }
+.header-content p, .header-content h1 {
+  margin: 0; }
 
 .header-equipe {
   text-align: center;
@@ -1086,8 +1086,8 @@ h1 {
   font-weight: 700;
   padding: 15px;
   background-color: rgba(0, 0, 0, 0.23); }
-  .header-equipe p {
-    margin-bottom: 30px; }
+.header-equipe p {
+  margin-bottom: 30px; }
 
 .box {
   width: auto;
@@ -1097,16 +1097,16 @@ h1 {
   border-radius: 5px;
   color: #eeeeee;
   text-align: center; }
-  .box p {
-    width: auto; }
-  .box .box-top {
-    font-weight: 600; }
-  .box .box-top, .box .box-middle {
-    font-size: 30px; }
-  .box .box-bottom {
-    color: #fecb00;
-    font-size: 50px;
-    font-weight: 700; }
+.box p {
+  width: auto; }
+.box .box-top {
+  font-weight: 600; }
+.box .box-top, .box .box-middle {
+  font-size: 30px; }
+.box .box-bottom {
+  color: #fecb00;
+  font-size: 50px;
+  font-weight: 700; }
 
 .box-border-bottom {
   border-bottom: 1px solid #fecb00; }
@@ -1136,8 +1136,8 @@ h1 {
   font-size: 25px;
   color: #eee;
   margin-bottom: 50px; }
-  .btn-header-detail:hover {
-    background-color: rgba(254, 203, 0, 0.3); }
+.btn-header-detail:hover {
+  background-color: rgba(254, 203, 0, 0.3); }
 
 .header-page {
   margin-top: 115px;
@@ -1146,35 +1146,89 @@ h1 {
 .header-page-name {
   text-align: center;
   margin: 0 auto; }
-  .header-page-name h1 {
-    display: inline-block;
-    margin: 0 auto;
-    color: #FFF; }
+.header-page-name h1 {
+  display: inline-block;
+  margin: 0 auto;
+  color: #FFF; }
 
+/* RESPONSIVE */
+@media only screen and (max-width: 992px) {
+  .site-pusher {
+    transition-duration: 0.3s;
+    transform: translateX(0px); }
+
+  .header-menu-title {
+    position: relative;
+    display: block;
+    float: left;
+    width: 55px;
+    height: 55px;
+    cursor: pointer; }
+  .header-menu-title p {
+    display: none; }
+  .header-menu-title:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 0;
+    top: 10px;
+    left: 15px;
+    box-shadow: 0 10px 0 1px #FFF,0 16px 0 1px #FFF,0 22px 0 1px #FFF; }
+
+  .header-menu-title {
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #191919;
+    width: 250px;
+    transform: translateX(-250px);
+    transition-duration: 0s; }
+  .header-menu-title ul li {
+    float: none; }
+  .header-menu-title ul li a {
+    display: block;
+    height: 40px;
+    text-align: center;
+    line-height: 40px; }
+
+  .width--sidebar .site-pusher {
+    transform: translateX(250px); }
+  .width--sidebar .site-cache {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); } }
 .header-journee {
   height: auto;
   background-color: rgba(115, 115, 115, 0.02);
   padding: 5px;
   border-bottom: 1px solid rgba(183, 183, 183, 0.12); }
-  .header-journee:hover {
-    transition-duration: 0.3s;
-    background-color: rgba(115, 115, 115, 0.12); }
+.header-journee:hover {
+  transition-duration: 0.3s;
+  background-color: rgba(115, 115, 115, 0.12); }
 
 .journee-block {
   height: 50px;
   background-color: #fecb00;
   text-align: center;
   z-index: 2; }
-  .journee-block p {
-    display: inline-block;
-    font-size: 18px;
-    color: #262626;
-    margin: 0;
-    line-height: 50px; }
-  .journee-block:hover {
-    background-color: #ffe786;
-    border: 1px solid #262626;
-    cursor: pointer; }
+.journee-block p {
+  display: inline-block;
+  font-size: 18px;
+  color: #262626;
+  margin: 0;
+  line-height: 50px; }
+.journee-block:hover {
+  background-color: #ffe786;
+  border: 1px solid #262626;
+  cursor: pointer; }
 
 .journee-block-left:before {
   padding-top: 15px;
@@ -1195,24 +1249,24 @@ h1 {
   line-height: 48px;
   margin-left: 5px;
   float: right; }
-  .journee-name:hover {
-    transition-duration: 0.3s;
-    background-color: #262626; }
-    .journee-name:hover a {
-      color: #FFF; }
-  .journee-name.is-active {
-    transition-duration: 0.3s;
-    background-color: #262626; }
-    .journee-name.is-active a {
-      color: #FFF; }
-  .journee-name a {
-    display: inline-block;
-    border: hidden;
-    color: #262626;
-    margin: 0 auto;
-    font-size: 15px;
-    padding-left: 5px;
-    padding-right: 5px; }
+.journee-name:hover {
+  transition-duration: 0.3s;
+  background-color: #262626; }
+.journee-name:hover a {
+  color: #FFF; }
+.journee-name.is-active {
+  transition-duration: 0.3s;
+  background-color: #262626; }
+.journee-name.is-active a {
+  color: #FFF; }
+.journee-name a {
+  display: inline-block;
+  border: hidden;
+  color: #262626;
+  margin: 0 auto;
+  font-size: 15px;
+  padding-left: 5px;
+  padding-right: 5px; }
 
 .variable-width {
   overflow: hidden; }
@@ -1225,25 +1279,25 @@ h1 {
   margin-bottom: 50px;
   background-color: rgba(115, 115, 115, 0.02);
   border-bottom: 1px solid rgba(183, 183, 183, 0.12); }
-  .header-effectif:hover {
-    transition-duration: 0.3s;
-    background-color: rgba(115, 115, 115, 0.12); }
+.header-effectif:hover {
+  transition-duration: 0.3s;
+  background-color: rgba(115, 115, 115, 0.12); }
 
 .effectif-block {
   height: 50px;
   background-color: #fecb00;
   text-align: center;
   z-index: 2; }
-  .effectif-block p {
-    display: inline-block;
-    font-size: 18px;
-    color: #262626;
-    margin: 0;
-    line-height: 50px; }
-  .effectif-block:hover {
-    background-color: #ffe786;
-    border: 1px solid #262626;
-    cursor: pointer; }
+.effectif-block p {
+  display: inline-block;
+  font-size: 18px;
+  color: #262626;
+  margin: 0;
+  line-height: 50px; }
+.effectif-block:hover {
+  background-color: #ffe786;
+  border: 1px solid #262626;
+  cursor: pointer; }
 
 .effectif-block-left:before {
   padding-top: 15px;
@@ -1267,22 +1321,22 @@ h1 {
   padding-left: 15px;
   padding-right: 15px;
   float: left; }
-  .effectif-name:hover {
-    transition-duration: 0.3s;
-    background-color: #262626; }
-    .effectif-name:hover a {
-      color: #FFF; }
-  .effectif-name.is-active {
-    transition-duration: 0.3s;
-    background-color: #262626; }
-    .effectif-name.is-active a {
-      color: #FFF; }
-  .effectif-name a {
-    display: inline-block;
-    border: hidden;
-    color: #262626;
-    margin: 0 auto;
-    font-size: 18px; }
+.effectif-name:hover {
+  transition-duration: 0.3s;
+  background-color: #262626; }
+.effectif-name:hover a {
+  color: #FFF; }
+.effectif-name.is-active {
+  transition-duration: 0.3s;
+  background-color: #262626; }
+.effectif-name.is-active a {
+  color: #FFF; }
+.effectif-name a {
+  display: inline-block;
+  border: hidden;
+  color: #262626;
+  margin: 0 auto;
+  font-size: 18px; }
 
 /* centered columns styles */
 .row-centered {
@@ -1303,17 +1357,17 @@ h1 {
   margin-bottom: 15px;
   padding-bottom: 12.45px;
   background-color: rgba(94, 94, 94, 0.06); }
-  .block-joueur header {
-    background-color: #fecb00;
-    padding: 15px;
-    margin-bottom: 5px; }
-    .block-joueur header h2 {
-      margin: 0px; }
-  .block-joueur p {
-    padding-left: 15px;
-    font-size: 16px;
-    padding-right: 15px;
-    margin-bottom: 0px; }
+.block-joueur header {
+  background-color: #fecb00;
+  padding: 15px;
+  margin-bottom: 5px; }
+.block-joueur header h2 {
+  margin: 0px; }
+.block-joueur p {
+  padding-left: 15px;
+  font-size: 16px;
+  padding-right: 15px;
+  margin-bottom: 0px; }
 
 .ombrage {
   margin: 0 auto;
@@ -1327,30 +1381,30 @@ h1 {
 /* WIDGET */
 .widget-matchavenir table {
   border: 2px solid #212121; }
-  .widget-matchavenir table tr {
-    text-align: center;
-    font-family: "Montserrat";
-    font-size: 17px;
-    font-weight: 400;
-    border-bottom: 2px solid #212121; }
-    .widget-matchavenir table tr td img {
-      margin-left: 15px;
-      margin-right: 15px; }
-    .widget-matchavenir table tr td p {
-      margin: 0; }
-    .widget-matchavenir table tr td {
-      padding-top: 10px;
-      padding-bottom: 10px; }
-  .widget-matchavenir table tr:nth-child(odd) {
-    background-color: #e7e7e7; }
-  .widget-matchavenir table tr:nth-child(even) {
-    background-color: #FFF; }
-  .widget-matchavenir table tr.entete {
-    height: 50px;
-    font-family: "Montserrat";
-    font-size: 18px;
-    background-color: #fecb00;
-    color: #262626; }
+.widget-matchavenir table tr {
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 17px;
+  font-weight: 400;
+  border-bottom: 2px solid #212121; }
+.widget-matchavenir table tr td img {
+  margin-left: 15px;
+  margin-right: 15px; }
+.widget-matchavenir table tr td p {
+  margin: 0; }
+.widget-matchavenir table tr td {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+.widget-matchavenir table tr:nth-child(odd) {
+  background-color: #e7e7e7; }
+.widget-matchavenir table tr:nth-child(even) {
+  background-color: #FFF; }
+.widget-matchavenir table tr.entete {
+  height: 50px;
+  font-family: "Montserrat";
+  font-size: 18px;
+  background-color: #fecb00;
+  color: #262626; }
 
 .btn-widget-detail {
   display: block;
@@ -1368,8 +1422,8 @@ h1 {
   color: #000;
   text-transform: uppercase;
   margin-bottom: 50px; }
-  .btn-widget-detail:hover {
-    background-color: rgba(254, 203, 0, 0.5); }
+.btn-widget-detail:hover {
+  background-color: rgba(254, 203, 0, 0.5); }
 
 #equipeDomicile g:hover {
   cursor: pointer; }
@@ -1381,48 +1435,48 @@ h1 {
 .table-calendrier {
   font-size: 17px;
   font-weight: 400; }
-  .table-calendrier table {
-    border: 2px solid #262626;
-    color: #262626;
-    margin-top: 35px; }
-  .table-calendrier td {
-    padding-top: 2px;
-    padding-bottom: 2px;
-    text-align: center;
-    padding-left: 15px;
-    padding-right: 15px; }
-  .table-calendrier .calendrier-etat {
-    text-align: left;
-    padding-left: 15px;
-    padding-right: 15px;
-    line-height: 60px; }
-  .table-calendrier .calendrier-club1 {
-    text-align: right; }
-    .table-calendrier .calendrier-club1 img {
-      margin-left: 15px; }
-  .table-calendrier .calendrier-info p {
-    margin: 0; }
-  .table-calendrier .calendrier-club2 {
-    text-align: left; }
-    .table-calendrier .calendrier-club2 img {
-      margin-right: 15px; }
-  .table-calendrier tr {
-    border-bottom: 1px solid #262626; }
-  .table-calendrier tr:nth-child(odd) {
-    background-color: #e7e7e7; }
-  .table-calendrier tr:nth-child(even) {
-    background-color: #FFF; }
-  .table-calendrier .entete-calendrier {
-    height: 50px;
-    width: 100%;
-    background-color: #fecb00 !important;
-    border-bottom: 2px solid #262626; }
-    .table-calendrier .entete-calendrier th {
-      font-family: "Montserrat";
-      font-size: 22px;
-      padding-left: 15px;
-      padding-right: 15px;
-      text-align: left; }
+.table-calendrier table {
+  border: 2px solid #262626;
+  color: #262626;
+  margin-top: 35px; }
+.table-calendrier td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px; }
+.table-calendrier .calendrier-etat {
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 60px; }
+.table-calendrier .calendrier-club1 {
+  text-align: right; }
+.table-calendrier .calendrier-club1 img {
+  margin-left: 15px; }
+.table-calendrier .calendrier-info p {
+  margin: 0; }
+.table-calendrier .calendrier-club2 {
+  text-align: left; }
+.table-calendrier .calendrier-club2 img {
+  margin-right: 15px; }
+.table-calendrier tr {
+  border-bottom: 1px solid #262626; }
+.table-calendrier tr:nth-child(odd) {
+  background-color: #e7e7e7; }
+.table-calendrier tr:nth-child(even) {
+  background-color: #FFF; }
+.table-calendrier .entete-calendrier {
+  height: 50px;
+  width: 100%;
+  background-color: #fecb00 !important;
+  border-bottom: 2px solid #262626; }
+.table-calendrier .entete-calendrier th {
+  font-family: "Montserrat";
+  font-size: 22px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: left; }
 
 .table-calendrier-accueil tr:hover {
   background-color: #d4d4d4; }
@@ -1436,20 +1490,20 @@ h1 {
   font-family: "Montserrat";
   color: #262626;
   text-transform: uppercase; }
-  .resume-match .header-equipe {
-    color: #000; }
-  .resume-match .resume-match-stade {
-    font-size: 15px; }
-  .resume-match .resume-match-etat {
-    font-size: 30px; }
-  .resume-match .resume-match-date {
-    font-size: 25px; }
-  .resume-match .resume-match-info {
-    font-size: 30px;
-    font-weight: 700; }
-  .resume-match p {
-    margin-top: 15px;
-    margin-bottom: 15px; }
+.resume-match .header-equipe {
+  color: #000; }
+.resume-match .resume-match-stade {
+  font-size: 15px; }
+.resume-match .resume-match-etat {
+  font-size: 30px; }
+.resume-match .resume-match-date {
+  font-size: 25px; }
+.resume-match .resume-match-info {
+  font-size: 30px;
+  font-weight: 700; }
+.resume-match p {
+  margin-top: 15px;
+  margin-bottom: 15px; }
 
 .btn-reserver {
   background-color: #262626;
@@ -1457,9 +1511,9 @@ h1 {
   border: hidden;
   margin-bottom: 10px;
   display: inline-block; }
-  .btn-reserver:hover {
-    color: #fecb00;
-    background-color: #262626; }
+.btn-reserver:hover {
+  color: #fecb00;
+  background-color: #262626; }
 
 .popover {
   position: absolute;

@@ -76,6 +76,10 @@ class ChampionnatController extends Controller
             if ($request->isMethod('POST')) {
                 $formAddChamp->handleRequest($request);
                 if ($formAddChamp->isValid()) {
+                    $this->get('session')->getFlashBag()->add(
+                        'success',
+                        'Le Championnat et les equipes on bien été ajoutés'
+                    );
                     $em = $this->getDoctrine()->getManager();
                     /** @var \Symfony\Component\HttpFoundation\File\UploadedFile $file */
                     $file = $formAddChamp['submitFile']->getData();
