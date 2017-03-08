@@ -28,7 +28,7 @@
                     {{ form_end(form_upload_csv) }}
                 </form>
             </div>
-            <div class="box col-md-5 margin-15 no-padding">
+            <div class="box col-md-5 margin-15 no-padding scroll">
                 <h1>Prévisualisation des joueurs à insérer</h1>
                 {% for flashMessage in app.session.flashbag.get('success') %}
                     <h2 style="color:green;">{{ flashMessage }}</h2>

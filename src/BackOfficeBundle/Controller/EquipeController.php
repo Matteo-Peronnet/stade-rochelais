@@ -41,7 +41,9 @@ class EquipeController extends Controller
     {
 
         $repository = $this->getDoctrine()->getManager()->getRepository('FrontOfficeBundle:Equipe');
-        $listeEquipesTop14 = $repository->myfindAllEquipesDuTop14();
+        $repositoryC = $this->getDoctrine()->getManager()->getRepository('FrontOfficeBundle:Championnat');
+        $idChampionnatTop14 = $repositoryC->findByNom('Top 14');
+        $listeEquipesTop14 = $idChampionnatTop14[0]->getEquipe();
 
         // FORMULAIRE EQUIPE
         $equipe = new Equipe();
