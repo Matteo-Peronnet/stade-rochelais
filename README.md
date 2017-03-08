@@ -1,7 +1,7 @@
 StadeRochelais
 ==============
 
-##Projet IUT
+## Projet IUT
 Ce projet avait pour but, la validation de la montée en compétence sur le framework php mvc Symfony.
 
  - Mise en oeuvre des valeurs agiles dans le management de l’itération
