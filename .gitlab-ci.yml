@@ -1,11 +1,11 @@
 pages:
   stage: deploy
   script:
-    - sudo rm -r /var/www/stade-rochelais/
-    - sudo mkdir /var/www/stade-rochelais
-    - sudo cp -r * /var/www/stade-rochelais/
+    - sudo rm -r /var/www/personal-portfolio/project/stade-rochelais/
+    - sudo mkdir /var/www/personal-portfolio/project/stade-rochelais
+    - sudo cp -r * /var/www/personal-portfolio/project/stade-rochelais/
   artifacts:
     paths:
-    - /var/www/stade-rochelais/
+    - /var/www/personal-portfolio/stade-rochelais/
   only:
   - master
