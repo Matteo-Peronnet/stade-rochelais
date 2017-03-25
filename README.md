@@ -16,6 +16,7 @@ Ce projet avait pour but, la validation de la montée en compétence sur le fram
 ```shell
 git clone git@matteo-raspberry.dynamic-dns.net:matteop/stade-rochelais.git
 composer install
+php bin/console doctrine:database:create
 php bin/console doctrine:schema:update --force
 php bin/console doctrine:fixtures:load
 php bin/console server:run
